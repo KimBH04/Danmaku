@@ -1,0 +1,59 @@
+name: Build WebGL and Deploy to docs
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build WebGL
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Cache Unity Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-WebGL-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-WebGL-
+
+      - name: Build Unity project (WebGL)
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: WebGL
+          buildsPath: build
+
+      - name: Clean docs folder
+        run: |
+          rm -rf docs
+          mkdir -p docs
+
+      - name: Copy build output into docs
+        run: |
+          cp -a build/WebGL/WebGL/. docs/
+
+      - name: Add .nojekyll
+        run: |
+          touch docs/.nojekyll
+
+      - name: Commit and push build result
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update WebGL build in docs [skip ci]"
+          file_pattern: docs/**
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
