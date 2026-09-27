@@ -1,29 +1,38 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed = 1f;
 
     [SerializeField] private float lowSpeedMagnification = 0.7f;
 
-    private Rigidbody2D rigid2d;
+    [SerializeField] private Transform deadzoneMinTr, deadzoneMaxTr;
+
     private Vector2 move;
+
+    private Vector2 deadzoneMin, deadzoneMax;
 
     private void Start()
     {
-        rigid2d = GetComponent<Rigidbody2D>();
+        deadzoneMin = deadzoneMinTr.position;
+        deadzoneMax = deadzoneMaxTr.position;
 
         InputHandler.Instance.OnMove += Move;
         InputHandler.Instance.OnUseBomb += Bomb;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        rigid2d.linearVelocity = move * (
-            InputHandler.Instance.IsSlowMoving ?
+        Vector3 target = move * (
+            (InputHandler.Instance.IsSlowMoving ?
             speed * lowSpeedMagnification :
-            speed);
+            speed
+        ) * GameManager.RATE) + (Vector2)transform.position;
+
+        transform.position = new(
+            Mathf.Clamp(target.x, deadzoneMin.x, deadzoneMax.x),
+            Mathf.Clamp(target.y, deadzoneMin.y, deadzoneMax.y)
+        );
     }
 
     private void Move(Vector2 m)
