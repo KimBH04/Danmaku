@@ -3,7 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
-public class InputHandler : Singleton<InputHandler>
+public class InputHandler : SingletonBehaviour<InputHandler>
 {
     public event UnityAction<Vector2> OnMove;
     public bool IsSlowMoving { get; private set; }
