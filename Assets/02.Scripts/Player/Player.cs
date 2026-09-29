@@ -17,14 +17,14 @@ public class Player : MonoBehaviour
         deadzoneMin = deadzoneMinTr.position;
         deadzoneMax = deadzoneMaxTr.position;
 
-        InputHandler.Instance.OnMove += Move;
-        InputHandler.Instance.OnUseBomb += Bomb;
+        InGameInputHandler.Instance.OnMove += Move;
+        InGameInputHandler.Instance.OnUseBomb += Bomb;
     }
 
     private void Update()
     {
         Vector3 target = move * (
-            (InputHandler.Instance.IsSlowMoving ?
+            (InGameInputHandler.Instance.IsSlowMoving ?
             speed * lowSpeedMagnification :
             speed
         ) * GameManager.RATE) + (Vector2)transform.position;
