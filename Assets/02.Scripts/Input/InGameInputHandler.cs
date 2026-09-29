@@ -3,13 +3,11 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
-public class InputHandler : SingletonBehaviour<InputHandler>
+public class InGameInputHandler : SingletonBehaviour<InGameInputHandler>
 {
     public event UnityAction<Vector2> OnMove;
     public bool IsSlowMoving { get; private set; }
     public event UnityAction OnUseBomb;
-
-    public event UnityAction OnEscape;
     
     public void InvokeOnMove(InputAction.CallbackContext context)
     {
@@ -32,6 +30,4 @@ public class InputHandler : SingletonBehaviour<InputHandler>
             IsSlowMoving = false;
         }
     }
-
-    public void InvokeOnEscape() => OnEscape?.Invoke();
 }
