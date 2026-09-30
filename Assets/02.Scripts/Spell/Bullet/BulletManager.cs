@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -17,11 +18,34 @@ public class BulletManager : SingletonBehaviour<BulletManager>
     public void SpawnBullet(BulletPattern pattern)
     {
         var bullet = bulletPool.Get();
-        bullet.Initialize(pattern.InitialBulletData);
-        bullet.SetSequence(pattern.BulletSequence);
+        bullet.Initialize(pattern);
         bullet.Start();
 
         activeBullets.Add(bullet);
+    }
+
+    public Coroutine SpawnBulletChain(IEnumerable<BulletPattern> patterns)
+    {
+        return StartCoroutine(Chain());
+
+        IEnumerator Chain()
+        {
+            int elapse = 0;
+            foreach (var pattern in patterns)
+            {
+                SpawnBullet(pattern);
+
+                if (elapse < pattern.WaitForFrame)
+                {
+                    elapse++;
+                    yield return null;
+                }
+                else
+                {
+                    elapse = 0;
+                }
+            }
+        }
     }
 
     private void Update()
