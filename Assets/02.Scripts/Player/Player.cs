@@ -10,12 +10,18 @@ public class Player : MonoBehaviour
 
     private Vector2 move;
 
-    private Vector2 deadzoneMin, deadzoneMax;
+    private Vector2 deadzoneMin = Vector2.negativeInfinity, deadzoneMax = Vector2.positiveInfinity;
 
     private void Start()
     {
-        deadzoneMin = deadzoneMinTr.position;
-        deadzoneMax = deadzoneMaxTr.position;
+        if (deadzoneMinTr != null)
+        {
+            deadzoneMin = deadzoneMinTr.position;
+        }
+        if (deadzoneMaxTr != null)
+        {
+            deadzoneMax = deadzoneMaxTr.position;
+        }
 
         InGameInputHandler.Instance.OnMove += Move;
         InGameInputHandler.Instance.OnUseBomb += Bomb;

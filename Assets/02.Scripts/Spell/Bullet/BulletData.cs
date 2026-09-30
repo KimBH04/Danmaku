@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class BulletData
@@ -14,9 +15,10 @@ public class BulletData
     public int Elapse { get; private set; }
     private BulletSequenceBase.ISequenceRunner Sequence;
 
-    public void Initialize(InitialBulletData bulletData)
+    public void Initialize(BulletPattern pattern)
     {
-        Clear();
+        var bulletData = pattern.InitialBulletData;
+        var sequence = pattern.BulletSequence;
 
         Type        = bulletData.Type;
         bulletImage = bulletData.BulletImage;
@@ -25,10 +27,9 @@ public class BulletData
         Position    = bulletData.InitialPosition;
         Velocity    = bulletData.InitialVelocity;
         Torque      = bulletData.InitialTorque;
-    }
 
-    public void SetSequence(BulletSequenceBase sequence)
-    {
+        IsAlive = true;
+        Elapse = 0;
         Sequence = sequence.GetSequenceRunner();
     }
 
