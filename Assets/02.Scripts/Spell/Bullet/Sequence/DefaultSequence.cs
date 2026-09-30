@@ -4,7 +4,7 @@ using UnityEngine;
 /// 등속 직선운동을 하는 기본 시퀀스입니다.
 /// </summary>
 [CreateAssetMenu(fileName = "NewSequnce", menuName = "Bullet/Default Sequence", order = 0)]
-public class DefaultBulletSequence : BulletSequenceBase
+public class DefaultSequence : BulletSequenceBase
 {
     public override ISequenceRunner GetSequenceRunner()
     {

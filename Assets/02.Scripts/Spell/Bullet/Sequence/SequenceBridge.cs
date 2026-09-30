@@ -5,7 +5,7 @@ using UnityEngine;
 /// 시퀀스와 시퀀스를 프레임 간격으로 이어줍니다.
 /// </summary>
 [CreateAssetMenu(fileName = "NewSequensBridge", menuName = "Bullet/Sequence Bridge")]
-public class BulletSequenceBridge : BulletSequenceBase
+public class SequenceBridge : BulletSequenceBase
 {
     [SerializeField] private BulletSequenceBase[] sequences;
 
