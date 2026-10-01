@@ -20,12 +20,12 @@ public abstract class BulletSequenceBase : ScriptableObject
         /// 시퀀스가 시작된 직후 실행합니다.
         /// </summary>
         /// <param name="data">적용할 탄환 데이터</param>
-        void Start(BulletData data);
+        void Start(Bullet data);
 
         /// <summary>
         /// 탄환의 다음 움직임을 계산합니다.
         /// </summary>
         /// <param name="data">적용할 탄환 데이터</param>
-        void Next(BulletData data);
+        void Next(Bullet data);
     }
 }

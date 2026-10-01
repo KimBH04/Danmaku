@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// 런타임에 플레이어를 타겟팅합니다.
 /// </summary>
-[CreateAssetMenu(fileName = "NewTargettingSequence", menuName = "Bullet/Targetting Sequence")]
+[CreateAssetMenu(fileName = "NewTargettingSequence", menuName = "Bullet/Targetting Sequence", order = 3)]
 public class TargettingSequence : BulletSequenceBase
 {
     public override ISequenceRunner GetSequenceRunner()
@@ -15,7 +15,7 @@ public class TargettingSequence : BulletSequenceBase
     {
         public static readonly SequenceRunner Singleton = new();
 
-        public void Start(BulletData data)
+        public void Start(Bullet data)
         {
             var player = FindFirstObjectByType<Player>();
             if (player == null)
@@ -29,7 +29,7 @@ public class TargettingSequence : BulletSequenceBase
             data.Velocity = (playerPos - data.Position).normalized;
         }
 
-        public void Next(BulletData data)
+        public void Next(Bullet data)
         {
             data.Position += data.Velocity;
         }

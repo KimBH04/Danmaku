@@ -5,7 +5,7 @@ using UnityEngine.Pool;
 
 public class BulletManager : SingletonBehaviour<BulletManager>
 {
-    private readonly ObjectPool<BulletData> bulletPool = new(
+    private readonly ObjectPool<Bullet> bulletPool = new(
         () => new(),                // Create
         b  => b.Clear(),            // Get
         b  => b.IsAlive = false,    // Release
@@ -13,7 +13,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         maxSize: 1024
     );
 
-    private readonly List<BulletData> activeBullets = new(128);
+    private readonly List<Bullet> activeBullets = new(128);
 
     public void SpawnBullet(BulletPattern pattern)
     {

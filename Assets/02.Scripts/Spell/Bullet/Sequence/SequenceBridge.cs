@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 시퀀스와 시퀀스를 프레임 간격으로 이어줍니다.
 /// </summary>
-[CreateAssetMenu(fileName = "NewSequensBridge", menuName = "Bullet/Sequence Bridge")]
+[CreateAssetMenu(fileName = "NewSequensBridge", menuName = "Bullet/Sequence Bridge", order = 2)]
 public class SequenceBridge : BulletSequenceBase
 {
     [SerializeField] private BulletSequenceBase[] sequences;
@@ -28,9 +28,9 @@ public class SequenceBridge : BulletSequenceBase
         private int elapse = 0;
         private int index = 0;
 
-        public void Start(BulletData data) { }
+        public void Start(Bullet data) { }
 
-        public void Next(BulletData data)
+        public void Next(Bullet data)
         {
             sequenceRunners[index].Next(data);
 
