@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 
+[System.Serializable]
 public class Bullet
 {
     public BulletData Data { get; private set; }
