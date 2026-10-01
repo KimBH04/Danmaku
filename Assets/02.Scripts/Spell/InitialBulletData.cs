@@ -11,5 +11,5 @@ public struct InitialBullet
     public readonly Color BulletColor => bulletColor;
     public readonly Vector2 InitialPosition => initialPosition;
     public readonly Vector2 InitialVelocity => initialVelocity;
-    public readonly float InitialTorque => initialTorque;
+    public readonly float InitialTorqueDegree => initialTorque;
 }

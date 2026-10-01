@@ -23,7 +23,7 @@ public class Bullet
         bulletColor = bulletData.BulletColor;
         Position    = bulletData.InitialPosition;
         Velocity    = bulletData.InitialVelocity;
-        Torque      = bulletData.InitialTorque;
+        Torque      = bulletData.InitialTorqueDegree * Mathf.Deg2Rad;
 
         IsAlive = true;
         Elapse = 0;
