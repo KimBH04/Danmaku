@@ -21,9 +21,9 @@ public class DefaultSequence : BulletSequenceBase
         {
             var vel = data.Velocity;
 
-            data.Position += vel;
+            data.Position += vel * GameManager.RATE;
 
-            var tor = data.Torque;
+            var tor = data.Torque * GameManager.RATE;
             data.Velocity = new(
                 vel.x * Mathf.Cos(tor) - vel.y * Mathf.Sin(tor),
                 vel.x * Mathf.Sin(tor) + vel.y * Mathf.Cos(tor)

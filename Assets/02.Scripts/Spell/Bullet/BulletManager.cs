@@ -15,6 +15,8 @@ public class BulletManager : SingletonBehaviour<BulletManager>
 
     private readonly List<Bullet> activeBullets = new(128);
 
+    public IReadOnlyList<Bullet> ActiveBullets => activeBullets;
+
     public void SpawnBullet(BulletPattern pattern)
     {
         var bullet = bulletPool.Get();
