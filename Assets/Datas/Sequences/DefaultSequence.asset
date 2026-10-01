@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff263813529de4245a1e6651f4fa2be9, type: 3}
+  m_Script: {fileID: 11500000, guid: ae48f443edfc69441bd8b787fb915169, type: 3}
   m_Name: DefaultSequence
   m_EditorClassIdentifier: Assembly-CSharp::DefaultBulletSequence

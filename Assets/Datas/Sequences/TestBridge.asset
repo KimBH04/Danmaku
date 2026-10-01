@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40e2d82d8826a3d41ac7999c303862db, type: 3}
+  m_Script: {fileID: 11500000, guid: 2731cb1dad138374ab19decc857b3c20, type: 3}
   m_Name: TestBridge
   m_EditorClassIdentifier: Assembly-CSharp::BulletSequenceBridge
-  sequences:
-  - {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
-  - {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
-  frameBetweenSequence: 0a000000
+  sequences: []
+  frameBetweenSequence: 

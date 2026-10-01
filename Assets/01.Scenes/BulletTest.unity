@@ -702,15 +702,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletTest
   bulletPattern:
-  - initialBulletData:
-      type: 0
-      bulletImage: {fileID: 0}
-      bulletColor: {r: 0, g: 0, b: 0, a: 0}
-      distance: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
       initialPosition: {x: 0, y: 0}
-      initialVelocity: {x: 0, y: 0}
+      initialVelocity: {x: 1, y: 1}
       initialTorque: 0
-    bulletSequence: {fileID: 0}
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 0, g: 0, b: 1, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1, y: 1}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 0, g: 1, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1, y: -1}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 1, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1, y: -1}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
     waitForFrame: 0
 --- !u!4 &1723013511
 Transform:
