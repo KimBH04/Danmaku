@@ -1,0 +1,1296 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b719e80cc201b2a43b1bdfec3f134106, type: 3}
+  m_Name: Radial8_Red
+  m_EditorClassIdentifier: Assembly-CSharp::BurstData
+  bulletPatterns:
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 4, y: 0}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.82843, y: 2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0, y: 4}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.82843, y: 2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -4, y: 0}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.82843, y: -2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0, y: -4}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.82843, y: -2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.95075, y: 0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.35114, y: 3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -0.625738, y: 3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.23607, y: 2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.95075, y: -0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.35114, y: -3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0.625738, y: -3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.23607, y: -2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.80423, y: 1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.81596, y: 3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.23607, y: 3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.56403, y: 1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.80423, y: -1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.81596, y: -3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.23607, y: -3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.56403, y: -1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.56403, y: 1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.23607, y: 3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.81596, y: 3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.80423, y: 1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.56403, y: -1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.23607, y: -3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.81596, y: -3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.80423, y: -1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.23607, y: 2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0.625738, y: 3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.35114, y: 3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.95075, y: 0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.23607, y: -2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -0.625738, y: -3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.35114, y: -3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.95075, y: -0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.82843, y: 2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0, y: 4}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.82843, y: 2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -4, y: 0}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.82843, y: -2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0, y: -4}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.82843, y: -2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 4, y: 0}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.35114, y: 3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -0.625738, y: 3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.23607, y: 2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.95075, y: -0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.35114, y: -3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0.625738, y: -3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.23607, y: -2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.95075, y: 0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.81596, y: 3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.23607, y: 3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.56403, y: 1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.80423, y: -1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.81596, y: -3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.23607, y: -3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.56403, y: -1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.80423, y: 1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.23607, y: 3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.81596, y: 3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.80423, y: 1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.56403, y: -1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.23607, y: -3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.81596, y: -3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.80423, y: -1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.56403, y: 1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0.625738, y: 3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.35114, y: 3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.95075, y: 0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.23607, y: -2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -0.625738, y: -3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.35114, y: -3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.95075, y: -0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.23607, y: 2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0, y: 4}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.82843, y: 2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -4, y: 0}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.82843, y: -2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0, y: -4}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.82843, y: -2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 4, y: 0}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.82843, y: 2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -0.625738, y: 3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.23607, y: 2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.95075, y: -0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.35114, y: -3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0.625738, y: -3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.23607, y: -2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.95075, y: 0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.35114, y: 3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.23607, y: 3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.56403, y: 1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.80423, y: -1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.81596, y: -3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.23607, y: -3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.56403, y: -1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.80423, y: 1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.81596, y: 3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.81596, y: 3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.80423, y: 1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.56403, y: -1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.23607, y: -3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.81596, y: -3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.80423, y: -1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.56403, y: 1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.23607, y: 3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.35114, y: 3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.95075, y: 0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.23607, y: -2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -0.625738, y: -3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.35114, y: -3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.95075, y: -0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.23607, y: 2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0.625738, y: 3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.82843, y: 2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -4, y: 0}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.82843, y: -2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0, y: -4}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.82843, y: -2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 4, y: 0}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.82843, y: 2.82843}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0, y: 4}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.23607, y: 2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.95075, y: -0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.35114, y: -3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0.625738, y: -3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.23607, y: -2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.95075, y: 0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.35114, y: 3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -0.625738, y: 3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.56403, y: 1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.80423, y: -1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.81596, y: -3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.23607, y: -3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.56403, y: -1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.80423, y: 1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.81596, y: 3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.23607, y: 3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.80423, y: 1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.56403, y: -1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.23607, y: -3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.81596, y: -3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.80423, y: -1.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.56403, y: 1.81596}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 1.23607, y: 3.80423}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -1.81596, y: 3.56403}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 10
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.95075, y: 0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -3.23607, y: -2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -0.625738, y: -3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 2.35114, y: -3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.95075, y: -0.625738}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 3.23607, y: 2.35114}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: 0.625738, y: 3.95075}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  - bulletData: {fileID: 11400000, guid: 19bfa3df6a7a0b0419a416cd5e7559a9, type: 2}
+    initialBullet:
+      bulletColor: {r: 1, g: 0, b: 0, a: 1}
+      initialPosition: {x: 0, y: 0}
+      initialVelocity: {x: -2.35114, y: 3.23607}
+      initialTorque: 0
+    bulletSequence: {fileID: 11400000, guid: f1b8e4d6ec2d4e4429f68aee5a9ff022, type: 2}
+    waitForFrame: 0
+  waitForFrame: 0

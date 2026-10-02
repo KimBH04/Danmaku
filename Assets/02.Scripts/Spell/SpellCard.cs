@@ -6,9 +6,9 @@ public class SpellCard : ScriptableObject
 {
     [SerializeField] private string spellName;
     [SerializeField, TextArea] private string spellDescription;
-    [SerializeField] private BulletPattern[] bulletPatterns;
+    [SerializeField] private BurstData[] bursts;
 
     public string SpellName => spellName;
     public string SpellDescription => spellDescription;
-    public IEnumerable<BulletPattern> BulletPatterns => bulletPatterns;
+    public IEnumerable<BurstData> Bursts => bursts;
 }
