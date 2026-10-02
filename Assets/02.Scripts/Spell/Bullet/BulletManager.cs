@@ -94,14 +94,22 @@ public class BulletManager : SingletonBehaviour<BulletManager>
             var bullet = activeBullets[i];
             while (!BulletValidation(bullet))
             {
-                cnt--;
+                int last = --cnt;
                 bulletPool.Release(bullet);
-                bullet = activeBullets[i] = activeBullets[cnt];
-                activeBullets.RemoveAt(cnt);
+                (activeBullets[i], activeBullets[^1]) = (activeBullets[^1], activeBullets[i]);
+                activeBullets.RemoveAt(last);
+                if (i >= last)
+                {
+                    goto HandlingEnd;
+                }
+
+                bullet = activeBullets[i];
             }
 
             bullet.Update();
         }
+
+    HandlingEnd:;
     }
 
     private bool BulletValidation(Bullet bullet)
