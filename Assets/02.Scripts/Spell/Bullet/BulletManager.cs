@@ -5,6 +5,10 @@ using UnityEngine.Pool;
 
 public class BulletManager : SingletonBehaviour<BulletManager>
 {
+    [SerializeField] private Transform deadzoneMinTr, deadzoneMaxTr;
+
+    private Rect deadzone = new(Vector2.negativeInfinity, Vector2.positiveInfinity);
+
     private readonly ObjectPool<Bullet> bulletPool = new(
         () => new(),                // Create
         b  => b.Clear(),            // Get
@@ -62,6 +66,21 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         }
     }
 
+    protected override void Awake()
+    {
+        base.Awake();
+
+        if (deadzoneMinTr != null && deadzoneMaxTr != null)
+        {
+            var min = deadzoneMinTr.position;
+            var max = deadzoneMaxTr.position;
+            deadzone = new(
+                min,
+                max - min
+            );
+        }
+    }
+
     private void Update()
     {
         HandleBulletsInFrame();
@@ -73,7 +92,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         for (int i = 0; i < cnt; i++)
         {
             var bullet = activeBullets[i];
-            while (!bullet.IsAlive)     // todo: 화면 밖을 벗어나거나 보스가 처치되었을 때 제거
+            while (!BulletValidation(bullet))
             {
                 cnt--;
                 bulletPool.Release(bullet);
@@ -83,5 +102,11 @@ public class BulletManager : SingletonBehaviour<BulletManager>
 
             bullet.Update();
         }
+    }
+
+    private bool BulletValidation(Bullet bullet)
+    {
+        // todo: 보스가 처치되었을 때 제거
+        return deadzone.Contains(bullet.Position);
     }
 }
