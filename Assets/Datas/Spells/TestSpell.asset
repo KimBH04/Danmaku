@@ -11,18 +11,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 727e9866015447a47bef3d31af6fd0e2, type: 3}
   m_Name: TestSpell
-  m_EditorClassIdentifier: Assembly-CSharp::SpellData
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCard
   spellName: test
   spellDescription: "\uD14C\uC2A4\uD2B8 \uC2A4\uD3A0 \uCE74\uB4DC"
-  bulletPatterns:
-  - repeatCount: 5
-    initialBulletData:
-      type: 0
-      bulletImage: {fileID: 0}
-      bulletColor: {r: 1, g: 1, b: 1, a: 1}
-      distance: 1
-      initialPosition: {x: 0, y: 0}
-      initialVelocity: {x: 0.5, y: 1}
-      initialTorque: 0
-    bulletSequence: {fileID: 11400000, guid: f0cc4ac91ac120343a0e48402f2d665b, type: 2}
-    waitForFrame: 10
+  bursts:
+  - {fileID: 11400000, guid: 5e89c158c99746dab6852d406f403139, type: 2}

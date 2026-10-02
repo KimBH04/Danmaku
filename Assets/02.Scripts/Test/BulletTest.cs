@@ -3,17 +3,13 @@ using UnityEngine;
 
 public class BulletTest : MonoBehaviour
 {
-    public BulletPattern[] bulletPattern;
+    public SpellCard[] spellCards;
 
-    private Coroutine bulletRoutine;
-
-    public void BulletOneShot()
+    public void SpellOneShot()
     {
-        if (bulletRoutine != null)
+        foreach (var spell in spellCards)
         {
-            StopCoroutine(bulletRoutine);
+            BulletManager.Instance.BurstChain(spell.Bursts);
         }
-        
-        bulletRoutine = BulletManager.Instance.SpawnBulletChain(bulletPattern);
     }
 }

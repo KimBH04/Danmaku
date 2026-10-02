@@ -32,19 +32,31 @@ public class BulletManager : SingletonBehaviour<BulletManager>
 
         IEnumerator Chain()
         {
-            int elapse = 0;
             foreach (var pattern in patterns)
             {
                 SpawnBullet(pattern);
 
-                if (elapse < pattern.WaitForFrame)
+                for (int i = 0; i < pattern.WaitForFrame; i++)
                 {
-                    elapse++;
                     yield return null;
                 }
-                else
+            }
+        }
+    }
+
+    public Coroutine BurstChain(IEnumerable<BurstData> bursts)
+    {
+        return StartCoroutine(Chain());
+
+        IEnumerator Chain()
+        {
+            foreach (var burst in bursts)
+            {
+                yield return SpawnBulletChain(burst.BulletPatterns);
+
+                for (int i = 0; i < burst.WaitForFrame; i++)
                 {
-                    elapse = 0;
+                    yield return null;
                 }
             }
         }
