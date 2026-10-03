@@ -27,13 +27,13 @@ public class Player : MonoBehaviour
         InGameInputHandler.Instance.OnUseBomb += Bomb;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Vector3 target = move * (
             (InGameInputHandler.Instance.IsSlowMoving ?
             speed * lowSpeedMagnification :
             speed
-        ) * GameManager.RATE) + (Vector2)transform.position;
+        ) * Time.fixedDeltaTime) + (Vector2)transform.position;
 
         transform.position = new(
             Mathf.Clamp(target.x, deadzoneMin.x, deadzoneMax.x),

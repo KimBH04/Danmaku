@@ -9,6 +9,9 @@ public class BulletManager : SingletonBehaviour<BulletManager>
 
     private Rect deadzone = new(Vector2.negativeInfinity, Vector2.positiveInfinity);
 
+    // 코루틴 컨디션 재할당 방지
+    private static readonly WaitForFixedUpdate waitForFixedUpdate = new();
+
     private readonly ObjectPool<Bullet> bulletPool = new(
         () => new(),                // Create
         b  => b.Clear(),            // Get
@@ -42,7 +45,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
 
                 for (int i = 0; i < pattern.WaitForFrame; i++)
                 {
-                    yield return null;
+                    yield return waitForFixedUpdate;
                 }
             }
         }
@@ -60,7 +63,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
 
                 for (int i = 0; i < burst.WaitForFrame; i++)
                 {
-                    yield return null;
+                    yield return waitForFixedUpdate;
                 }
             }
         }
@@ -81,7 +84,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         HandleBulletsInFrame();
     }
