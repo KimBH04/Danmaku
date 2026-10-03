@@ -7,7 +7,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
 {
     [SerializeField] private Transform deadzoneMinTr, deadzoneMaxTr;
 
-    private Rect deadzone = new(Vector2.negativeInfinity, Vector2.positiveInfinity);
+    private Rect deadzone = new(0f, 0f, 0f, 0f);
 
     // 코루틴 컨디션 재할당 방지
     private static readonly WaitForFixedUpdate waitForFixedUpdate = new();
@@ -81,6 +81,10 @@ public class BulletManager : SingletonBehaviour<BulletManager>
                 min,
                 max - min
             );
+        }
+        else
+        {
+            Debug.LogWarning("[BulletManager] 데드존 트랜스폼이 연결되지 않았습니다.", this);
         }
     }
 

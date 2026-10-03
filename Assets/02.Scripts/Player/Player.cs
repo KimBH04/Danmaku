@@ -6,21 +6,25 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float lowSpeedMagnification = 0.7f;
 
+    [SerializeField] private float radius = 0.5f;
+
     [SerializeField] private Transform deadzoneMinTr, deadzoneMaxTr;
 
     private Vector2 move;
 
-    private Vector2 deadzoneMin = Vector2.negativeInfinity, deadzoneMax = Vector2.positiveInfinity;
+    private Rect deadzone = new(0f, 0f, 0f, 0f);
 
     private void Start()
     {
-        if (deadzoneMinTr != null)
+        if (deadzoneMinTr != null && deadzoneMaxTr != null)
         {
-            deadzoneMin = deadzoneMinTr.position;
+            Vector2 min = deadzoneMinTr.position;
+            Vector2 max = deadzoneMaxTr.position;
+            deadzone = Rect.MinMaxRect(min.x + radius, min.y + radius, max.x - radius, max.y - radius);
         }
-        if (deadzoneMaxTr != null)
+        else
         {
-            deadzoneMax = deadzoneMaxTr.position;
+            Debug.LogWarning("[Player] 데드존 트랜스폼이 연결되지 않았습니다.", this);
         }
 
         InGameInputHandler.Instance.OnMove += Move;
@@ -36,8 +40,8 @@ public class Player : MonoBehaviour
         ) * Time.fixedDeltaTime) + (Vector2)transform.position;
 
         transform.position = new(
-            Mathf.Clamp(target.x, deadzoneMin.x, deadzoneMax.x),
-            Mathf.Clamp(target.y, deadzoneMin.y, deadzoneMax.y)
+            Mathf.Clamp(target.x, deadzone.xMin, deadzone.xMax),
+            Mathf.Clamp(target.y, deadzone.yMin, deadzone.yMax)
         );
     }
 
