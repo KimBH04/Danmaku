@@ -31,7 +31,7 @@ public class TargettingSequence : BulletSequenceBase
 
         public void Next(Bullet data)
         {
-            data.Position += data.Velocity * GameManager.RATE;
+            data.Position += data.Velocity * Time.fixedDeltaTime;
         }
     }
 }
