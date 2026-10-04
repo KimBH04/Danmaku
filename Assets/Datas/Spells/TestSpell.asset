@@ -15,4 +15,6 @@ MonoBehaviour:
   spellName: test
   spellDescription: "\uD14C\uC2A4\uD2B8 \uC2A4\uD3A0 \uCE74\uB4DC"
   bursts:
-  - {fileID: 11400000, guid: 5e89c158c99746dab6852d406f403139, type: 2}
+  - {fileID: 11400000, guid: 9bb5a869264540738204601f64733139, type: 2}
+  - {fileID: 11400000, guid: 9bb5a869264540738204601f64733139, type: 2}
+  - {fileID: 11400000, guid: 9bb5a869264540738204601f64733139, type: 2}
