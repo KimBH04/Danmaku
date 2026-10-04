@@ -9,7 +9,7 @@ public class BulletTest : MonoBehaviour
     {
         foreach (var spell in spellCards)
         {
-            BulletManager.Instance.BurstChain(spell.Bursts);
+            BulletManager.Instance.BurstChain(spell.Bursts, transform);
         }
     }
 }

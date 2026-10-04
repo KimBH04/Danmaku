@@ -15,14 +15,14 @@ public class Bullet
     public int Elapse { get; private set; }
     private BulletSequenceBase.ISequenceRunner Sequence;
 
-    public void Initialize(BulletPattern pattern)
+    public void Initialize(BulletPattern pattern, Vector2 presenterPosition = default)
     {
         Data = pattern.BulletData;
         var bulletData = pattern.InitialBullet;
         var sequence = pattern.BulletSequence;
 
         bulletColor = bulletData.BulletColor;
-        Position    = bulletData.InitialPosition;
+        Position    = bulletData.InitialPosition + presenterPosition;
         Velocity    = bulletData.InitialVelocity;
         Torque      = bulletData.InitialTorqueDegree * Mathf.Deg2Rad;
 

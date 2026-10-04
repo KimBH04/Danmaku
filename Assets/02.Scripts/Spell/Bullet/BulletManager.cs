@@ -24,16 +24,16 @@ public class BulletManager : SingletonBehaviour<BulletManager>
 
     public IReadOnlyList<Bullet> ActiveBullets => activeBullets;
 
-    public void SpawnBullet(BulletPattern pattern)
+    public void SpawnBullet(BulletPattern pattern, Transform presenter)
     {
         var bullet = bulletPool.Get();
-        bullet.Initialize(pattern);
+        bullet.Initialize(pattern, presenter.position);
         bullet.Start();
 
         activeBullets.Add(bullet);
     }
 
-    public Coroutine SpawnBulletChain(IEnumerable<BulletPattern> patterns)
+    public Coroutine SpawnBulletChain(IEnumerable<BulletPattern> patterns, Transform presenter)
     {
         return StartCoroutine(Chain());
 
@@ -41,7 +41,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         {
             foreach (var pattern in patterns)
             {
-                SpawnBullet(pattern);
+                SpawnBullet(pattern, presenter);
 
                 for (int i = 0; i < pattern.WaitForFrame; i++)
                 {
@@ -51,7 +51,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         }
     }
 
-    public Coroutine BurstChain(IEnumerable<BurstData> bursts)
+    public Coroutine BurstChain(IEnumerable<BurstData> bursts, Transform presenter)
     {
         return StartCoroutine(Chain());
 
@@ -59,7 +59,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         {
             foreach (var burst in bursts)
             {
-                yield return SpawnBulletChain(burst.BulletPatterns);
+                yield return SpawnBulletChain(burst.BulletPatterns, presenter);
 
                 for (int i = 0; i < burst.WaitForFrame; i++)
                 {
