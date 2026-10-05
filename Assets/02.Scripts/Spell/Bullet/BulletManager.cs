@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.Serialization;
 
 public class BulletManager : SingletonBehaviour<BulletManager>
 {
-    [SerializeField] private Transform deadzoneMinTr, deadzoneMaxTr;
+    [field: SerializeField, FormerlySerializedAs("deadzoneMinTr")]
+    public Transform DeadzoneMinTr { get; private set; }
+
+    [field: SerializeField, FormerlySerializedAs("deadzoneMaxTr")]
+    public Transform DeadzoneMaxTr { get; private set; }
 
     private Rect deadzone = new(0f, 0f, 0f, 0f);
 
@@ -73,10 +78,10 @@ public class BulletManager : SingletonBehaviour<BulletManager>
     {
         base.Awake();
 
-        if (deadzoneMinTr != null && deadzoneMaxTr != null)
+        if (DeadzoneMinTr != null && DeadzoneMaxTr != null)
         {
-            var min = deadzoneMinTr.position;
-            var max = deadzoneMaxTr.position;
+            var min = DeadzoneMinTr.position;
+            var max = DeadzoneMaxTr.position;
             deadzone = new(
                 min,
                 max - min

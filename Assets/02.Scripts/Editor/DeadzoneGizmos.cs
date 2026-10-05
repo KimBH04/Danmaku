@@ -22,13 +22,13 @@ public static class DeadzoneGizmos
         DrawDeadzone(manager, BulletDeadzoneColor, "Bullet Deadzone");
     }
 
-    // 컴포넌트의 deadzoneMinTr / deadzoneMaxTr로 사각형을 계산해 그립니다.
+    // 컴포넌트의 DeadzoneMinTr / DeadzoneMaxTr로 사각형을 계산해 그립니다.
     // (런타임 Rect는 Start/Awake 이후에만 생기므로, 에디트 모드에서도 보이도록 Transform 기준으로 계산)
     private static void DrawDeadzone(Component component, Color color, string label)
     {
         using var so = new SerializedObject(component);
-        var minTr = so.FindProperty("deadzoneMinTr")?.objectReferenceValue as Transform;
-        var maxTr = so.FindProperty("deadzoneMaxTr")?.objectReferenceValue as Transform;
+        var minTr = so.FindProperty("<DeadzoneMinTr>k__BackingField")?.objectReferenceValue as Transform;
+        var maxTr = so.FindProperty("<DeadzoneMaxTr>k__BackingField")?.objectReferenceValue as Transform;
         if (minTr == null || maxTr == null)
             return;
 

@@ -1,15 +1,18 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public struct BulletPattern
 {
-    [SerializeField] private BulletData bulletData;
-    [SerializeField] private InitialBullet initialBullet;
-    [SerializeField] private BulletSequenceBase bulletSequence;
-    [SerializeField] private int waitForFrame;
+    [field: SerializeField, FormerlySerializedAs("bulletData")]
+    public BulletData BulletData { get; private set; }
 
-    public readonly BulletData BulletData => bulletData;
-    public readonly InitialBullet InitialBullet => initialBullet;
-    public readonly BulletSequenceBase BulletSequence => bulletSequence;
-    public readonly int WaitForFrame => waitForFrame;
+    [field: SerializeField, FormerlySerializedAs("initialBullet")]
+    public InitialBullet InitialBullet { get; private set; }
+
+    [field: SerializeField, FormerlySerializedAs("bulletSequence")]
+    public BulletSequenceBase BulletSequence { get; private set; }
+
+    [field: SerializeField, FormerlySerializedAs("waitForFrame")]
+    public int WaitForFrame { get; private set; }
 }

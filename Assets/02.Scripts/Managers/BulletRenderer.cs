@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// 활성화된 탄환(<see cref="Bullet"/>)을 GPU 인스턴싱으로 한 번에 그립니다.<br/>
@@ -15,14 +16,14 @@ public class BulletRenderer : MonoBehaviour
     private static readonly int MainTexId = Shader.PropertyToID("_MainTex");
     private static readonly int ColorId = Shader.PropertyToID("_Color");
 
-    [Tooltip("탄환 머티리얼 (예: Bullet01). 원본 에셋은 수정하지 않고 런타임 복사본을 사용합니다.")]
-    [SerializeField] private Material bulletMaterial;
+    [field: SerializeField, FormerlySerializedAs("bulletMaterial"), Tooltip("탄환 머티리얼 (예: Bullet01). 원본 에셋은 수정하지 않고 런타임 복사본을 사용합니다.")]
+    public Material BulletMaterial { get; private set; }
 
-    [Tooltip("탄환을 그릴 Z 위치")]
-    [SerializeField] private float depth = 0f;
+    [field: SerializeField, FormerlySerializedAs("depth"), Tooltip("탄환을 그릴 Z 위치")]
+    public float Depth { get; private set; } = 0f;
 
-    [Tooltip("진행 방향(Velocity)에 맞춰 스프라이트를 회전합니다. 스프라이트의 위쪽(+Y)이 진행 방향을 향합니다.")]
-    [SerializeField] private bool rotateToVelocity = true;
+    [field: SerializeField, FormerlySerializedAs("rotateToVelocity"), Tooltip("진행 방향(Velocity)에 맞춰 스프라이트를 회전합니다. 스프라이트의 위쪽(+Y)이 진행 방향을 향합니다.")]
+    public bool RotateToVelocity { get; private set; } = true;
 
     /// <summary>
     /// 스프라이트 하나에 대응하는 인스턴싱 그룹.<br/>
@@ -66,9 +67,9 @@ public class BulletRenderer : MonoBehaviour
         }
 
         // 원본 머티리얼 에셋을 건드리지 않도록 복사본을 만들고 인스턴싱을 켭니다.
-        if (bulletMaterial != null)
+        if (BulletMaterial != null)
         {
-            runtimeMaterial = new Material(bulletMaterial) { enableInstancing = true };
+            runtimeMaterial = new Material(BulletMaterial) { enableInstancing = true };
         }
 
         propertyBlock = new MaterialPropertyBlock();
@@ -138,7 +139,7 @@ public class BulletRenderer : MonoBehaviour
             // 위치 + 회전으로 변환 행렬 생성
             var rotation = Quaternion.identity;
             var velocity = bullet.Velocity;
-            if (rotateToVelocity && velocity.sqrMagnitude > Mathf.Epsilon)
+            if (RotateToVelocity && velocity.sqrMagnitude > Mathf.Epsilon)
             {
                 float angle = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg - 90f;
                 rotation = Quaternion.Euler(0f, 0f, angle);
@@ -146,7 +147,7 @@ public class BulletRenderer : MonoBehaviour
 
             var position = bullet.Position;
             batch.Matrices[batch.Count] = Matrix4x4.TRS(
-                new Vector3(position.x, position.y, depth), rotation, Vector3.one);
+                new Vector3(position.x, position.y, Depth), rotation, Vector3.one);
 
             // 인스턴스별 색상 (MaterialPropertyBlock 배열은 색 공간 변환을 하지 않으므로 직접 변환)
             var color = bullet.bulletColor;

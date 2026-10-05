@@ -25,9 +25,9 @@ public class BulletDataEditor : Editor
 
     private void OnEnable()
     {
-        typeProp = serializedObject.FindProperty("type");
-        imageProp = serializedObject.FindProperty("bulletImage");
-        distanceProp = serializedObject.FindProperty("distance");
+        typeProp = serializedObject.FindProperty("<Type>k__BackingField");
+        imageProp = serializedObject.FindProperty("<BulletImage>k__BackingField");
+        distanceProp = serializedObject.FindProperty("<Distance>k__BackingField");
     }
 
     public override void OnInspectorGUI()

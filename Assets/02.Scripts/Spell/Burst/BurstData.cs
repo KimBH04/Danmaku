@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "NewBurst", menuName = "Bullet/Burst", order = 0)]
 public class BurstData : ScriptableObject
 {
     [SerializeField] private BulletPattern[] bulletPatterns;
-    [SerializeField] private int waitForFrame;
+    [field: SerializeField, FormerlySerializedAs("waitForFrame")]
+    public int WaitForFrame { get; private set; }
 
     public IReadOnlyList<BulletPattern> BulletPatterns => bulletPatterns;
-    public int WaitForFrame => waitForFrame;
 }

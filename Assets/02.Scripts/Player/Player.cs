@@ -1,14 +1,22 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float speed = 1f;
+    [field: SerializeField, FormerlySerializedAs("speed")]
+    public float Speed { get; private set; } = 1f;
 
-    [SerializeField] private float lowSpeedMagnification = 0.7f;
+    [field: SerializeField, FormerlySerializedAs("lowSpeedMagnification")]
+    public float LowSpeedMagnification { get; private set; } = 0.7f;
 
-    [SerializeField] private float radius = 0.5f;
+    [field: SerializeField, FormerlySerializedAs("radius")]
+    public float Radius { get; private set; } = 0.5f;
 
-    [SerializeField] private Transform deadzoneMinTr, deadzoneMaxTr;
+    [field: SerializeField, FormerlySerializedAs("deadzoneMinTr")]
+    public Transform DeadzoneMinTr { get; private set; }
+
+    [field: SerializeField, FormerlySerializedAs("deadzoneMaxTr")]
+    public Transform DeadzoneMaxTr { get; private set; }
 
     private Vector2 move;
 
@@ -16,11 +24,11 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        if (deadzoneMinTr != null && deadzoneMaxTr != null)
+        if (DeadzoneMinTr != null && DeadzoneMaxTr != null)
         {
-            Vector2 min = deadzoneMinTr.position;
-            Vector2 max = deadzoneMaxTr.position;
-            deadzone = Rect.MinMaxRect(min.x + radius, min.y + radius, max.x - radius, max.y - radius);
+            Vector2 min = DeadzoneMinTr.position;
+            Vector2 max = DeadzoneMaxTr.position;
+            deadzone = Rect.MinMaxRect(min.x + Radius, min.y + Radius, max.x - Radius, max.y - Radius);
         }
         else
         {
@@ -35,8 +43,8 @@ public class Player : MonoBehaviour
     {
         Vector3 target = move * (
             (InGameInputHandler.Instance.IsSlowMoving ?
-            speed * lowSpeedMagnification :
-            speed
+            Speed * LowSpeedMagnification :
+            Speed
         ) * Time.fixedDeltaTime) + (Vector2)transform.position;
 
         transform.position = new(
@@ -52,6 +60,6 @@ public class Player : MonoBehaviour
 
     private void Bomb()
     {
-        
+
     }
 }

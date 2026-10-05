@@ -1,15 +1,18 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public struct InitialBullet
 {
-    [SerializeField] private Color bulletColor;
-    [SerializeField] private Vector2 initialPosition;
-    [SerializeField] private Vector2 initialVelocity;
-    [SerializeField] private float initialTorque;
+    [field: SerializeField, FormerlySerializedAs("bulletColor")]
+    public Color BulletColor { get; private set; }
 
-    public readonly Color BulletColor => bulletColor;
-    public readonly Vector2 InitialPosition => initialPosition;
-    public readonly Vector2 InitialVelocity => initialVelocity;
-    public readonly float InitialTorqueDegree => initialTorque;
+    [field: SerializeField, FormerlySerializedAs("initialPosition")]
+    public Vector2 InitialPosition { get; private set; }
+
+    [field: SerializeField, FormerlySerializedAs("initialVelocity")]
+    public Vector2 InitialVelocity { get; private set; }
+
+    [field: SerializeField, FormerlySerializedAs("initialTorque")]
+    public float InitialTorqueDegree { get; private set; }
 }

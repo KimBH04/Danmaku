@@ -1,21 +1,25 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "NewAccelate", menuName = "Bullet/AccelateSequence")]
 public class AccelateSequence : BulletSequenceBase
 {
-    [SerializeField, Min(1e-2f)] private float targetVelocity = 0.01f;
+    [field: SerializeField, Min(1e-2f), FormerlySerializedAs("targetVelocity")]
+    public float TargetVelocity { get; private set; } = 0.01f;
 
-    [SerializeField] private AnimationCurve curve;
+    [field: SerializeField, FormerlySerializedAs("curve")]
+    public AnimationCurve Curve { get; private set; }
 
-    [SerializeField] private int duration;
+    [field: SerializeField, FormerlySerializedAs("duration")]
+    public int Duration { get; private set; }
 
     public override ISequenceRunner GetSequenceRunner()
     {
         return new Accelate()
         {
-            curve = curve,
-            target = targetVelocity,
-            duration = duration,
+            curve = Curve,
+            target = TargetVelocity,
+            duration = Duration,
         };
     }
 

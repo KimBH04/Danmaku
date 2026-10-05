@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "NewSpell", menuName = "Spell/SpellPattern")]
 public class SpellCard : ScriptableObject
 {
-    [SerializeField] private string spellName;
-    [SerializeField, TextArea] private string spellDescription;
+    [field: SerializeField, FormerlySerializedAs("spellName")]
+    public string SpellName { get; private set; }
+    [field: SerializeField, TextArea, FormerlySerializedAs("spellDescription")]
+    public string SpellDescription { get; private set; }
     [SerializeField] private BurstData[] bursts;
 
-    public string SpellName => spellName;
-    public string SpellDescription => spellDescription;
     public IEnumerable<BurstData> Bursts => bursts;
 }

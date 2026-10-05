@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class HoldButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] private UnityEvent<bool> OnChangeTouchState;
+    [field: SerializeField, FormerlySerializedAs("OnChangeTouchState")]
+    public UnityEvent<bool> OnChangeTouchState { get; private set; }
 
     public void OnPointerDown(PointerEventData eventData)
     {
