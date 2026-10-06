@@ -6,6 +6,10 @@ using UnityEngine.Serialization;
 public class BurstData : ScriptableObject
 {
     [SerializeField] private BulletPattern[] bulletPatterns;
+
+    [field: SerializeField, FormerlySerializedAs("presentPosition")]
+    public Vector2 PresentPosition { get; private set; }
+
     [field: SerializeField, FormerlySerializedAs("waitForFrame")]
     public int WaitForFrame { get; private set; }
 
