@@ -13,6 +13,12 @@ public class AccelateSequence : BulletSequenceBase
     [field: SerializeField, FormerlySerializedAs("duration")]
     public int Duration { get; private set; }
 
+    /// <summary>
+    /// Duration 이후(Duration이 0이면 처음부터) 적용되는 초당 속력 변화량 (unit/s²)
+    /// </summary>
+    [field: SerializeField]
+    public float Acceleration { get; private set; }
+
     public override ISequenceRunner GetSequenceRunner()
     {
         return new Accelate()
@@ -20,6 +26,7 @@ public class AccelateSequence : BulletSequenceBase
             curve = Curve,
             target = TargetVelocity,
             duration = Duration,
+            acceleration = Acceleration,
         };
     }
 
@@ -31,25 +38,45 @@ public class AccelateSequence : BulletSequenceBase
 
         public int duration;
 
+        public float acceleration;
+
         private int startElapse;
 
-        private Vector2 startVelocity;
+        private float startSpeed;
 
-        private Vector2 targetVelocity;
+        private float speed;
+
+        private Vector2 direction;
 
         public void Start(Bullet data)
         {
-            startVelocity = data.Velocity;
             startElapse = data.Elapse;
-
-            targetVelocity = startVelocity.normalized * target;
+            startSpeed = speed = data.Velocity.magnitude;
+            direction = data.Velocity.normalized;
         }
 
         public void Next(Bullet data)
         {
-            var t = Mathf.Clamp01((data.Elapse - startElapse) / (float)duration);
-            var vt = curve.Evaluate(t);
-            data.Velocity = Vector2.Lerp(startVelocity, targetVelocity, vt);
+            // 속력: Duration 동안은 커브로 목표 속력까지 보간, 이후에는 가속도 적용
+            int elapsed = data.Elapse - startElapse;
+            if (duration > 0 && elapsed <= duration)
+            {
+                var vt = curve.Evaluate(elapsed / (float)duration);
+                speed = Mathf.Lerp(startSpeed, target, vt);
+            }
+            else
+            {
+                speed = Mathf.Max(0f, speed + acceleration * Time.fixedDeltaTime);
+            }
+
+            // 방향: 토크만큼 회전
+            var tor = data.Torque * Time.fixedDeltaTime;
+            direction = new(
+                direction.x * Mathf.Cos(tor) - direction.y * Mathf.Sin(tor),
+                direction.x * Mathf.Sin(tor) + direction.y * Mathf.Cos(tor)
+            );
+
+            data.Velocity = direction * speed;
             data.Position += data.Velocity * Time.fixedDeltaTime;
         }
     }
