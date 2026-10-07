@@ -8,6 +8,7 @@ public class InGameInputHandler : SingletonBehaviour<InGameInputHandler>
     public event UnityAction<Vector2> OnMove;
     public bool IsSlowMoving { get; private set; }
     public event UnityAction OnUseBomb;
+    public event UnityAction<Vector2> OnSwipe;
     
     public void InvokeOnMove(InputAction.CallbackContext context)
     {
@@ -30,4 +31,6 @@ public class InGameInputHandler : SingletonBehaviour<InGameInputHandler>
             IsSlowMoving = false;
         }
     }
+
+    public void Swipe(Vector2 swipe) => OnSwipe?.Invoke(swipe);
 }
