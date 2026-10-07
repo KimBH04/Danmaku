@@ -1,17 +1,25 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour
 {
     private EnemyPattern pattern;
 
     private EnemyData data;
 
-    private Coroutine spawnBulletCoroutine;
+    private Coroutine burstChainCoroutine;
 
     private int elapse;
 
     private int enemyHP;
+
+    private new SpriteRenderer renderer;
+
+    private void Awake()
+    {
+        renderer = GetComponent<SpriteRenderer>();
+    }
 
     public void Initialize(EnemyPattern enemyPattern)
     {
@@ -20,6 +28,8 @@ public class Enemy : MonoBehaviour
         data = (pattern = enemyPattern).EnemyData;
 
         transform.position = enemyPattern.SpawnPosition;
+
+        renderer.color = data.EnemyColor;
     }
     
     public void StartPattern()
@@ -40,11 +50,13 @@ public class Enemy : MonoBehaviour
                 do
                 {
                     enemyHP = spell.PresentHP;
-                    spawnBulletCoroutine = BulletManager.Instance.BurstChain(spell.Bursts, transform);
-                    yield return spawnBulletCoroutine;
+                    burstChainCoroutine = BulletManager.Instance.BurstChain(spell.Bursts, transform);
+                    yield return burstChainCoroutine;
                 }
-                while ((uint)spell.TimeLimit >= elapse);
+                while ((uint)spell.TimeLimit >= elapse && enemyHP > 0);
             }
+
+            OnDie();
         }
 
         IEnumerator Timer()
@@ -56,15 +68,29 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void SendDamage(int damage)
+    {
+        enemyHP -= damage;
+        if (enemyHP <= 0)
+        {
+            StopCoroutine(burstChainCoroutine);
+        }
+    }
+
+    protected virtual void OnDie()
+    {
+        EnemyManager.Instance.ReleaseEnemy(this);
+    }
+
     private void OnEnable()
     {
         pattern = default;
         elapse = 0;
         StopAllCoroutines();
-        if (spawnBulletCoroutine != null)
+        if (burstChainCoroutine != null)
         {
-            StopCoroutine(spawnBulletCoroutine);
-            spawnBulletCoroutine = null;
+            StopCoroutine(burstChainCoroutine);
+            burstChainCoroutine = null;
         }
     }
 
@@ -73,10 +99,10 @@ public class Enemy : MonoBehaviour
         pattern = default;
         elapse = 0;
         StopAllCoroutines();
-        if (spawnBulletCoroutine != null)
+        if (burstChainCoroutine != null)
         {
-            StopCoroutine(spawnBulletCoroutine);
-            spawnBulletCoroutine = null;
+            StopCoroutine(burstChainCoroutine);
+            burstChainCoroutine = null;
         }
     }
 }

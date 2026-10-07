@@ -35,24 +35,6 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         activeBullets.Add(bullet);
     }
 
-    public Coroutine SpawnBulletChain(IEnumerable<BulletPattern> patterns, Transform presenter)
-    {
-        return StartCoroutine(Chain());
-
-        IEnumerator Chain()
-        {
-            foreach (var pattern in patterns)
-            {
-                SpawnBullet(pattern, presenter);
-
-                if (pattern.WaitForFrame > 0)
-                {
-                    yield return new WaitForFixedFrame(pattern.WaitForFrame);
-                }
-            }
-        }
-    }
-
     public Coroutine BurstChain(IEnumerable<BurstData> bursts, Transform presenter)
     {
         return StartCoroutine(Chain());
@@ -61,12 +43,27 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         {
             foreach (var burst in bursts)
             {
-                yield return SpawnBulletChain(burst.BulletPatterns, presenter);
+                var bullet = SpawnBulletChain(burst.BulletPatterns, presenter);
+                while (bullet.MoveNext())
+                    yield return bullet.Current;
 
                 if (burst.WaitForFrame > 0)
                 {
                     yield return new WaitForFixedFrame(burst.WaitForFrame);
                 }
+            }
+        }
+    }
+
+    private IEnumerator SpawnBulletChain(IEnumerable<BulletPattern> patterns, Transform presenter)
+    {
+        foreach (var pattern in patterns)
+        {
+            SpawnBullet(pattern, presenter);
+
+            if (pattern.WaitForFrame > 0)
+            {
+                yield return new WaitForFixedFrame(pattern.WaitForFrame);
             }
         }
     }
