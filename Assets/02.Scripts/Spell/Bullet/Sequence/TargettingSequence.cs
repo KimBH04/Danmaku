@@ -15,12 +15,12 @@ public class TargettingSequence : BulletSequenceBase
     {
         public static readonly SequenceRunner Singleton = new();
 
-        public static Player playerCache;
+        public static PlayerController playerCache;
 
         public void Start(Bullet data)
         {
             if (playerCache == null &&
-                (playerCache = FindFirstObjectByType<Player>()) == null)
+                (playerCache = FindFirstObjectByType<PlayerController>()) == null)
             {
                 Debug.LogError("타겟팅 시퀀스에서 타겟을 찾지 못했습니다.");
                 return;

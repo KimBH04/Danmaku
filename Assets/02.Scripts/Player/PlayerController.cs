@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [field: SerializeField, FormerlySerializedAs("speed")]
     public float Speed { get; private set; } = 1f;

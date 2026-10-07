@@ -11,7 +11,7 @@ public static class DeadzoneGizmos
     private static readonly Color BulletDeadzoneColor = new Color(1f, 0.35f, 0.35f, 1f);
 
     [DrawGizmo(GizmoType.Selected | GizmoType.NonSelected)]
-    private static void DrawPlayerDeadzone(Player player, GizmoType gizmoType)
+    private static void DrawPlayerDeadzone(PlayerController player, GizmoType gizmoType)
     {
         DrawDeadzone(player, PlayerDeadzoneColor, "Player Deadzone");
     }
