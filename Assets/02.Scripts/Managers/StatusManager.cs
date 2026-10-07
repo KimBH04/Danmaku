@@ -1,28 +1,54 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class StatusManager : SingletonBehaviour<StatusManager>
 {
     public const int MAX_HP = 5;
-    public const double MAX_POWER = 5.0;
+    public const decimal MAX_POWER = 5m;
     
-    [field: SerializeField]
-    public UnityEvent<int> UpdateHP { get; private set; }
+    [SerializeField] private UnityEvent<int> updateHP;
 
-    [field: SerializeField]
-    public UnityEvent<double> UpdatePower { get; private set; }
+    [SerializeField] private UnityEvent<decimal> updatePower;
 
-    [field: SerializeField]
-    public UnityEvent<int> UpdateCurrentScore { get; private set; }
+    [SerializeField] private UnityEvent<int> updateCurrentScore;
 
-    [field: SerializeField]
-    public UnityEvent<int> UpdateHighScore { get; private set; }
+    [SerializeField] private UnityEvent<int> updateHighScore;
 
-    [field: SerializeField]
-    public UnityEvent OnPlayerDie { get; private set;}
+    [SerializeField] private UnityEvent onPlayerDie;
+
+    public event UnityAction<int> UpdateHP
+    {
+        add => updateHP.AddListener(value);
+        remove => updateHP.RemoveListener(value);
+    }
+
+    public event UnityAction<decimal> UpdatePower
+    {
+        add => updatePower.AddListener(value);
+        remove => updatePower.RemoveListener(value);
+    }
+
+    public event UnityAction<int> UpdateCurrentScore
+    {
+        add => updateCurrentScore.AddListener(value);
+        remove => updateCurrentScore.RemoveListener(value);
+    }
+
+    public event UnityAction<int> UpdateHighScore
+    {
+        add => updateHighScore.AddListener(value);
+        remove => updateHighScore.RemoveListener(value);
+    }
+
+    public event UnityAction OnPlayerDie
+    {
+        add => onPlayerDie.AddListener(value);
+        remove => onPlayerDie.RemoveListener(value);
+    }
 
     private int currentHP = 0;
-    private double currentPower = 0;
+    private decimal currentPower = 0;
 
     private int currentScore = 0;
     private int highScore = 0;
@@ -36,37 +62,40 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         highScore = DataSaveLoad.HighScore;
     }
 
-    public void Initialize(int hp, double power)
+    public void Initialize(int hp, decimal power)
     {
         currentHP = hp;
         currentPower = power;
 
-        UpdateHP.Invoke(currentHP);
-        UpdatePower.Invoke(currentPower);
+        updateHP.Invoke(currentHP);
+        updatePower.Invoke(currentPower);
 
-        UpdateCurrentScore.Invoke(currentScore);
-        UpdateHighScore.Invoke(highScore);
+        updateCurrentScore.Invoke(currentScore);
+        updateHighScore.Invoke(highScore);
     }
 
     public void AddHP(int point)
     {
         currentHP += point;
-        UpdateHP.Invoke(currentHP);
+        updateHP.Invoke(currentHP);
     }
 
-    public void AddPower(double power)
+    public void AddPower(decimal power)
     {
         currentPower += power;
-        UpdatePower.Invoke(currentPower);
+        updatePower.Invoke(currentPower);
     }
 
     public void AddScore(int point)
     {
         currentScore += point;
-        highScore = Mathf.Max(currentScore, highScore);
-
-        UpdateCurrentScore.Invoke(currentScore);
-        UpdateHighScore.Invoke(highScore);
+        updateCurrentScore.Invoke(currentScore);
+        
+        if (highScore < currentScore)
+        {
+            highScore = currentScore;
+            updateHighScore.Invoke(highScore);
+        }
     }
 
     public void Hit()
@@ -79,22 +108,22 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
             if (--currentHP <= 0)
             {
-                OnPlayerDie.Invoke();
+                onPlayerDie.Invoke();
             }
-            UpdateHP.Invoke(currentHP);
+            updateHP.Invoke(currentHP);
             hitBombCoroutine = null;
         }
     }
 
     public void UsePower()
     {
-        if (currentPower < 1)
+        if (currentPower < 1m)
         {
             return;
         }
 
         currentPower--;
-        UpdatePower.Invoke(currentPower);
+        updatePower.Invoke(currentPower);
 
         if (hitBombCoroutine != null)
         {
@@ -105,13 +134,13 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     public void UseSemiPower()
     {
-        if (currentPower < 0.5)
+        if (currentPower < 0.5m)
         {
             return;
         }
 
-        currentPower -= 0.5;
-        UpdatePower.Invoke(currentPower);
+        currentPower -= 0.5m;
+        updatePower.Invoke(currentPower);
 
         if (hitBombCoroutine != null)
         {
