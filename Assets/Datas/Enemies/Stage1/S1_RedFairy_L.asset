@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62b81436e59ba945a5700953286b233, type: 3}
+  m_Name: S1_RedFairy_L
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  <Type>k__BackingField: 0
+  <EnemyName>k__BackingField: "\uBD89\uC740 \uC694\uC815"
+  <Description>k__BackingField: "\uC67C\uCABD\uC5D0\uC11C \uC544\uB798\uCABD \uC911\uC559\uC744 \uB178\uB9AC\uB294 \uC694\uC815."
+  <EnemyColor>k__BackingField: {r: 1, g: 0.55, b: 0.55, a: 1}
+  spells:
+  - {fileID: 11400000, guid: e82163c59f3956cbb093213e2d5c81bb, type: 2}
