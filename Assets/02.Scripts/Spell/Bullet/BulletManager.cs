@@ -95,27 +95,22 @@ public class BulletManager : SingletonBehaviour<BulletManager>
     private void HandleBulletsInFrame()
     {
         int cnt = activeBullets.Count;
+        int last = 0;
         for (int i = 0; i < cnt; i++)
         {
             var bullet = activeBullets[i];
-            while (!BulletValidation(bullet))
+            if (BulletValidation(bullet))
             {
-                int last = --cnt;
-                bulletPool.Release(bullet);
-                (activeBullets[i], activeBullets[^1]) = (activeBullets[^1], activeBullets[i]);
-                activeBullets.RemoveAt(last);
-                if (i >= last)
-                {
-                    goto HandlingEnd;
-                }
-
-                bullet = activeBullets[i];
+                bullet.Update();
+                activeBullets[last++] = activeBullets[i];
             }
-
-            bullet.Update();
+            else
+            {
+                bulletPool.Release(bullet);
+            }
         }
 
-    HandlingEnd:;
+        activeBullets.RemoveRange(last, cnt - last);
     }
 
     private bool BulletValidation(Bullet bullet)
