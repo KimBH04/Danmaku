@@ -111,6 +111,8 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         }
 
         activeBullets.RemoveRange(last, cnt - last);
+
+        BulletCollision.Rebuild(activeBullets, deadzone);
     }
 
     private bool BulletValidation(Bullet bullet)

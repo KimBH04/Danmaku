@@ -7,6 +7,9 @@ public class BulletData : ScriptableObject
     [field: SerializeField, FormerlySerializedAs("type")]
     public BulletType Type { get; private set; }
 
+    [field: SerializeField]
+    public BulletTag Tag { get; private set; }
+
     [field: SerializeField, FormerlySerializedAs("bulletImage")]
     public Sprite BulletImage { get; private set; }
 
