@@ -16,6 +16,14 @@ public class UIManager : SingletonBehaviour<UIManager>
     [SerializeField] private TextMeshProUGUI bossNameText;
     [SerializeField] private Image bossHPImg;
 
+    private Coroutine runFillAmount = null;
+
+    private void Start()
+    {
+        bossHPImg.fillAmount = 0f;
+        bossStatusUIObj.SetActive(false);
+    }
+
     public void SetHPSlider(int hp)
     {
         var value = Mathf.Clamp(hp, 0f, StatusManager.MAX_HP) / StatusManager.MAX_HP;
@@ -45,6 +53,19 @@ public class UIManager : SingletonBehaviour<UIManager>
 
     public void SetBossHP(int current, int max)
     {
-        bossHPImg.fillAmount = (float)current / max;
+        StopCoroutine(runFillAmount);
+        runFillAmount = StartCoroutine(Flow());
+
+        System.Collections.IEnumerator Flow()
+        {
+            var amount = bossHPImg.fillAmount;
+            var target = (float)current / max;
+            int t = 0;
+            while (bossHPImg.fillAmount < target)
+            {
+                bossHPImg.fillAmount = Mathf.Lerp(amount, target, ++t / 30f);
+                yield return GameManager.WaitForFixedUpdate;
+            }
+        }
     }
 }

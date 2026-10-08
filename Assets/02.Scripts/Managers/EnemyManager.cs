@@ -6,6 +6,8 @@ public class EnemyManager : SingletonBehaviour<EnemyManager>
 {
     [SerializeField] private GameObject enemyObj;
 
+    [SerializeField] private GameObject bossObj;
+
     private readonly ObjectPool<Enemy> enemyPool = new(
         () => Instantiate(Instance.enemyObj).GetComponent<Enemy>(),
         e  => e.gameObject.SetActive(true),
@@ -19,15 +21,31 @@ public class EnemyManager : SingletonBehaviour<EnemyManager>
 
     public void SpawnEnemy(EnemyPattern enemyPattern)
     {
-        var enemy = enemyPool.Get();
-        enemy.Initialize(enemyPattern);
-        enemy.StartPattern();
+        if (enemyPattern.EnemyData.Type == EnemyType.Common)
+        {
+            var enemy = enemyPool.Get();
+            enemy.Initialize(enemyPattern);
+            enemy.StartPattern();
 
-        activeEnemy.Add(enemy);
+            activeEnemy.Add(enemy);
+        }
+        else
+        {
+            var boss = Instantiate(bossObj).GetComponent<EnemyBoss>();
+            boss.Initialize(enemyPattern);
+            boss.StartPattern();
+        }
     }
 
     public void ReleaseEnemy(Enemy enemy)
     {
-        enemyPool.Release(enemy);
+        if (enemy is EnemyBoss boss)
+        {
+            Destroy(boss.gameObject);
+        }
+        else
+        {
+            enemyPool.Release(enemy);
+        }
     }
 }

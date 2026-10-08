@@ -3,9 +3,7 @@ using UnityEngine;
 
 public class StageRunner : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyObj;
-
-    private StageData data;
+    [SerializeField] private StageData data;
 
     public void Initialize(StageData stageData)
     {
@@ -20,21 +18,22 @@ public class StageRunner : MonoBehaviour
         {
             foreach (var phase in data.Phases)
             {
+                Debug.Log("페이즈 시작");
+                yield return new WaitForFixedFrame(phase.WaitForFirstEmenyFrame);
+
                 foreach (var chain in phase.EnemyChains)
                 {
-                    yield return new WaitForFixedFrame(phase.WaitForFirstEmenyFrame);
-
+                    Debug.Log("체인 시작");
                     foreach (var pattern in chain.EnemyPatterns)
                     {
-                        var enemy = Instantiate(enemyObj, pattern.SpawnPosition, Quaternion.identity).GetComponent<Enemy>();
-                        enemy.Initialize(pattern);
-                        enemy.StartPattern();
+                        Debug.Log("패턴 시작");
+                        EnemyManager.Instance.SpawnEnemy(pattern);
 
                         yield return new WaitForFixedFrame(chain.WaitForNextEmenyFrame);
                     }
+                    Debug.Log("체인 종료");
                 }
-
-                
+                Debug.Log("페이즈 종료");
             }
         }
     }
