@@ -57,6 +57,12 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     protected override void Awake()
     {
+        if (transform.parent != UIManager.Instance.transform)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         base.Awake();
 
         highScore = DataSaveLoad.HighScore;
@@ -115,11 +121,11 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         }
     }
 
-    public void UsePower()
+    public bool TryUsePower()
     {
         if (currentPower < 1m)
         {
-            return;
+            return false;
         }
 
         currentPower--;
@@ -130,13 +136,15 @@ public class StatusManager : SingletonBehaviour<StatusManager>
             StopCoroutine(hitBombCoroutine);
             hitBombCoroutine = null;
         }
+        
+        return true;
     }
 
-    public void UseSemiPower()
+    public bool TryUseSemiPower()
     {
         if (currentPower < 0.5m)
         {
-            return;
+            return false;
         }
 
         currentPower -= 0.5m;
@@ -147,6 +155,8 @@ public class StatusManager : SingletonBehaviour<StatusManager>
             StopCoroutine(hitBombCoroutine);
             hitBombCoroutine = null;
         }
+
+        return true;
     }
 
     private void OnApplicationQuit()
