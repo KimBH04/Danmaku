@@ -6,8 +6,6 @@ public class Enemy : MonoBehaviour
 {
     private EnemyPattern pattern;
 
-    private EnemyData data;
-
     private Coroutine burstChainCoroutine;
 
     private int elapse;
@@ -25,11 +23,15 @@ public class Enemy : MonoBehaviour
     {
         elapse = 0;
 
-        data = (pattern = enemyPattern).EnemyData;
+        pattern = enemyPattern;
 
         transform.position = enemyPattern.SpawnPosition;
 
-        renderer.color = data.EnemyColor;
+        renderer.color = enemyPattern.EnemyColor;
+        if (enemyPattern.Body != null && enemyPattern.Body.BulletImage != null)
+        {
+            renderer.sprite = enemyPattern.Body.BulletImage;
+        }
     }
     
     public void StartPattern()
@@ -40,7 +42,7 @@ public class Enemy : MonoBehaviour
         IEnumerator Run()
         {
             int wait = pattern.WaitForFirstBurstFrame;
-            foreach (var spell in data.Spells)
+            foreach (var spell in pattern.Spells)
             {
                 if (wait > 0)
                 {
@@ -54,6 +56,11 @@ public class Enemy : MonoBehaviour
                     yield return burstChainCoroutine;
                 }
                 while ((uint)spell.TimeLimit >= elapse && enemyHP > 0);
+
+                if (enemyHP <= 0)
+                {
+                    break;
+                }
             }
 
             OnDie();
@@ -68,18 +75,32 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void SendDamage(int damage)
-    {
-        enemyHP -= damage;
-        if (enemyHP <= 0)
-        {
-            StopCoroutine(burstChainCoroutine);
-        }
-    }
-
     protected virtual void OnDie()
     {
         EnemyManager.Instance.ReleaseEnemy(this);
+    }
+
+    private void FixedUpdate()
+    {
+        if (pattern.Body == null)
+        {
+            return;
+        }
+
+        if (BulletCollision.Check(transform.position, BulletTag.Player, pattern.Body.Distance, out var bullet))
+        {
+            bullet.IsAlive = false;
+
+            if (--enemyHP <= 0)
+            {
+                if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
+                {
+                    BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
+                }
+
+                OnDie();
+            }
+        }
     }
 
     private void OnEnable()
@@ -87,9 +108,9 @@ public class Enemy : MonoBehaviour
         pattern = default;
         elapse = 0;
         StopAllCoroutines();
-        if (burstChainCoroutine != null)
+        if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
         {
-            StopCoroutine(burstChainCoroutine);
+            BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
             burstChainCoroutine = null;
         }
     }
@@ -99,9 +120,9 @@ public class Enemy : MonoBehaviour
         pattern = default;
         elapse = 0;
         StopAllCoroutines();
-        if (burstChainCoroutine != null)
+        if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
         {
-            StopCoroutine(burstChainCoroutine);
+            BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
             burstChainCoroutine = null;
         }
     }

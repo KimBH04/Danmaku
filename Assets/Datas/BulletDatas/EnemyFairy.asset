@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c62b81436e59ba945a5700953286b233, type: 3}
-  m_Name: NewEnemy
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  m_Script: {fileID: 11500000, guid: 0eef8b2f7eaa4d84e8c792c4c9c81c83, type: 3}
+  m_Name: EnemyFairy
+  m_EditorClassIdentifier: Assembly-CSharp::BulletData
   <Type>k__BackingField: 0
-  <EnemyName>k__BackingField: 
-  <Description>k__BackingField: 
-  spells: []
+  <Tag>k__BackingField: 0
+  <BulletImage>k__BackingField: {fileID: 0}
+  <Distance>k__BackingField: 0.5

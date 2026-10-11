@@ -18,6 +18,8 @@ public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonB
         }
     }
 
+    public static T ExistingInstance => instance;
+
     protected virtual bool IsPersistent { get; } = false;
 
     protected virtual void Awake()

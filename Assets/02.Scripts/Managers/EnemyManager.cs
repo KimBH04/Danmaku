@@ -21,7 +21,7 @@ public class EnemyManager : SingletonBehaviour<EnemyManager>
 
     public void SpawnEnemy(EnemyPattern enemyPattern)
     {
-        if (enemyPattern.EnemyData.Type == EnemyType.Common)
+        if (enemyPattern.Type == EnemyType.Common)
         {
             var enemy = enemyPool.Get();
             enemy.Initialize(enemyPattern);

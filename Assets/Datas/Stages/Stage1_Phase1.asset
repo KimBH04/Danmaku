@@ -12,58 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5709f5e13a7956459b4f976e611254f, type: 3}
   m_Name: Stage1_Phase1
   m_EditorClassIdentifier: Assembly-CSharp::PhaseData
-  <EnemyChains>k__BackingField:
-  - <EnemyPatterns>k__BackingField:
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: c0f49e98bf83599c89e3c138f7193755, type: 2}
-      <SpawnPosition>k__BackingField: {x: -5.5, y: 6}
-      <WaitForFirstBurstFrame>k__BackingField: 30
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: c0f49e98bf83599c89e3c138f7193755, type: 2}
-      <SpawnPosition>k__BackingField: {x: 5.5, y: 6}
-      <WaitForFirstBurstFrame>k__BackingField: 30
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: c0f49e98bf83599c89e3c138f7193755, type: 2}
-      <SpawnPosition>k__BackingField: {x: -3, y: 5}
-      <WaitForFirstBurstFrame>k__BackingField: 30
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: c0f49e98bf83599c89e3c138f7193755, type: 2}
-      <SpawnPosition>k__BackingField: {x: 3, y: 5}
-      <WaitForFirstBurstFrame>k__BackingField: 30
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: c0f49e98bf83599c89e3c138f7193755, type: 2}
-      <SpawnPosition>k__BackingField: {x: -6.5, y: 4.5}
-      <WaitForFirstBurstFrame>k__BackingField: 30
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: c0f49e98bf83599c89e3c138f7193755, type: 2}
-      <SpawnPosition>k__BackingField: {x: 6.5, y: 4.5}
-      <WaitForFirstBurstFrame>k__BackingField: 30
-    <WaitForNextEmenyFrame>k__BackingField: 90
-  - <EnemyPatterns>k__BackingField:
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: 61873262877d5dcca437eac7f5c2b0d3, type: 2}
-      <SpawnPosition>k__BackingField: {x: -5.5, y: 6.5}
-      <WaitForFirstBurstFrame>k__BackingField: 15
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: d69f2a4fa0d65477880d263bc7627125, type: 2}
-      <SpawnPosition>k__BackingField: {x: 5.5, y: 6.5}
-      <WaitForFirstBurstFrame>k__BackingField: 15
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: 2efcddb247d35085b26c01cbfb8b9444, type: 2}
-      <SpawnPosition>k__BackingField: {x: -2.5, y: 5.5}
-      <WaitForFirstBurstFrame>k__BackingField: 15
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: 2efcddb247d35085b26c01cbfb8b9444, type: 2}
-      <SpawnPosition>k__BackingField: {x: 2.5, y: 5.5}
-      <WaitForFirstBurstFrame>k__BackingField: 15
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: 61873262877d5dcca437eac7f5c2b0d3, type: 2}
-      <SpawnPosition>k__BackingField: {x: -6.5, y: 5}
-      <WaitForFirstBurstFrame>k__BackingField: 15
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: d69f2a4fa0d65477880d263bc7627125, type: 2}
-      <SpawnPosition>k__BackingField: {x: 6.5, y: 5}
-      <WaitForFirstBurstFrame>k__BackingField: 15
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: 2efcddb247d35085b26c01cbfb8b9444, type: 2}
-      <SpawnPosition>k__BackingField: {x: 0, y: 6}
-      <WaitForFirstBurstFrame>k__BackingField: 15
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: 61873262877d5dcca437eac7f5c2b0d3, type: 2}
-      <SpawnPosition>k__BackingField: {x: -4, y: 4.5}
-      <WaitForFirstBurstFrame>k__BackingField: 15
-    - <EnemyData>k__BackingField: {fileID: 11400000, guid: d69f2a4fa0d65477880d263bc7627125, type: 2}
-      <SpawnPosition>k__BackingField: {x: 4, y: 4.5}
-      <WaitForFirstBurstFrame>k__BackingField: 15
-    <WaitForNextEmenyFrame>k__BackingField: 60
-  <WaitForFirstEmenyFrame>k__BackingField: 60
+  <EnemyChains>k__BackingField: []
+  <WaitForFirstEmenyFrame>k__BackingField: 49
   <Boss>k__BackingField:
-    <EnemyData>k__BackingField: {fileID: 11400000, guid: b16930f87efa5fd3be5c93a51a95ca6c, type: 2}
+    <Type>k__BackingField: 1
+    <EnemyName>k__BackingField: "\uBC9A\uAF43 \uC694\uC815 \uD558\uB8E8"
+    <Description>k__BackingField: "\uC5B8\uB355\uC744 \uC9C0\uD0A4\uB294 \uC7A5\uB09C\uAFB8\uB7EC\uAE30
+      \uC694\uC815. \uBC14\uB78C\uAC1C\uBE44 \uB180\uC774\uB97C \uC88B\uC544\uD55C\uB2E4."
+    <EnemyColor>k__BackingField: {r: 1, g: 0.7, b: 0.85, a: 1}
+    <Body>k__BackingField: {fileID: 11400000, guid: a271055cf82852bdb0fad65c728d4612, type: 2}
+    spells:
+    - {fileID: 11400000, guid: 8b7e93418d7a5d48844f7a607f45f27c, type: 2}
     <SpawnPosition>k__BackingField: {x: 0, y: 5}
     <WaitForFirstBurstFrame>k__BackingField: 60
