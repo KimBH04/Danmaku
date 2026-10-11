@@ -27,8 +27,19 @@ public class TargettingSequence : BulletSequenceBase
             }
 
             Vector2 playerPos = playerCache.transform.position;
+            Vector2 toPlayer = (playerPos - data.Position).normalized;
 
-            data.Velocity = (playerPos - data.Position).normalized;
+            // 초기 속도의 크기 = 속력, 초기 속도의 각도(+x 기준) = 플레이어 방향 기준 오프셋
+            // 예) (5, 0): 플레이어 정면으로 5, (5, 0)을 15도 회전한 벡터: 플레이어 기준 +15도
+            var initial = data.Velocity;
+            float speed = initial.sqrMagnitude > Mathf.Epsilon ? initial.magnitude : 1f;
+            float offset = Mathf.Atan2(initial.y, initial.x);
+            float cos = Mathf.Cos(offset), sin = Mathf.Sin(offset);
+
+            data.Velocity = new Vector2(
+                toPlayer.x * cos - toPlayer.y * sin,
+                toPlayer.x * sin + toPlayer.y * cos
+            ) * speed;
         }
 
         public void Next(Bullet data)
