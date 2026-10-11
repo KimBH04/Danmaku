@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62b81436e59ba945a5700953286b233, type: 3}
+  m_Name: S1_BlueFairy
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  <Type>k__BackingField: 0
+  <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
+  <Description>k__BackingField: "\uC791\uC740 \uD0C4\uD658 \uACE0\uB9AC\uB97C \uD37C\uB728\uB9AC\uB294 \uC694\uC815."
+  <EnemyColor>k__BackingField: {r: 0.55, g: 0.7, b: 1, a: 1}
+  spells:
+  - {fileID: 11400000, guid: 8c535097b66f507abc459332234ac16d, type: 2}

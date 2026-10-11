@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class GameManager : SingletonBehaviour<GameManager>
 {
-    public const int FPS = 60;
-    public const float RATE = 1f / FPS;
+    // 코루틴 컨디션 재할당 방지
+    public static readonly WaitForFixedUpdate WaitForFixedUpdate = new();
+
+    public static float FrameToSecond(int elapse) => elapse / 60f;
 
     protected override void Awake()
     {
         base.Awake();
-        Application.targetFrameRate = FPS;
     }
 }
