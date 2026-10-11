@@ -1,5 +1,7 @@
 # Danmaku
 탄막 게임
+## Code guide
+[Guide](./CODEBASE_GUIDE.md)
 ## License
 [MIT License](./LICENSE)
 ### Third-Party
