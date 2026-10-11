@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.Serialization;
@@ -26,6 +27,27 @@ public class BulletManager : SingletonBehaviour<BulletManager>
 
     public IReadOnlyList<Bullet> ActiveBullets => activeBullets;
 
+    public void BulletClearing(Vector2 presentPosition)
+    {
+        StartCoroutine(Clearing());
+
+        IEnumerator Clearing()
+        {
+            List<Bullet> collisions = new(10);
+            float radius = 1f;
+            while (radius <= 25f)
+            {
+                var cnt = BulletCollision.CheckAll(presentPosition, BulletTag.Enemy, radius, collisions);
+                for (int i = 0; i < cnt; i++)
+                {
+                    collisions[i].IsAlive = false;
+                }
+                radius *= 1.02f;
+                yield return GameManager.WaitForFixedUpdate;
+            }
+        }
+    }
+
     public void SpawnBullet(BulletPattern pattern, Transform presenter)
     {
         var bullet = bulletPool.Get();
@@ -35,6 +57,9 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         activeBullets.Add(bullet);
     }
 
+    public Coroutine BulletPatternChain(IEnumerable<BulletPattern> patterns, Transform presenter) =>
+        StartCoroutine(SpawnBulletChain(patterns, presenter));
+
     public Coroutine BurstChain(IEnumerable<BurstData> bursts, Transform presenter)
     {
         return StartCoroutine(Chain());
@@ -43,6 +68,14 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         {
             foreach (var burst in bursts)
             {
+                // 대기 시간이 있는 버스트만 이동 (0이면 발사 전용 버스트로 보고 위치 유지), 등속 이동
+                if (burst.WaitForFrame > 0)
+                {
+                    presenter.DOMove(burst.PresentPosition, GameManager.FrameToSecond(burst.WaitForFrame))
+                        .SetEase(Ease.Linear)
+                        .SetLink(presenter.gameObject, LinkBehaviour.KillOnDisable);
+                }
+
                 var bullet = SpawnBulletChain(burst.BulletPatterns, presenter);
                 while (bullet.MoveNext())
                     yield return bullet.Current;
@@ -99,7 +132,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         for (int i = 0; i < cnt; i++)
         {
             var bullet = activeBullets[i];
-            if (BulletValidation(bullet))
+            if (bullet.IsAlive && BulletValidation(bullet))
             {
                 bullet.Update();
                 activeBullets[last++] = activeBullets[i];

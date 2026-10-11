@@ -15,6 +15,8 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     [SerializeField] private UnityEvent<int> updateHighScore;
 
+    [SerializeField] private UnityEvent onPlayerHit;
+
     [SerializeField] private UnityEvent onPlayerDie;
 
     public event UnityAction<int> UpdateHP
@@ -41,14 +43,20 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         remove => updateHighScore.RemoveListener(value);
     }
 
+    public event UnityAction OnPlayerHit
+    {
+        add => onPlayerHit.AddListener(value);
+        remove => onPlayerHit.RemoveListener(value);
+    }
+
     public event UnityAction OnPlayerDie
     {
         add => onPlayerDie.AddListener(value);
         remove => onPlayerDie.RemoveListener(value);
     }
 
-    private int currentHP = 0;
-    private decimal currentPower = 0;
+    private int currentHP = 5;
+    private decimal currentPower = 5m;
 
     private int currentScore = 0;
     private int highScore = 0;
@@ -107,16 +115,13 @@ public class StatusManager : SingletonBehaviour<StatusManager>
     public void Hit()
     {
         hitBombCoroutine ??= StartCoroutine(HitBomb());
+        onPlayerHit.Invoke();
 
         System.Collections.IEnumerator HitBomb()
         {
             yield return new WaitForFixedFrame(18);
-
-            if (--currentHP <= 0)
-            {
-                onPlayerDie.Invoke();
-            }
-            updateHP.Invoke(currentHP);
+            onPlayerDie.Invoke();
+            updateHP.Invoke(--currentHP);
             hitBombCoroutine = null;
         }
     }
@@ -159,8 +164,33 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         return true;
     }
 
+    private void OnDisable()
+    {
+        DataSaveLoad.HighScore = highScore;
+        updateHP.RemoveAllListeners();
+        updatePower.RemoveAllListeners();
+        updateCurrentScore.RemoveAllListeners();
+        updateHighScore.RemoveAllListeners();
+        onPlayerDie.RemoveAllListeners();
+    }
+
+    private void OnDestroy()
+    {
+        DataSaveLoad.HighScore = highScore;
+        updateHP.RemoveAllListeners();
+        updatePower.RemoveAllListeners();
+        updateCurrentScore.RemoveAllListeners();
+        updateHighScore.RemoveAllListeners();
+        onPlayerDie.RemoveAllListeners();
+    }
+
     private void OnApplicationQuit()
     {
         DataSaveLoad.HighScore = highScore;
+        updateHP.RemoveAllListeners();
+        updatePower.RemoveAllListeners();
+        updateCurrentScore.RemoveAllListeners();
+        updateHighScore.RemoveAllListeners();
+        onPlayerDie.RemoveAllListeners();
     }
 }
