@@ -1,0 +1,100 @@
+name: Generate code docs with Copilot
+
+# 'docs' 태그를 푸시하면 태그가 가리키는 커밋을 Copilot CLI로 분석해
+# 저장소 루트에 CODEBASE_GUIDE.md 를 생성하고 기본 브랜치에 커밋합니다.
+# 실행이 끝나면 태그를 삭제하므로 같은 이름으로 다시 태그를 달 수 있습니다.
+on:
+  push:
+    tags:
+      - 'docs'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: copilot-docs
+  cancel-in-progress: false
+
+jobs:
+  docs:
+    name: Analyze and write docs
+    runs-on: ubuntu-latest
+    env:
+      GUIDE_PATH: CODEBASE_GUIDE.md
+    steps:
+      - name: Checkout tagged commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
+
+      - name: Generate docs with Copilot
+        env:
+          # Fine-grained PAT with the "Copilot Requests" permission
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_TOKEN }}
+        run: |
+          rm -f "$GUIDE_PATH"
+          copilot --allow-all-tools -p "$(cat <<'PROMPT'
+          This repository is a 2D bullet-hell (danmaku) game built with Unity 6.
+          Analyze the C# code under Assets/02.Scripts and write a single Markdown guide
+          to the file CODEBASE_GUIDE.md at the repository root.
+
+          Write ALL document content in Korean. Keep code identifiers, file paths,
+          and type/method names in their original form.
+
+          The guide must contain these sections, with a table of contents at the top:
+          1. Project overview and folder structure
+          2. Architecture: the role and data flow of each major system
+             (stage, enemy, spell card, burst, bullet, bullet sequence, rendering, status/UI, input)
+          3. Data assets: the ScriptableObject data hierarchy
+             (StageData -> PhaseData -> EnemyChain -> EnemyPattern -> EnemyData -> SpellCard -> BurstData -> BulletPattern)
+             and what each field means
+          4. Classes: responsibilities and key public methods of each class
+
+          Rules:
+          - Describe only what actually exists in the code. Do not speculate.
+          - Write file paths relative to the repository root.
+          - Create or modify only CODEBASE_GUIDE.md. Do not touch any other file.
+          - Do not run any git commands (commit, push, etc.).
+          PROMPT
+          )"
+
+      - name: Keep generated guide
+        run: |
+          if [ ! -s "$GUIDE_PATH" ]; then
+            echo "Copilot이 $GUIDE_PATH 를 생성하지 않았습니다." >&2
+            exit 1
+          fi
+          cp "$GUIDE_PATH" "$RUNNER_TEMP/CODEBASE_GUIDE.md"
+
+      - name: Commit to default branch
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git checkout -- .
+          git clean -fd
+          git checkout "$DEFAULT_BRANCH"
+          git pull --ff-only origin "$DEFAULT_BRANCH"
+
+          cp "$RUNNER_TEMP/CODEBASE_GUIDE.md" "$GUIDE_PATH"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$GUIDE_PATH"
+          if git diff --cached --quiet; then
+            echo "변경된 문서가 없습니다."
+          else
+            git commit -m "docs: Copilot 코드 분석 문서 갱신 (${GITHUB_SHA::7}) [skip ci]"
+            git push origin "$DEFAULT_BRANCH"
+          fi
+
+      - name: Delete docs tag
+        if: always()
+        run: git push origin ":refs/tags/docs"
