@@ -16,6 +16,7 @@ public class BulletDataEditor : Editor
     private static readonly Color PivotColor = new Color(1f, 0.9f, 0.2f, 1f);
 
     private SerializedProperty typeProp;
+    private SerializedProperty tagProp;
     private SerializedProperty imageProp;
     private SerializedProperty distanceProp;
 
@@ -26,6 +27,7 @@ public class BulletDataEditor : Editor
     private void OnEnable()
     {
         typeProp = serializedObject.FindProperty("<Type>k__BackingField");
+        tagProp = serializedObject.FindProperty("<Tag>k__BackingField");
         imageProp = serializedObject.FindProperty("<BulletImage>k__BackingField");
         distanceProp = serializedObject.FindProperty("<Distance>k__BackingField");
     }
@@ -35,6 +37,7 @@ public class BulletDataEditor : Editor
         // 1) 데이터 필드
         serializedObject.Update();
         EditorGUILayout.PropertyField(typeProp);
+        EditorGUILayout.PropertyField(tagProp);
         EditorGUILayout.PropertyField(imageProp);
         EditorGUILayout.PropertyField(distanceProp);
         if (distanceProp.floatValue < 0f)
