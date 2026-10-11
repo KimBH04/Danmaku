@@ -7,4 +7,5 @@
 ### Third-Party
 |name|license|url|
 |-|-|-|
-|Suhgung-ttf|[OFL 1.1](./Assets/ThirdParty/Suhgung-ttf/OFL.txt)|[Suhgung](https://monadabxy.com/fonts/suhgung/)|
+|Suhgung-ttf|[OFL 1.1](./Assets/Plugins/Suhgung-ttf/OFL.txt)|[Suhgung](https://monadabxy.com/fonts/suhgung/)|
+|DOTween|[DOTween License](http://dotween.demigiant.com/license.php)|[DOTween](http://dotween.demigiant.com/)|
