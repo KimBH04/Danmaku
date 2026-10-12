@@ -104,3 +104,13 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# DOTween Pro (유료 에셋이라 저장소에 포함하지 않음, 무료 DOTween 폴더만 추적)
+/[Aa]ssets/Plugins/Demigiant/DOTweenPro/
+/[Aa]ssets/Plugins/Demigiant/DOTweenPro.meta
+/[Aa]ssets/Plugins/Demigiant/DOTweenPro Examples/
+/[Aa]ssets/Plugins/Demigiant/DOTweenPro Examples.meta
+/[Aa]ssets/Plugins/Demigiant/DemiLib/
+/[Aa]ssets/Plugins/Demigiant/DemiLib.meta
+/[Aa]ssets/Plugins/Demigiant/readme_DOTweenPro.txt
+/[Aa]ssets/Plugins/Demigiant/readme_DOTweenPro.txt.meta

@@ -19,6 +19,21 @@ jobs:
         with:
           lfs: true
 
+      # DOTween Pro는 유료 에셋이라 비공개 저장소(PrivateStorage)에서 가져옵니다.
+      # PrivateStorage/DOTween/Plugins 는 Assets/Plugins 와 같은 구조 (예: Plugins/Demigiant/DOTweenPro)
+      - name: Checkout private assets
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/PrivateStorage
+          token: ${{ secrets.PRIVATE_STORAGE_TOKEN }}
+          path: _private
+          sparse-checkout: DOTween/Plugins
+
+      - name: Install DOTween Pro
+        run: |
+          cp -a _private/DOTween/Plugins/. Assets/Plugins/
+          rm -rf _private
+
       - name: Cache Unity Library
         uses: actions/cache@v4
         with:
