@@ -1,9 +1,23 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StageRunner : MonoBehaviour
 {
     [SerializeField] private StageData data;
+
+    [SerializeField] private UnityEvent onStageEnd;
+
+    public event UnityAction OnStageEnd
+    {
+        add => onStageEnd.AddListener(value);
+        remove => onStageEnd.RemoveListener(value);
+    }
+
+    private void Start()
+    {
+        StartRun();
+    }
 
     public void Initialize(StageData stageData)
     {
@@ -29,7 +43,14 @@ public class StageRunner : MonoBehaviour
                         yield return new WaitForFixedFrame(chain.WaitForNextEmenyFrame);
                     }
                 }
+
+                var boss = (EnemyBoss)EnemyManager.Instance.SpawnEnemy(phase.Boss);
+                yield return boss.BossAlive();
             }
+
+            Debug.Log("끝");
+            yield return new WaitForFixedFrame(300);
+            onStageEnd.Invoke();
         }
     }
 }

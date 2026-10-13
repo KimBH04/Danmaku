@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
         InGameInputHandler.Instance.OnUseBomb += Bomb;
         InGameInputHandler.Instance.OnUseSemiBomb += SemiBomb;
 
+        StatusManager.Instance.OnPlayerHit += () => isInvisibility = true;
         StatusManager.Instance.OnPlayerDie += () => SetInvisivility(300);
         StatusManager.Instance.OnPlayerDie += () => transform.position = new Vector2(0f, -7f);
     }

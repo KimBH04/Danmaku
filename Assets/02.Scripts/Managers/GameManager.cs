@@ -8,6 +8,8 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     public static float FrameToSecond(int elapse) => elapse / 60f;
 
+    public static int SecondToFrame(float time) => (int)(time * 60f);
+
     protected override bool IsPersistent => true;
 
     protected override void Awake()

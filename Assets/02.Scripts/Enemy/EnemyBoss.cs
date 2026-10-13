@@ -1,25 +1,27 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class EnemyBoss : Enemy
 {
+    public override void Initialize(EnemyPattern enemyPattern)
+    {
+        UIManager.Instance.BossStatusOn();
+        UIManager.Instance.SetBossName(enemyPattern.EnemyName);
+
+        base.Initialize(enemyPattern);
+    }
+
     protected override void OnDie()
     {
-        StartCoroutine(Exit());
+        transform.DOMoveY(15f, 3f).OnComplete(base.OnDie);
+    }
 
-        System.Collections.IEnumerator Exit()
+    public System.Collections.IEnumerator BossAlive()
+    {
+        while (enemyHP >= 0)
         {
-            int targetFrame = 180;
-            int elapse = 0;
-            Vector2 start = transform.position;
-            Vector2 target = new(0f, 15f);
-            while (elapse <= targetFrame)
-            {
-                float value = elapse / targetFrame;
-                transform.position = Vector2.Lerp(start, target, value * value);
-                yield return GameManager.WaitForFixedUpdate;
-            }
-
-            base.OnDie();
+            UIManager.Instance.SetBossHP(enemyHP, maxHP);
+            yield return GameManager.WaitForFixedUpdate;
         }
     }
 }

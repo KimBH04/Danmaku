@@ -167,26 +167,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 494279434773453477, guid: d98be2e007d7209498c615eb1e0e81ca, type: 3}
-      propertyPath: m_Color.a
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 494279434773453477, guid: d98be2e007d7209498c615eb1e0e81ca, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 494279434773453477, guid: d98be2e007d7209498c615eb1e0e81ca, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 494279434773453477, guid: d98be2e007d7209498c615eb1e0e81ca, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 494279434773453477, guid: d98be2e007d7209498c615eb1e0e81ca, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6172500920063742021, guid: d98be2e007d7209498c615eb1e0e81ca, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -257,6 +237,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageRunner
   data: {fileID: 11400000, guid: bea821a08ca43de48be5b0e3fe63e171, type: 2}
+  onStageEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &161935086
 Transform:
   m_ObjectHideFlags: 0
@@ -308,7 +291,7 @@ MonoBehaviour:
   <LowSpeedMagnification>k__BackingField: 0.6
   <DeadzoneMinTr>k__BackingField: {fileID: 798320831}
   <DeadzoneMaxTr>k__BackingField: {fileID: 363860913}
-  playerBurst: {fileID: 11400000, guid: a4cb7bd38d245a0481f4894431010230, type: 2}
+  playerBurst: {fileID: 11400000, guid: 63636e6036ba58a78bf1d3da7975b5ef, type: 2}
 --- !u!4 &285277369
 Transform:
   m_ObjectHideFlags: 0
@@ -1118,22 +1101,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1018401638279089337, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1018401638279089337, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053474646256587283, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053474646256587283, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3158784153654908127, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
       propertyPath: m_Name
       value: BulletManager

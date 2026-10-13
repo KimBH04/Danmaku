@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Pool;
 
 public class EnemyManager : SingletonBehaviour<EnemyManager>
@@ -7,6 +8,14 @@ public class EnemyManager : SingletonBehaviour<EnemyManager>
     [SerializeField] private GameObject enemyObj;
 
     [SerializeField] private GameObject bossObj;
+
+    [SerializeField] private UnityEvent<EnemyBoss> onRaiseBoss;
+
+    public event UnityAction<EnemyBoss> OnRaiseBoss
+    {
+        add => onRaiseBoss.AddListener(value);
+        remove => onRaiseBoss.RemoveListener(value);
+    }
 
     private readonly ObjectPool<Enemy> enemyPool = new(
         () => Instantiate(Instance.enemyObj).GetComponent<Enemy>(),
@@ -17,9 +26,7 @@ public class EnemyManager : SingletonBehaviour<EnemyManager>
         maxSize: 100
     );
 
-    private readonly List<Enemy> activeEnemy = new(10);
-
-    public void SpawnEnemy(EnemyPattern enemyPattern)
+    public Enemy SpawnEnemy(EnemyPattern enemyPattern)
     {
         if (enemyPattern.Type == EnemyType.Common)
         {
@@ -27,13 +34,17 @@ public class EnemyManager : SingletonBehaviour<EnemyManager>
             enemy.Initialize(enemyPattern);
             enemy.StartPattern();
 
-            activeEnemy.Add(enemy);
+            return enemy;
         }
         else
         {
             var boss = Instantiate(bossObj).GetComponent<EnemyBoss>();
             boss.Initialize(enemyPattern);
             boss.StartPattern();
+
+            onRaiseBoss.Invoke(boss);
+
+            return boss;
         }
     }
 

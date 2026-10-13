@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +17,7 @@ public class UIManager : SingletonBehaviour<UIManager>
     [SerializeField] private TextMeshProUGUI bossNameText;
     [SerializeField] private Image bossHPImg;
 
-    private Coroutine runFillAmount = null;
+    private Tween runFillAmount = null;
 
     private void Start()
     {
@@ -46,6 +47,16 @@ public class UIManager : SingletonBehaviour<UIManager>
         highScoreText.text = score.ToString("000,000,000");
     }
 
+    public void BossStatusOn()
+    {
+        bossStatusUIObj.SetActive(true);
+    }
+
+    public void BossStatusOff()
+    {
+        bossStatusUIObj.SetActive(false);
+    }
+
     public void SetBossName(string name)
     {
         bossNameText.text = name;
@@ -53,19 +64,12 @@ public class UIManager : SingletonBehaviour<UIManager>
 
     public void SetBossHP(int current, int max)
     {
-        StopCoroutine(runFillAmount);
-        runFillAmount = StartCoroutine(Flow());
+        runFillAmount?.Kill();
+        runFillAmount = bossHPImg.DOFillAmount((float) current / max, 0.4f);
+    }
 
-        System.Collections.IEnumerator Flow()
-        {
-            var amount = bossHPImg.fillAmount;
-            var target = (float)current / max;
-            int t = 0;
-            while (bossHPImg.fillAmount < target)
-            {
-                bossHPImg.fillAmount = Mathf.Lerp(amount, target, ++t / 30f);
-                yield return GameManager.WaitForFixedUpdate;
-            }
-        }
+    public void ResultBoardOn()
+    {
+        
     }
 }

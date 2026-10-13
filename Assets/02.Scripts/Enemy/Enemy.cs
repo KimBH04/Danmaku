@@ -4,13 +4,14 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour
 {
-    private EnemyPattern pattern;
+    protected EnemyPattern pattern;
 
     private Coroutine burstChainCoroutine;
 
     private int elapse;
 
-    private int enemyHP;
+    protected int enemyHP;
+    protected int maxHP;
 
     private new SpriteRenderer renderer;
 
@@ -19,7 +20,7 @@ public class Enemy : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
     }
 
-    public void Initialize(EnemyPattern enemyPattern)
+    public virtual void Initialize(EnemyPattern enemyPattern)
     {
         elapse = 0;
 
@@ -49,9 +50,9 @@ public class Enemy : MonoBehaviour
                     yield return new WaitForFixedFrame(wait);
                 }
 
+                enemyHP = maxHP = spell.PresentHP;
                 do
                 {
-                    enemyHP = spell.PresentHP;
                     burstChainCoroutine = BulletManager.Instance.BurstChain(spell.Bursts, transform);
                     yield return burstChainCoroutine;
                 }
@@ -59,6 +60,7 @@ public class Enemy : MonoBehaviour
 
                 if (enemyHP <= 0)
                 {
+                    StatusManager.Instance.AddScore(pattern.Score);
                     break;
                 }
             }
@@ -77,6 +79,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void OnDie()
     {
+        enemyHP = 0;
         EnemyManager.Instance.ReleaseEnemy(this);
     }
 
@@ -91,7 +94,7 @@ public class Enemy : MonoBehaviour
         {
             bullet.IsAlive = false;
 
-            if (--enemyHP <= 0)
+            if (--enemyHP == 0)
             {
                 if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
                 {
