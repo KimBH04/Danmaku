@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727e9866015447a47bef3d31af6fd0e2, type: 3}
+  m_Name: RandomDrop10_9_Spell
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCard
+  <SpellName>k__BackingField: "\uB099\uD558 \uB098\uC120 \uC0AC\uACA9"
+  <SpellDescription>k__BackingField: "\uD654\uBA74 \uC704\uC5D0\uC11C \uB0B4\uB824\uC640 \uBA48\uCD98 \uB4A4 Radial8_Red\uB97C \uD55C \uBC88 \uC3D8\uACE0, \uC544\uB798\uB85C \uC11C\uC11C\uD788 \uB0B4\uB824\uAC00\uBA70 \uD1F4\uC7A5\uD55C\uB2E4."
+  <PresentHP>k__BackingField: 20
+  <TimeLimit>k__BackingField: 0
+  bursts:
+  - {fileID: 11400000, guid: 3b1d99b994834edc9e3c464270826561, type: 2}
+  - {fileID: 11400000, guid: 5e89c158c99746dab6852d406f403139, type: 2}
+  - {fileID: 11400000, guid: 07742fec2abf477e90694d4c9f312584, type: 2}

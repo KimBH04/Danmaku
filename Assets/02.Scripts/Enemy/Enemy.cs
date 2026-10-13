@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void OnDisable()
     {
         pattern = default;
         elapse = 0;
