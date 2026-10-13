@@ -28,11 +28,14 @@ public class SequenceBridge : BulletSequenceBase
         private int elapse = 0;
         private int index = 0;
 
-        public void Start(Bullet data) { }
+        public void Start(Bullet data)
+        {
+            sequenceRunners[0]?.Start(data);
+        }
 
         public void Next(Bullet data)
         {
-            sequenceRunners[index].Next(data);
+            sequenceRunners[index]?.Next(data);
 
             while (index < frameBetweenSequence.Length &&
                    index < sequenceRunners.Length - 1 &&
@@ -40,6 +43,7 @@ public class SequenceBridge : BulletSequenceBase
             {
                 elapse = 0;
                 index++;
+                sequenceRunners[index].Start(data);
                 sequenceRunners[index].Next(data);
             }
 
