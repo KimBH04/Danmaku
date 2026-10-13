@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727e9866015447a47bef3d31af6fd0e2, type: 3}
+  m_Name: TopCorner2_R_Spell
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCard
+  <SpellName>k__BackingField: "\uC624\uB978\uCABD \uC704 \uBC29\uC0AC \uC0AC\uACA9"
+  <SpellDescription>k__BackingField: "\uC624\uB978\uCABD \uC704\uC5D0\uC11C \uB0B4\uB824\uC640 \uBA48\uCD98 \uB4A4 Radial8_Thin_Red\uB97C 20\uD504\uB808\uC784 \uAC04\uACA9\uC73C\uB85C 5\uBC88 \uC3D8\uACE0, \uC624\uB978\uCABD \uC704\uB85C \uBE60\uC838\uB098\uAC04\uB2E4. \uBC18\uB300\uD3B8 \uC801\uACFC 10\uD504\uB808\uC784\uC529 \uBC88\uAC08\uC544 \uC3DC\uB2E4."
+  <PresentHP>k__BackingField: 20
+  <TimeLimit>k__BackingField: 0
+  bursts:
+  - {fileID: 11400000, guid: 08ca1f8a37844d9595dd1ca94b2abd39, type: 2}
+  - {fileID: 11400000, guid: bdfbd868584c4d2293e64522479d6b86, type: 2}
+  - {fileID: 11400000, guid: 8db459b94acd46a9b13af15a86cd6775, type: 2}
+  - {fileID: 11400000, guid: c0152abb1827415f8abe7dd60b1d9fbc, type: 2}
+  - {fileID: 11400000, guid: 8db459b94acd46a9b13af15a86cd6775, type: 2}
+  - {fileID: 11400000, guid: 4ec9cb17532a47cd8218b894a92765d7, type: 2}
+  - {fileID: 11400000, guid: 8db459b94acd46a9b13af15a86cd6775, type: 2}
+  - {fileID: 11400000, guid: eb36ac43b1334424bbe543f98cb4af7a, type: 2}
+  - {fileID: 11400000, guid: 8db459b94acd46a9b13af15a86cd6775, type: 2}
+  - {fileID: 11400000, guid: d41e1f1addcc441f9b9df9fee0e31d38, type: 2}
+  - {fileID: 11400000, guid: a764f249b7d94c55b1afdd7998a46449, type: 2}
