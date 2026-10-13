@@ -10,9 +10,9 @@ public class EnemyManager : SingletonBehaviour<EnemyManager>
 
     private readonly ObjectPool<Enemy> enemyPool = new(
         () => Instantiate(Instance.enemyObj).GetComponent<Enemy>(),
-        e  => e.gameObject.SetActive(true),
-        e  => e.gameObject.SetActive(false),
-        e  => Destroy(e.gameObject),
+        e  => { if (e != null) e.gameObject.SetActive(true);  },
+        e  => { if (e != null) e.gameObject.SetActive(false); },
+        e  => { if (e != null) Destroy(e.gameObject);         },
         defaultCapacity: 10,
         maxSize: 100
     );

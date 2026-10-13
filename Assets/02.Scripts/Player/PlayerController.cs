@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
@@ -29,6 +30,8 @@ public class PlayerController : MonoBehaviour
     private bool isInvisibility = false;
 
     private int atkCooldown = 0;
+
+    public event UnityAction<int> OnInvisibility;
 
     private void Start()
     {
@@ -144,6 +147,7 @@ public class PlayerController : MonoBehaviour
     private void SetInvisivility(int duration)
     {
         StartCoroutine(Invisibility());
+        OnInvisibility?.Invoke(duration);
 
         IEnumerator Invisibility()
         {
