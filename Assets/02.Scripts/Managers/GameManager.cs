@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : SingletonBehaviour<GameManager>
 {
@@ -7,8 +8,20 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     public static float FrameToSecond(int elapse) => elapse / 60f;
 
+    protected override bool IsPersistent => true;
+
     protected override void Awake()
     {
         base.Awake();
+    }
+    
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void OpenOptionPanel()
+    {
+        
     }
 }

@@ -48,15 +48,4 @@ public class InGameInputHandler : SingletonBehaviour<InGameInputHandler>
     }
 
     public void Swipe(Vector2 swipe) => OnSwipe?.Invoke(swipe);
-
-    protected override void Awake()
-    {
-        if (transform.parent != UIManager.Instance.transform)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        base.Awake();
-    }
 }

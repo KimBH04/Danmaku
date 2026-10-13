@@ -63,23 +63,12 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     private Coroutine hitBombCoroutine = null;
 
-    protected override void Awake()
-    {
-        if (transform.parent != UIManager.Instance.transform)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        base.Awake();
-
-        highScore = DataSaveLoad.HighScore;
-    }
-
     public void Initialize(int hp, decimal power)
     {
         currentHP = hp;
         currentPower = power;
+
+        highScore = DataSaveLoad.HighScore;
 
         updateHP.Invoke(currentHP);
         updatePower.Invoke(currentPower);

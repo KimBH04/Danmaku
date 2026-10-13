@@ -8,6 +8,12 @@ public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonB
     {
         get
         {
+            if (instance == null)
+            {
+                instance = FindFirstObjectByType<T>(FindObjectsInactive.Exclude);
+                Debug.Log("find");
+            }
+
             if (instance == null || !instance.isActiveAndEnabled)
             {
                 instance = Resources.LoadAll<T>("ManagerObjects")[0];
