@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour
@@ -13,7 +14,12 @@ public class Enemy : MonoBehaviour
     protected int enemyHP;
     protected int maxHP;
 
+    // EnemyBoss.BossAlive가 사용 (사망 처리가 시작되면 true)
+    protected bool isDead;
+
     private new SpriteRenderer renderer;
+
+    protected event UnityAction OnHit;
 
     private void Awake()
     {
@@ -23,6 +29,7 @@ public class Enemy : MonoBehaviour
     public virtual void Initialize(EnemyPattern enemyPattern)
     {
         elapse = 0;
+        isDead = false;
 
         pattern = enemyPattern;
 
@@ -34,7 +41,7 @@ public class Enemy : MonoBehaviour
             renderer.sprite = enemyPattern.Body.BulletImage;
         }
     }
-    
+
     public void StartPattern()
     {
         StartCoroutine(Run());
@@ -51,20 +58,16 @@ public class Enemy : MonoBehaviour
                 }
 
                 enemyHP = maxHP = spell.PresentHP;
+                OnSpellStart();     // EnemyBoss가 체력바를 채우는 데 사용
                 do
                 {
                     burstChainCoroutine = BulletManager.Instance.BurstChain(spell.Bursts, transform);
                     yield return burstChainCoroutine;
                 }
                 while ((uint)spell.TimeLimit >= elapse && enemyHP > 0);
-
-                if (enemyHP <= 0)
-                {
-                    StatusManager.Instance.AddScore(pattern.Score);
-                    break;
-                }
             }
 
+            isDead = true;
             OnDie();
         }
 
@@ -77,9 +80,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 스펠이 시작되어 체력이 채워진 직후에 호출됩니다. (EnemyBoss에서 재정의)
+    /// </summary>
+    protected virtual void OnSpellStart() { }
+
     protected virtual void OnDie()
     {
         enemyHP = 0;
+        StatusManager.Instance.AddScore(pattern.Score);
         EnemyManager.Instance.ReleaseEnemy(this);
     }
 
@@ -93,6 +102,7 @@ public class Enemy : MonoBehaviour
         if (BulletCollision.Check(transform.position, BulletTag.Player, pattern.Body.Distance, out var bullet))
         {
             bullet.IsAlive = false;
+            OnHit?.Invoke();
 
             if (--enemyHP == 0)
             {
@@ -101,6 +111,7 @@ public class Enemy : MonoBehaviour
                     BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
                 }
 
+                isDead = true;
                 OnDie();
             }
         }
@@ -110,23 +121,25 @@ public class Enemy : MonoBehaviour
     {
         pattern = default;
         elapse = 0;
-        StopAllCoroutines();
         if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
         {
             BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
             burstChainCoroutine = null;
         }
+        StopAllCoroutines();
+        OnHit = null;
     }
 
     private void OnDestroy()
     {
         pattern = default;
         elapse = 0;
-        StopAllCoroutines();
         if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
         {
             BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
             burstChainCoroutine = null;
         }
+        StopAllCoroutines();
+        OnHit = null;
     }
 }

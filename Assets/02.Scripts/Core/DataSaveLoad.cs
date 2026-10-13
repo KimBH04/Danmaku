@@ -7,6 +7,13 @@ public static class DataSaveLoad
     public static int HighScore
     {
         get => PlayerPrefs.GetInt(HIGH_SOCRE_KEY, 0);
-        set => PlayerPrefs.SetInt(HIGH_SOCRE_KEY, value);
+        set
+        {
+            var hs = HighScore;
+            if (hs < value)
+            {
+                PlayerPrefs.SetInt(HIGH_SOCRE_KEY, value);
+            }
+        }
     }
 }

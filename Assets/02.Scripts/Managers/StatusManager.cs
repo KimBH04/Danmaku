@@ -73,7 +73,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         updatePower.Invoke(currentPower);
 
         updateCurrentScore.Invoke(currentScore);
-        updateHighScore.Invoke(highScore);
+        UIManager.Instance.SetHighScoreText(highScore);
     }
 
     public void AddHP(int point)
@@ -108,9 +108,38 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         System.Collections.IEnumerator HitBomb()
         {
             yield return new WaitForFixedFrame(18);
-            onPlayerDie.Invoke();
             updateHP.Invoke(--currentHP);
             hitBombCoroutine = null;
+
+            if (currentHP < 0)
+            {
+                GameOver();
+            }
+            else
+            {
+                onPlayerDie.Invoke();
+            }
+        }
+    }
+
+    /// <summary>
+    /// 체력이 모두 소진되면 게임을 멈추고 결과창을 띄웁니다.
+    /// </summary>
+    private void GameOver()
+    {
+        SaveHighScore();
+        GameManager.Instance.Pause();
+        UIManager.Instance.ResultBoardOn();
+    }
+
+    /// <summary>
+    /// 저장된 최고 점수보다 높을 때만 저장합니다. (Initialize 전이라 highScore가 0이어도 기존 기록 보존)
+    /// </summary>
+    private void SaveHighScore()
+    {
+        if (highScore > DataSaveLoad.HighScore)
+        {
+            DataSaveLoad.HighScore = highScore;
         }
     }
 
@@ -154,31 +183,34 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     private void OnDisable()
     {
-        DataSaveLoad.HighScore = highScore;
+        SaveHighScore();
         updateHP.RemoveAllListeners();
         updatePower.RemoveAllListeners();
         updateCurrentScore.RemoveAllListeners();
         updateHighScore.RemoveAllListeners();
+        onPlayerHit.RemoveAllListeners();
         onPlayerDie.RemoveAllListeners();
     }
 
     private void OnDestroy()
     {
-        DataSaveLoad.HighScore = highScore;
+        SaveHighScore();
         updateHP.RemoveAllListeners();
         updatePower.RemoveAllListeners();
         updateCurrentScore.RemoveAllListeners();
         updateHighScore.RemoveAllListeners();
+        onPlayerHit.RemoveAllListeners();
         onPlayerDie.RemoveAllListeners();
     }
 
     private void OnApplicationQuit()
     {
-        DataSaveLoad.HighScore = highScore;
+        SaveHighScore();
         updateHP.RemoveAllListeners();
         updatePower.RemoveAllListeners();
         updateCurrentScore.RemoveAllListeners();
         updateHighScore.RemoveAllListeners();
+        onPlayerHit.RemoveAllListeners();
         onPlayerDie.RemoveAllListeners();
     }
 }

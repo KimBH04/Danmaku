@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
         StatusManager.Instance.OnPlayerHit += () => isInvisibility = true;
         StatusManager.Instance.OnPlayerDie += () => SetInvisivility(300);
         StatusManager.Instance.OnPlayerDie += () => transform.position = new Vector2(0f, -7f);
+        StatusManager.Instance.Initialize(5, 5m);
     }
 
     private void FixedUpdate()

@@ -20,6 +20,7 @@ MonoBehaviour:
     <Description>k__BackingField: "\uC5B8\uB355\uC744 \uC9C0\uD0A4\uB294 \uC7A5\uB09C\uAFB8\uB7EC\uAE30
       \uC694\uC815. \uBC14\uB78C\uAC1C\uBE44 \uB180\uC774\uB97C \uC88B\uC544\uD55C\uB2E4."
     <EnemyColor>k__BackingField: {r: 1, g: 0.7, b: 0.85, a: 1}
+    <Score>k__BackingField: 30000
     <Body>k__BackingField: {fileID: 11400000, guid: a271055cf82852bdb0fad65c728d4612, type: 2}
     spells:
     - {fileID: 11400000, guid: 8b7e93418d7a5d48844f7a607f45f27c, type: 2}

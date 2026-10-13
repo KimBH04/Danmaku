@@ -11,13 +11,15 @@ public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonB
             if (instance == null)
             {
                 instance = FindFirstObjectByType<T>(FindObjectsInactive.Exclude);
-                Debug.Log("find");
             }
 
             if (instance == null || !instance.isActiveAndEnabled)
             {
-                instance = Resources.LoadAll<T>("ManagerObjects")[0];
-                Instantiate(instance.gameObject, Vector3.zero, Quaternion.identity);
+                instance = Instantiate(
+                    Resources.LoadAll<T>("ManagerObjects")[0].gameObject,
+                    Vector3.zero,
+                    Quaternion.identity
+                ).GetComponent<T>();
                 Debug.LogWarning($"'{typeof(T).Name}'의 인스턴스가 없어서 새로 생성했습니다.");
             }
             return instance;

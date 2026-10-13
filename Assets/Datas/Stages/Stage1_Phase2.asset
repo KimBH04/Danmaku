@@ -18,6 +18,7 @@ MonoBehaviour:
       <EnemyName>k__BackingField: "\uBCF4\uB77C \uC694\uC815"
       <Description>k__BackingField: "\uBC18\uC2DC\uACC4 \uBC29\uD5A5 \uC18C\uC6A9\uB3CC\uC774\uB97C \uADF8\uB9AC\uB294 \uC694\uC815."
       <EnemyColor>k__BackingField: {r: 0.8, g: 0.6, b: 1, a: 1}
+      <Score>k__BackingField: 1500
       <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
       spells:
       - {fileID: 11400000, guid: ace199bbe4fc57479d94dee8d7717833, type: 2}
@@ -27,6 +28,7 @@ MonoBehaviour:
       <EnemyName>k__BackingField: "\uBCF4\uB77C \uC694\uC815"
       <Description>k__BackingField: "\uC2DC\uACC4 \uBC29\uD5A5 \uC18C\uC6A9\uB3CC\uC774\uB97C \uADF8\uB9AC\uB294 \uC694\uC815."
       <EnemyColor>k__BackingField: {r: 0.8, g: 0.6, b: 1, a: 1}
+      <Score>k__BackingField: 1500
       <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
       spells:
       - {fileID: 11400000, guid: dc6fcd4209405bbaadb04946f3735bcb, type: 2}
@@ -36,6 +38,7 @@ MonoBehaviour:
       <EnemyName>k__BackingField: "\uB178\uB791 \uC694\uC815"
       <Description>k__BackingField: "\uAF43\uC78E \uACE0\uB9AC\uB97C \uD130\uB728\uB9AC\uB294 \uC694\uC815."
       <EnemyColor>k__BackingField: {r: 1, g: 0.95, b: 0.55, a: 1}
+      <Score>k__BackingField: 1000
       <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
       spells:
       - {fileID: 11400000, guid: dd1e5d2b15d45e64b205b411e075ea0d, type: 2}
@@ -45,6 +48,7 @@ MonoBehaviour:
       <EnemyName>k__BackingField: "\uB178\uB791 \uC694\uC815"
       <Description>k__BackingField: "\uAF43\uC78E \uACE0\uB9AC\uB97C \uD130\uB728\uB9AC\uB294 \uC694\uC815."
       <EnemyColor>k__BackingField: {r: 1, g: 0.95, b: 0.55, a: 1}
+      <Score>k__BackingField: 1000
       <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
       spells:
       - {fileID: 11400000, guid: dd1e5d2b15d45e64b205b411e075ea0d, type: 2}
@@ -54,6 +58,7 @@ MonoBehaviour:
       <EnemyName>k__BackingField: "\uBCF4\uB77C \uC694\uC815"
       <Description>k__BackingField: "\uC2DC\uACC4 \uBC29\uD5A5 \uC18C\uC6A9\uB3CC\uC774\uB97C \uADF8\uB9AC\uB294 \uC694\uC815."
       <EnemyColor>k__BackingField: {r: 0.8, g: 0.6, b: 1, a: 1}
+      <Score>k__BackingField: 1500
       <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
       spells:
       - {fileID: 11400000, guid: dc6fcd4209405bbaadb04946f3735bcb, type: 2}
@@ -63,6 +68,7 @@ MonoBehaviour:
       <EnemyName>k__BackingField: "\uB178\uB791 \uC694\uC815"
       <Description>k__BackingField: "\uAF43\uC78E \uACE0\uB9AC\uB97C \uD130\uB728\uB9AC\uB294 \uC694\uC815."
       <EnemyColor>k__BackingField: {r: 1, g: 0.95, b: 0.55, a: 1}
+      <Score>k__BackingField: 1000
       <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
       spells:
       - {fileID: 11400000, guid: dd1e5d2b15d45e64b205b411e075ea0d, type: 2}
@@ -75,6 +81,7 @@ MonoBehaviour:
     <EnemyName>k__BackingField: "\uAF43\uBC14\uB78C\uC758 \uBB34\uB140 \uC0AC\uD0A4"
     <Description>k__BackingField: "\uBD04\uBC14\uB78C\uC744 \uBD80\uB9AC\uB294 \uC5B8\uB355\uC758 \uBB34\uB140. \uAF43\uC78E\uACFC \uBCC4\uBE5B\uC73C\uB85C \uCE68\uC785\uC790\uB97C \uC2DC\uD5D8\uD55C\uB2E4."
     <EnemyColor>k__BackingField: {r: 0.85, g: 0.95, b: 1, a: 1}
+    <Score>k__BackingField: 220000
     <Body>k__BackingField: {fileID: 11400000, guid: a271055cf82852bdb0fad65c728d4612, type: 2}
     spells:
     - {fileID: 11400000, guid: fc38949ea6875a82a18e009b2ef7fb23, type: 2}

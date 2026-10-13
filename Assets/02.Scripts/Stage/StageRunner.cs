@@ -1,18 +1,9 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class StageRunner : MonoBehaviour
 {
     [SerializeField] private StageData data;
-
-    [SerializeField] private UnityEvent onStageEnd;
-
-    public event UnityAction OnStageEnd
-    {
-        add => onStageEnd.AddListener(value);
-        remove => onStageEnd.RemoveListener(value);
-    }
 
     private void Start()
     {
@@ -24,8 +15,17 @@ public class StageRunner : MonoBehaviour
         data = stageData;
     }
 
+    private bool isRunning;
+
     public void StartRun()
     {
+        // Start 자동 실행 + 에디터 "시작" 버튼 등으로 스테이지가 겹쳐 실행되는 것 방지
+        if (isRunning)
+        {
+            return;
+        }
+        isRunning = true;
+
         StartCoroutine(RunStage());
 
         IEnumerator RunStage()
@@ -44,13 +44,30 @@ public class StageRunner : MonoBehaviour
                     }
                 }
 
-                var boss = (EnemyBoss)EnemyManager.Instance.SpawnEnemy(phase.Boss);
-                yield return boss.BossAlive();
+                // 보스 칸이 비어 있으면(기본값 Type = Common) 보스 없이 다음 페이즈로
+                if (phase.Boss.Type == EnemyType.Common)
+                {
+                    continue;
+                }
+
+                var maybeBoss = EnemyManager.Instance.SpawnEnemy(phase.Boss);
+                if (maybeBoss is EnemyBoss boss)
+                {
+                    yield return boss.BossAlive();
+                    UIManager.Instance.SetBossHP(0, 1);
+                    UIManager.Instance.BossStatusOff();
+                }
+                else
+                {
+                    Debug.LogError(maybeBoss + " is not a boss.");
+                }
             }
 
-            Debug.Log("끝");
             yield return new WaitForFixedFrame(300);
-            onStageEnd.Invoke();
+
+            // 클리어도 게임 오버처럼 멈춘 뒤 결과창 표시
+            GameManager.Instance.Pause();
+            UIManager.Instance.ResultBoardOn();
         }
     }
 }

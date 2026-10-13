@@ -16,6 +16,11 @@ public class InGameInputHandler : SingletonBehaviour<InGameInputHandler>
         var move = context.ReadValue<Vector2>();
         OnMove?.Invoke(move);
     }
+
+    public void InvokeOnUseBomb()
+    {
+        OnUseBomb?.Invoke();
+    }
     
     public void InvokeOnUseBomb(InputAction.CallbackContext callback)
     {

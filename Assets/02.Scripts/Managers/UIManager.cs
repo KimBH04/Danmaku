@@ -17,12 +17,48 @@ public class UIManager : SingletonBehaviour<UIManager>
     [SerializeField] private TextMeshProUGUI bossNameText;
     [SerializeField] private Image bossHPImg;
 
+    [Header("Result")]
+    [SerializeField] private GameObject resultPanelObj;
+    [SerializeField] private TMP_Text resultScoreText;
+    [SerializeField] private TMP_Text resultHighScoreText;
+
     private Tween runFillAmount = null;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        // StatusManager 프리팹의 UnityEvent 대상이 비어 있어서, 코드로 직접 연결합니다.
+        // (StatusManager가 Initialize 하는 시점보다 먼저 연결돼야 하므로 Start가 아니라 Awake)
+        if (ExistingInstance == this)
+        {
+            var status = StatusManager.Instance;
+            status.UpdateHP += SetHPSlider;
+            status.UpdatePower += SetPowerSlider;
+            status.UpdateCurrentScore += SetScoreText;
+            status.UpdateHighScore += SetHighScoreText;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        runFillAmount?.Kill();
+
+        var status = StatusManager.ExistingInstance;
+        if (status != null)
+        {
+            status.UpdateHP -= SetHPSlider;
+            status.UpdatePower -= SetPowerSlider;
+            status.UpdateCurrentScore -= SetScoreText;
+            status.UpdateHighScore -= SetHighScoreText;
+        }
+    }
 
     private void Start()
     {
         bossHPImg.fillAmount = 0f;
         bossStatusUIObj.SetActive(false);
+        resultPanelObj.SetActive(false);
     }
 
     public void SetHPSlider(int hp)
@@ -39,12 +75,12 @@ public class UIManager : SingletonBehaviour<UIManager>
 
     public void SetScoreText(int score)
     {
-        scoreText.text = score.ToString("000,000,000");
+        resultScoreText.text = scoreText.text = score.ToString("000,000,000");
     }
 
     public void SetHighScoreText(int score)
     {
-        highScoreText.text = score.ToString("000,000,000");
+        resultHighScoreText.text = highScoreText.text = score.ToString("000,000,000");
     }
 
     public void BossStatusOn()
@@ -70,6 +106,6 @@ public class UIManager : SingletonBehaviour<UIManager>
 
     public void ResultBoardOn()
     {
-        
+        resultPanelObj.SetActive(true);
     }
 }
