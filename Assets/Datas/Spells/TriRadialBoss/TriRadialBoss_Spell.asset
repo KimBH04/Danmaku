@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e9866015447a47bef3d31af6fd0e2, type: 3}
   m_Name: TriRadialBoss_Spell
   m_EditorClassIdentifier: Assembly-CSharp::SpellCard
-  <SpellName>k__BackingField: "\uC0BC\uC810 \uD68C\uC804 \uBC29\uC0AC \u00B7 \uBB34\uC9C0\uAC1C \uC18C\uC6A9\uB3CC\uC774"
-  <SpellDescription>k__BackingField: "\uC67C\uCABD \u2192 \uC704 \u2192 \uC624\uB978\uCABD\uC73C\uB85C \uC62E\uACA8 \uB2E4\uB2C8\uBA70 Radial12_Spin_3Types\uB97C 1.5\uCD08 \uAC04\uACA9\uC73C\uB85C \uC138 \uBC88 \uC3DC \uB4A4, 5\uCD08 \uB3D9\uC548 \uD654\uBA74 \uC911\uC559\uC73C\uB85C \uC774\uB3D9\uD574 Swirl_Tangent\uB97C 15\uCD08 \uB3D9\uC548 \uC3DF\uC544\uB0B8\uB2E4."
-  <PresentHP>k__BackingField: 800
+  <SpellName>k__BackingField: "\uC0BC\uC810 \uD68C\uC804 \uBC29\uC0AC \xB7 \uBB34\uC9C0\uAC1C
+    \uC18C\uC6A9\uB3CC\uC774"
+  <SpellDescription>k__BackingField: "\uC67C\uCABD \u2192 \uC704 \u2192 \uC624\uB978\uCABD\uC73C\uB85C
+    \uC62E\uACA8 \uB2E4\uB2C8\uBA70 Radial12_Spin_3Types\uB97C 1.5\uCD08 \uAC04\uACA9\uC73C\uB85C
+    \uC138 \uBC88 \uC3DC \uB4A4, 5\uCD08 \uB3D9\uC548 \uD654\uBA74 \uC911\uC559\uC73C\uB85C
+    \uC774\uB3D9\uD574 Swirl_Tangent\uB97C 15\uCD08 \uB3D9\uC548 \uC3DF\uC544\uB0B8\uB2E4."
+  <PresentHP>k__BackingField: 500
   <TimeLimit>k__BackingField: 3600
   bursts:
   - {fileID: 11400000, guid: 30931958e1684e4e8466b479a5f7562a, type: 2}
