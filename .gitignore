@@ -114,3 +114,7 @@ InitTestScene*.unity*
 /[Aa]ssets/Plugins/Demigiant/DemiLib.meta
 /[Aa]ssets/Plugins/Demigiant/readme_DOTweenPro.txt
 /[Aa]ssets/Plugins/Demigiant/readme_DOTweenPro.txt.meta
+
+# apiurl 숨김
+**/apiurl.txt
+**/apiurl.txt.meta
