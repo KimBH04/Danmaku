@@ -18,6 +18,8 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     [SerializeField] private UnityEvent onPlayerDie;
 
+    [SerializeField] private UnityEvent onGameOver;
+
     public event UnityAction<int> UpdateHP
     {
         add => updateHP.AddListener(value);
@@ -54,6 +56,12 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         remove => onPlayerDie.RemoveListener(value);
     }
 
+    public event UnityAction OnGameOver
+    {
+        add => onGameOver.AddListener(value);
+        remove => onGameOver.RemoveListener(value);
+    }
+
     private int currentHP = 5;
     private decimal currentPower = 5m;
 
@@ -62,18 +70,13 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     private Coroutine hitBombCoroutine = null;
 
-    public void Initialize(int hp, decimal power)
+    private static int initialHP;
+    private static decimal initialPower;
+
+    public static void Initialize(int hp, decimal power)
     {
-        currentHP = hp;
-        currentPower = power;
-
-        highScore = DataSaveLoad.HighScore;
-
-        updateHP.Invoke(currentHP);
-        updatePower.Invoke(currentPower);
-
-        updateCurrentScore.Invoke(currentScore);
-        UIManager.Instance.SetHighScoreText(highScore);
+        initialHP = hp;
+        initialPower = power;
     }
 
     public void AddHP(int point)
@@ -114,12 +117,27 @@ public class StatusManager : SingletonBehaviour<StatusManager>
             if (currentHP < 0)
             {
                 GameOver();
+                onGameOver.Invoke();
             }
             else
             {
                 onPlayerDie.Invoke();
             }
         }
+    }
+
+    private void Start()
+    {
+        currentHP = initialHP;
+        currentPower = initialPower;
+
+        highScore = DataSaveLoad.HighScore;
+
+        updateHP.Invoke(currentHP);
+        updatePower.Invoke(currentPower);
+
+        updateCurrentScore.Invoke(currentScore);
+        UIManager.Instance.SetHighScoreText(highScore);
     }
 
     /// <summary>

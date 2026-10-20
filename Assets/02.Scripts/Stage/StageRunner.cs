@@ -1,21 +1,33 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StageRunner : MonoBehaviour
 {
     [SerializeField] private StageData data;
 
-    private void Start()
+    private UnityEvent onStageStart;
+
+    private UnityEvent onStageEnd;
+
+    public event UnityAction OnStageStart
     {
-        StartRun();
+        add => onStageStart.AddListener(value);
+        remove => onStageStart.RemoveListener(value);
     }
+
+    public event UnityAction OnStageEnd
+    {
+        add => onStageEnd.AddListener(value);
+        remove => onStageEnd.RemoveListener(value);
+    }
+
+    private bool isRunning;
 
     public void Initialize(StageData stageData)
     {
         data = stageData;
     }
-
-    private bool isRunning;
 
     public void StartRun()
     {
@@ -24,12 +36,13 @@ public class StageRunner : MonoBehaviour
         {
             return;
         }
-        isRunning = true;
 
         StartCoroutine(RunStage());
 
         IEnumerator RunStage()
         {
+            isRunning = true;
+            onStageStart.Invoke();
             foreach (var phase in data.Phases)
             {
                 yield return new WaitForFixedFrame(phase.WaitForFirstEmenyFrame);
@@ -68,6 +81,15 @@ public class StageRunner : MonoBehaviour
             // 클리어도 게임 오버처럼 멈춘 뒤 결과창 표시
             GameManager.Instance.Pause();
             UIManager.Instance.ResultBoardOn();
+
+            onStageEnd.Invoke();
+            isRunning = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        onStageStart.RemoveAllListeners();
+        onStageEnd.RemoveAllListeners();
     }
 }

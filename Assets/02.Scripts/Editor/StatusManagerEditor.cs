@@ -93,7 +93,7 @@ public class StatusManagerEditor : Editor
 
         if (GUILayout.Button("최대치로 초기화"))
         {
-            status.Initialize(StatusManager.MAX_HP, StatusManager.MAX_POWER);
+            StatusManager.Initialize(StatusManager.MAX_HP, StatusManager.MAX_POWER);
         }
     }
 }

@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class LevelSelector : MonoBehaviour
 {
+    private int selectedLevel;
+    private int selectedCharacter;
+
     public void SelectLevel(int level)
     {
         Debug.Log(level switch
@@ -11,6 +14,8 @@ public class LevelSelector : MonoBehaviour
             2 => "어려움",
             _ => nameof(level) + "에 이상한 값",
         });
+
+        selectedLevel = level;
     }
 
     public void SelectCharacter(int character)
@@ -21,5 +26,14 @@ public class LevelSelector : MonoBehaviour
             1 => "유진",
             _ => nameof(character) + "에 이상한 값",
         });
+
+        if (selectedCharacter == character)
+        {
+            Debug.Log("시작");
+        }
+        else
+        {
+            selectedCharacter = character;
+        }
     }
 }

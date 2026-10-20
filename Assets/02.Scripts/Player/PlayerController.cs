@@ -5,11 +5,7 @@ using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
-    [field: SerializeField, FormerlySerializedAs("speed")]
-    public float Speed { get; private set; } = 1f;
-
-    [field: SerializeField, FormerlySerializedAs("lowSpeedMagnification")]
-    public float LowSpeedMagnification { get; private set; } = 0.7f;
+    [SerializeField] private PlayerData data;
 
     [field: SerializeField, FormerlySerializedAs("deadzoneMinTr")]
     public Transform DeadzoneMinTr { get; private set; }
@@ -18,6 +14,10 @@ public class PlayerController : MonoBehaviour
     public Transform DeadzoneMaxTr { get; private set; }
 
     [SerializeField] private BurstData playerBurst;
+
+    private float speed;
+
+    private float slowSpeed;
 
     private Vector2 move;
 
@@ -32,6 +32,14 @@ public class PlayerController : MonoBehaviour
     private int atkCooldown = 0;
 
     public event UnityAction<int> OnInvisibility;
+
+    public void Initialize(PlayerData data)
+    {
+        this.data = data;
+        speed = data.Speed;
+        slowSpeed = data.SlowSpeed;
+        StatusManager.Initialize(data.InitialHP, data.InitialPower);
+    }
 
     private void Start()
     {
@@ -53,7 +61,6 @@ public class PlayerController : MonoBehaviour
         StatusManager.Instance.OnPlayerHit += () => isInvisibility = true;
         StatusManager.Instance.OnPlayerDie += () => SetInvisivility(300);
         StatusManager.Instance.OnPlayerDie += () => transform.position = new Vector2(0f, -7f);
-        StatusManager.Instance.Initialize(5, 5m);
     }
 
     private void FixedUpdate()
@@ -83,10 +90,10 @@ public class PlayerController : MonoBehaviour
         }
 
         Vector3 target = move * (
-            (InGameInputHandler.Instance.IsSlowMoving ?
-            Speed * LowSpeedMagnification :
-            Speed
-        ) * Time.fixedDeltaTime) + (Vector2)transform.position;
+            (
+                InGameInputHandler.Instance.IsSlowMoving ? speed : slowSpeed
+            ) * Time.fixedDeltaTime
+        ) + (Vector2)transform.position;
 
         transform.position = new(
             Mathf.Clamp(target.x, deadzone.xMin, deadzone.xMax),
