@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class LevelSelector : MonoBehaviour
 {
+    [SerializeField] LevelData[] levels;
+    [SerializeField] PlayerData[] playerDatas;
+
     private int selectedLevel;
     private int selectedCharacter;
 
@@ -39,6 +42,12 @@ public class LevelSelector : MonoBehaviour
 
     public void Confirm()
     {
+        StartCoroutine(
+            GameManager.Instance.LoadInGameScene(
+                levels[selectedLevel],
+                playerDatas[selectedCharacter]
+            )
+        );
         Debug.Log("시작");
     }
 }

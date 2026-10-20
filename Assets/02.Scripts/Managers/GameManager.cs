@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -63,6 +64,22 @@ public class GameManager : SingletonBehaviour<GameManager>
         pauseCount = 0;
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
+    }
+
+    public IEnumerator LoadInGameScene(LevelData level, PlayerData player)
+    {
+        const string INGAME = "InGame";
+        var loadingScene = SceneManager.LoadSceneAsync(INGAME);
+        loadingScene.allowSceneActivation = false;
+        yield return loadingScene;
+
+        Scene gameScene = SceneManager.GetSceneByName(INGAME);
+        var runnerObj = (GameObject)Instantiate(new GameObject("Runner"), gameScene);
+        var playerObj = (GameObject)Instantiate(new GameObject("Player"), gameScene);
+
+        runnerObj.AddComponent<LevelRunner>().Initialize(level);
+        playerObj.AddComponent<PlayerController>().Initialize(player);
+        playerObj.AddComponent<PlayerAnimation>();
     }
 
     public void OpenOptionPanel()

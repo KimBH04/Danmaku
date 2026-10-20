@@ -204,7 +204,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 579288327}
         m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
-        m_MethodName: ApplyLevel
+        m_MethodName: Confirm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2184,6 +2184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b5cd82120c67a4a9af5cc8c873354c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelector
+  levels: []
+  playerDatas: []
 --- !u!4 &579288328
 Transform:
   m_ObjectHideFlags: 0
