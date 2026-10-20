@@ -29,11 +29,16 @@ public class LevelSelector : MonoBehaviour
 
         if (selectedCharacter == character)
         {
-            Debug.Log("시작");
+            DG.Tweening.DOTween.PlayForward("CONFIRM");
         }
         else
         {
             selectedCharacter = character;
         }
+    }
+
+    public void Confirm()
+    {
+        Debug.Log("시작");
     }
 }
