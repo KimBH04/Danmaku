@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 88992385d366f0a4db23431fd76982e0
+guid: 463646b0c31f0a74aa170a0098ad21aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5214007099518685182
-    second: "\uC2E0\uB140_0"
+      213: -8890719452409753028
+    second: gunner_48x64_right_spritesheet_0
   - first:
-      213: 6828983508404216098
-    second: "\uC2E0\uB140_1"
+      213: -2925483542489927338
+    second: gunner_48x64_right_spritesheet_1
   - first:
-      213: -146566006168665340
-    second: "\uC2E0\uB140_2"
+      213: -3885234380522349479
+    second: gunner_48x64_right_spritesheet_2
   - first:
-      213: 6225961820227484147
-    second: "\uC2E0\uB140_3"
+      213: -728577417624910999
+    second: gunner_48x64_right_spritesheet_3
   - first:
-      213: -8303279892487149533
-    second: "\uC2E0\uB140_4"
+      213: 1467232293241765493
+    second: gunner_48x64_right_spritesheet_4
   - first:
-      213: 5002149104055670846
-    second: "\uC2E0\uB140_5"
+      213: -3802754894306480925
+    second: gunner_48x64_right_spritesheet_5
   - first:
-      213: -1686477746697485979
-    second: "\uC2E0\uB140_6"
+      213: -5888513885350607689
+    second: gunner_48x64_right_spritesheet_6
   - first:
-      213: 2754353459681454231
-    second: "\uC2E0\uB140_7"
+      213: 1207917640765389711
+    second: gunner_48x64_right_spritesheet_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -93,7 +93,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -147,12 +147,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Baekyeon_0
+      name: Yujin_Right_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 48
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -162,19 +162,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32bb4b952f77c7e4c8096a615b066f06
-      internalID: 120043564
+      spriteID: 015ed81704cc3104e8e9af1e79d4678a
+      internalID: -2002975791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Baekyeon_1
+      name: Yujin_Right_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 0
-        width: 32
+        width: 48
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -184,41 +184,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d62bf7c84ad055a4289dc27bab6b395a
-      internalID: 1343463285
+      spriteID: fe6fad54b730b2d44a8526c75092c659
+      internalID: 1003310761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Baekyeon_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: acd710720749f7742bdf0b5c6053e42f
-      internalID: 507654622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Baekyeon_3
+      name: Yujin_Right_2
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
+        width: 48
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -228,19 +206,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3aab7d55e7365441ab60003d5ab00e9
-      internalID: 515727150
+      spriteID: 1deb658ffbfabb14eb66e352155341f8
+      internalID: 558279653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Baekyeon_4
+      name: Yujin_Right_3
       rect:
         serializedVersion: 2
-        x: 128
+        x: 144
         y: 0
-        width: 32
+        width: 48
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -250,41 +228,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbcaa2568a48de64d8faa00279ad9c93
-      internalID: 659846546
+      spriteID: 5ba8280bc32b07b40897dda6372346bf
+      internalID: 818490598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Baekyeon_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f3f03daa04a30645b8a1e4ecfa1bea1
-      internalID: -1513486182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Baekyeon_6
+      name: Yujin_Right_4
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 32
+        width: 48
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -294,19 +250,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8aa7284d860e55429918487167a3da4
-      internalID: -546395908
+      spriteID: 02946f1d641755649aca1609604f3ac9
+      internalID: 920200669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Baekyeon_7
+      name: Yujin_Right_5
       rect:
         serializedVersion: 2
-        x: 224
+        x: 240
         y: 0
-        width: 32
+        width: 48
         height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -316,8 +272,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa1318a6aa8d92f4ab17c3181b4f9e82
-      internalID: 405507611
+      spriteID: 311d9bc476eeffb4384aef7ce074179a
+      internalID: -1950097479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yujin_Right_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8272a21ec95fc244841494e93239411
+      internalID: -663875472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yujin_Right_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f66fc41cd049d46919ea0e58e721ea
+      internalID: -754585072
       vertices: []
       indices: 
       edges: []
@@ -326,7 +326,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 02921b38caffaa04d94567d055fca603
     internalID: 0
     vertices: []
     indices: 
@@ -336,16 +336,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":1,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Baekyeon_0: 120043564
-      Baekyeon_1: 1343463285
-      Baekyeon_2: 507654622
-      Baekyeon_3: 515727150
-      Baekyeon_4: 659846546
-      Baekyeon_5: -1513486182
-      Baekyeon_6: -546395908
-      Baekyeon_7: 405507611
+      Yujin_Right_0: -2002975791
+      Yujin_Right_1: 1003310761
+      Yujin_Right_2: 558279653
+      Yujin_Right_3: 818490598
+      Yujin_Right_4: 920200669
+      Yujin_Right_5: -1950097479
+      Yujin_Right_6: -663875472
+      Yujin_Right_7: -754585072
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

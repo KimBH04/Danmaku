@@ -16,3 +16,4 @@ MonoBehaviour:
   <SlowSpeed>k__BackingField: 5
   <InitialHP>k__BackingField: 5
   <PlayerBurst>k__BackingField: {fileID: 0}
+  <AniCon>k__BackingField: {fileID: 9100000, guid: 9f1c6b2d1e3d24c4c9ebf33ec1f0f8b9, type: 2}
