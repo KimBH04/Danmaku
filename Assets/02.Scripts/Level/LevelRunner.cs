@@ -33,10 +33,7 @@ public class LevelRunner : MonoBehaviour
             return;
         }
 
-        GameObject runnerObj = Resources.Load<GameObject>("Runner");
-        if (runnerObj.TryGetComponent(out runner))
-        {
-            runner.OnStageEnd += StartLevel;
-        }
+        runner = new GameObject("Runner").AddComponent<StageRunner>();
+        runner.OnStageEnd += StartLevel;
     }
 }
