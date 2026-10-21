@@ -9,8 +9,8 @@ using UnityEngine;
 public class UIManagerEditor : Editor
 {
     // 테스트 값 (인스펙터를 다시 열면 초기화됨)
-    private int hp = StatusManager.MAX_HP;
-    private float power = (float)StatusManager.MAX_POWER;
+    private float hp = StatusManager.MAX_HP / 100f;
+    private float power = StatusManager.MAX_POWER / 100f;
     private int score;
     private int highScore;
 
@@ -39,9 +39,10 @@ public class UIManagerEditor : Editor
             // HP
             DrawRow(hpImg, "hpImgMask", () =>
             {
-                int next = EditorGUILayout.IntSlider($"HP (0~{StatusManager.MAX_HP})", hp, 0, StatusManager.MAX_HP);
+                float max = StatusManager.MAX_HP / 100f;
+                float next = Mathf.Round(EditorGUILayout.Slider($"HP (0~{max})", hp, 0f, max));
                 bool clicked = GUILayout.Button("적용", GUILayout.Width(48));
-                if (next != hp || clicked)
+                if (!Mathf.Approximately(next, hp) || clicked)
                 {
                     hp = next;
                     Apply(hpImg, "HP", ui => ui.SetHPSlider(hp));
@@ -51,14 +52,14 @@ public class UIManagerEditor : Editor
             // Power (0.5 단위)
             DrawRow(powerImg, "powerImgMask", () =>
             {
-                float max = (float)StatusManager.MAX_POWER;
+                float max = StatusManager.MAX_POWER / 100f;
                 float next = EditorGUILayout.Slider($"Power (0~{max})", power, 0f, max);
                 next = Mathf.Round(next * 2f) / 2f;
                 bool clicked = GUILayout.Button("적용", GUILayout.Width(48));
                 if (!Mathf.Approximately(next, power) || clicked)
                 {
                     power = next;
-                    Apply(powerImg, "Power", ui => ui.SetPowerSlider((decimal)power));
+                    Apply(powerImg, "Power", ui => ui.SetPowerSlider(power));
                 }
             });
 
@@ -100,11 +101,11 @@ public class UIManagerEditor : Editor
 
                 if (GUILayout.Button("전체 초기화"))
                 {
-                    hp = StatusManager.MAX_HP;
-                    power = (float)StatusManager.MAX_POWER;
+                    hp = StatusManager.MAX_HP / 100f;
+                    power = StatusManager.MAX_POWER / 100f;
                     score = highScore = 0;
                     if (hpImg != null) Apply(hpImg, "HP", ui => ui.SetHPSlider(hp));
-                    if (powerImg != null) Apply(powerImg, "Power", ui => ui.SetPowerSlider((decimal)power));
+                    if (powerImg != null) Apply(powerImg, "Power", ui => ui.SetPowerSlider(power));
                     if (scoreText != null) Apply(scoreText, "Score", ui => ui.SetScoreText(score));
                     if (highScoreText != null) Apply(highScoreText, "High Score", ui => ui.SetHighScoreText(highScore));
                 }

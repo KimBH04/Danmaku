@@ -3,12 +3,16 @@ using UnityEngine.Events;
 
 public class StatusManager : SingletonBehaviour<StatusManager>
 {
-    public const int MAX_HP = 5;
-    public const decimal MAX_POWER = 5m;
+    /// <summary>체력 최대치 (백분율, 500 = 5.00)</summary>
+    public const int MAX_HP = 500;
+    /// <summary>파워 최대치 (백분율, 500 = 5.00)</summary>
+    public const int MAX_POWER = 500;
     
-    [SerializeField] private UnityEvent<int> updateHP;
+    // 체력을 100으로 나눈 소수 값(0 ~ 5)을 전달
+    [SerializeField] private UnityEvent<float> updateHP;
 
-    [SerializeField] private UnityEvent<decimal> updatePower;
+    // 파워를 100으로 나눈 소수 값(0 ~ 5)을 전달
+    [SerializeField] private UnityEvent<float> updatePower;
 
     [SerializeField] private UnityEvent<int> updateCurrentScore;
 
@@ -20,13 +24,13 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     [SerializeField] private UnityEvent onGameOver;
 
-    public event UnityAction<int> UpdateHP
+    public event UnityAction<float> UpdateHP
     {
         add => updateHP.AddListener(value);
         remove => updateHP.RemoveListener(value);
     }
 
-    public event UnityAction<decimal> UpdatePower
+    public event UnityAction<float> UpdatePower
     {
         add => updatePower.AddListener(value);
         remove => updatePower.RemoveListener(value);
@@ -62,8 +66,10 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         remove => onGameOver.RemoveListener(value);
     }
 
-    private int currentHP = 5;
-    private decimal currentPower = 5m;
+    // 백분율 정수 (100 = 1.00)
+    private int currentHP = MAX_HP;
+    // 백분율 정수 (100 = 1.00)
+    private int currentPower = MAX_POWER;
 
     private int currentScore = 0;
     private int highScore = 0;
@@ -71,24 +77,34 @@ public class StatusManager : SingletonBehaviour<StatusManager>
     private Coroutine hitBombCoroutine = null;
 
     private int initialHP;
-    private decimal initialPower;
+    private int initialPower;
 
-    public void Initialize(int hp, decimal power)
+    /// <summary>체력 소수 값 (currentHP / 100)</summary>
+    public float HP => currentHP / 100f;
+
+    /// <summary>파워 소수 값 (currentPower / 100)</summary>
+    public float Power => currentPower / 100f;
+
+    /// <param name="hp">초기 체력 (백분율, 0 ~ <see cref="MAX_HP"/>)</param>
+    /// <param name="power">초기 파워 (백분율, 0 ~ <see cref="MAX_POWER"/>)</param>
+    public void Initialize(int hp, int power)
     {
         initialHP = hp;
         initialPower = power;
     }
 
+    /// <param name="point">더할 체력 (백분율)</param>
     public void AddHP(int point)
     {
-        currentHP += point;
-        updateHP.Invoke(currentHP);
+        currentHP = Mathf.Clamp(currentHP + point, 0, MAX_HP);
+        updateHP.Invoke(HP);
     }
 
-    public void AddPower(decimal power)
+    /// <param name="power">더할 파워 (백분율)</param>
+    public void AddPower(int power)
     {
-        currentPower += power;
-        updatePower.Invoke(currentPower);
+        currentPower = Mathf.Clamp(currentPower + power, 0, MAX_POWER);
+        updatePower.Invoke(Power);
     }
 
     public void AddScore(int point)
@@ -111,7 +127,8 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         System.Collections.IEnumerator HitBomb()
         {
             yield return new WaitForFixedFrame(18);
-            updateHP.Invoke(--currentHP);
+            currentHP -= 100;
+            updateHP.Invoke(HP);
             hitBombCoroutine = null;
 
             if (currentHP < 0)
@@ -128,13 +145,13 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     private void Start()
     {
-        currentHP = initialHP;
-        currentPower = initialPower;
+        currentHP = Mathf.Clamp(initialHP, 0, MAX_HP);
+        currentPower = Mathf.Clamp(initialPower, 0, MAX_POWER);
 
         highScore = DataSaveLoad.HighScore;
 
-        updateHP.Invoke(currentHP);
-        updatePower.Invoke(currentPower);
+        updateHP.Invoke(HP);
+        updatePower.Invoke(Power);
 
         updateCurrentScore.Invoke(currentScore);
         UIManager.Instance.SetHighScoreText(highScore);
@@ -163,13 +180,13 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     public bool TryUsePower()
     {
-        if (currentPower < 1m)
+        if (currentPower < 100)
         {
             return false;
         }
 
-        currentPower--;
-        updatePower.Invoke(currentPower);
+        currentPower -= 100;
+        updatePower.Invoke(Power);
 
         if (hitBombCoroutine != null)
         {
@@ -182,13 +199,13 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     public bool TryUseSemiPower()
     {
-        if (currentPower < 0.5m)
+        if (currentPower < 50)
         {
             return false;
         }
 
-        currentPower -= 0.5m;
-        updatePower.Invoke(currentPower);
+        currentPower -= 50;
+        updatePower.Invoke(Power);
 
         if (hitBombCoroutine != null)
         {

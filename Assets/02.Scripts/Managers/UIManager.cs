@@ -61,16 +61,16 @@ public class UIManager : SingletonBehaviour<UIManager>
         resultPanelObj.SetActive(false);
     }
 
-    public void SetHPSlider(int hp)
+    /// <param name="hp">체력 소수 값 (0 ~ 5)</param>
+    public void SetHPSlider(float hp)
     {
-        var value = Mathf.Clamp(hp, 0f, StatusManager.MAX_HP) / StatusManager.MAX_HP;
-        hpImgMask.fillAmount = value;
+        hpImgMask.fillAmount = Mathf.Clamp01(hp * 100f / StatusManager.MAX_HP);
     }
 
-    public void SetPowerSlider(decimal power)
+    /// <param name="power">파워 소수 값 (0 ~ 5)</param>
+    public void SetPowerSlider(float power)
     {
-        var value = System.Math.Clamp(power / StatusManager.MAX_POWER, 0m, 1m);
-        powerImgMask.fillAmount = (float)value;
+        powerImgMask.fillAmount = Mathf.Clamp01(power * 100f / StatusManager.MAX_POWER);
     }
 
     public void SetScoreText(int score)

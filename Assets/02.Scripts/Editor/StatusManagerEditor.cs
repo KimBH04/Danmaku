@@ -38,14 +38,15 @@ public class StatusManagerEditor : Editor
 
         var status = (StatusManager)target;
         int hp = (int)HPField.GetValue(status);
-        decimal power = (decimal)PowerField.GetValue(status);
+        int power = (int)PowerField.GetValue(status);
 
-        // 체력
+        // 체력 (백분율, 100 단위)
         using (new EditorGUILayout.HorizontalScope())
         {
-            int next = EditorGUILayout.IntSlider($"HP (0~{StatusManager.MAX_HP})", hp, 0, StatusManager.MAX_HP);
-            if (GUILayout.Button("-1", GUILayout.Width(32))) next = hp - 1;
-            if (GUILayout.Button("+1", GUILayout.Width(32))) next = hp + 1;
+            int slider = EditorGUILayout.IntSlider($"HP % (0~{StatusManager.MAX_HP})", hp, 0, StatusManager.MAX_HP);
+            int next = Mathf.RoundToInt(slider / 100f) * 100;
+            if (GUILayout.Button("-100", GUILayout.Width(40))) next = hp - 100;
+            if (GUILayout.Button("+100", GUILayout.Width(40))) next = hp + 100;
 
             next = Mathf.Clamp(next, 0, StatusManager.MAX_HP);
             if (next != hp)
@@ -54,16 +55,15 @@ public class StatusManagerEditor : Editor
             }
         }
 
-        // 파워 (0.5 단위)
+        // 파워 (백분율, 50 단위)
         using (new EditorGUILayout.HorizontalScope())
         {
-            float max = (float)StatusManager.MAX_POWER;
-            float slider = EditorGUILayout.Slider($"Power (0~{max})", (float)power, 0f, max);
-            decimal next = (decimal)(Mathf.Round(slider * 2f) / 2f);
-            if (GUILayout.Button("-0.5", GUILayout.Width(40))) next = power - 0.5m;
-            if (GUILayout.Button("+0.5", GUILayout.Width(40))) next = power + 0.5m;
+            int slider = EditorGUILayout.IntSlider($"Power % (0~{StatusManager.MAX_POWER})", power, 0, StatusManager.MAX_POWER);
+            int next = Mathf.RoundToInt(slider / 50f) * 50;
+            if (GUILayout.Button("-50", GUILayout.Width(40))) next = power - 50;
+            if (GUILayout.Button("+50", GUILayout.Width(40))) next = power + 50;
 
-            next = System.Math.Clamp(next, 0m, StatusManager.MAX_POWER);
+            next = Mathf.Clamp(next, 0, StatusManager.MAX_POWER);
             if (next != power)
             {
                 status.AddPower(next - power);

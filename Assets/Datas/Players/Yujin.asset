@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
   <Speed>k__BackingField: 15
   <SlowSpeed>k__BackingField: 7
-  <InitialHP>k__BackingField: 5
+  <InitialHP>k__BackingField: 300
+  <InitialPower>k__BackingField: 200
   <PlayerBurst>k__BackingField: {fileID: 0}
   <AniCon>k__BackingField: {fileID: 9100000, guid: 1487ff49565369a4f8ba54db104c5265, type: 2}

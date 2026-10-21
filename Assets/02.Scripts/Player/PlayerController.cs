@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private float speed;
     private float slowSpeed;
     private BurstData[] attacks;
-    private decimal power = 0;
+    private int power = 0;
 
     private Vector2 move;
 
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         InGameInputHandler.Instance.OnUseBomb += Bomb;
         InGameInputHandler.Instance.OnUseSemiBomb += SemiBomb;
 
-        StatusManager.Instance.UpdatePower += p  => power = p;
+        StatusManager.Instance.UpdatePower += p  => power = Mathf.RoundToInt(p * 100f) / 100;
         StatusManager.Instance.OnPlayerHit += () => isInvisibility = true;
         StatusManager.Instance.OnPlayerDie += () => SetInvisivility(300);
         StatusManager.Instance.OnPlayerDie += () => transform.position = new Vector2(0f, -7f);
@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
         }
 
         atkCooldown = 5;
-        BulletManager.Instance.BulletPatternChain(attacks[(int)power].BulletPatterns, transform);
+        BulletManager.Instance.BulletPatternChain(attacks[power].BulletPatterns, transform);
     }
 
     private void SetInvisivility(int duration)
