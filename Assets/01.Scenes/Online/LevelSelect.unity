@@ -1911,7 +1911,7 @@ MonoBehaviour:
   hasOnStepComplete: 0
   hasOnComplete: 0
   hasOnTweenCreated: 0
-  hasOnRewind: 0
+  hasOnRewind: 1
   onStart:
     m_PersistentCalls:
       m_Calls: []
@@ -1932,7 +1932,19 @@ MonoBehaviour:
       m_Calls: []
   onRewind:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 579288327}
+        m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+        m_MethodName: ReturnToTitle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   targetIsSelf: 1
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
@@ -2012,7 +2024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: DOTweenPro.dll::DG.Tweening.DOTweenVisualManager
   preset: 0
-  onEnableBehaviour: 2
+  onEnableBehaviour: 1
   onDisableBehaviour: 2
 --- !u!1 &443863485
 GameObject:

@@ -66,7 +66,7 @@ public class GameManager : SingletonBehaviour<GameManager>
         SceneManager.LoadScene(sceneName);
     }
 
-    public void LoadSceneAdd(string sceneName)
+    public void LoadSceneAdditive(string sceneName)
     {
         pauseCount = 0;
         Time.timeScale = 1f;
@@ -79,9 +79,8 @@ public class GameManager : SingletonBehaviour<GameManager>
         var loadingScene = SceneManager.LoadSceneAsync(INGAME);
         yield return loadingScene;
 
-        Scene gameScene = SceneManager.GetSceneByName(INGAME);
-        var runnerObj = (GameObject)Instantiate(new GameObject("Runner"), gameScene);
-        var playerObj = (GameObject)Instantiate(new GameObject("Player"), gameScene);
+        var runnerObj = new GameObject("Runner");
+        var playerObj = new GameObject("Player");
 
         runnerObj
             .AddComponent<LevelRunner>()
@@ -95,6 +94,8 @@ public class GameManager : SingletonBehaviour<GameManager>
             .AddComponent<PlayerAnimation>()
             .GetComponent<Animator>()
             .runtimeAnimatorController = player.AniCon;
+
+        playerObj.transform.position = new Vector3(0f, -7f);
     }
 
     public void OpenOptionPanel()

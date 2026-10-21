@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -13,11 +14,10 @@ public class PlayerController : MonoBehaviour
     [field: SerializeField, FormerlySerializedAs("deadzoneMaxTr")]
     public Transform DeadzoneMaxTr { get; private set; }
 
-    [SerializeField] private BurstData playerBurst;
-
     private float speed;
-
     private float slowSpeed;
+    private BurstData[] attacks;
+    private decimal power = 0;
 
     private Vector2 move;
 
@@ -38,7 +38,8 @@ public class PlayerController : MonoBehaviour
         this.data = data;
         speed = data.Speed;
         slowSpeed = data.SlowSpeed;
-        StatusManager.Initialize(data.InitialHP, data.InitialPower);
+        attacks = data.PlayerAttacks.ToArray();
+        StatusManager.Instance.Initialize(data.InitialHP, data.InitialPower);
     }
 
     private void Start()
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
         InGameInputHandler.Instance.OnUseBomb += Bomb;
         InGameInputHandler.Instance.OnUseSemiBomb += SemiBomb;
 
+        StatusManager.Instance.UpdatePower += p  => power = p;
         StatusManager.Instance.OnPlayerHit += () => isInvisibility = true;
         StatusManager.Instance.OnPlayerDie += () => SetInvisivility(300);
         StatusManager.Instance.OnPlayerDie += () => transform.position = new Vector2(0f, -7f);
@@ -150,7 +152,7 @@ public class PlayerController : MonoBehaviour
         }
 
         atkCooldown = 5;
-        BulletManager.Instance.BulletPatternChain(playerBurst.BulletPatterns, transform);
+        BulletManager.Instance.BulletPatternChain(attacks[(int)power].BulletPatterns, transform);
     }
 
     private void SetInvisivility(int duration)

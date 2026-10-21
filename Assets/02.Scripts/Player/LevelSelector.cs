@@ -42,12 +42,17 @@ public class LevelSelector : MonoBehaviour
 
     public void Confirm()
     {
-        StartCoroutine(
+        GameManager.Instance.StartCoroutine(
             GameManager.Instance.LoadInGameScene(
                 levels[selectedLevel],
                 playerDatas[selectedCharacter]
             )
         );
         Debug.Log("시작");
+    }
+
+    public void ReturnToTitle()
+    {
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("LevelSelect");
     }
 }

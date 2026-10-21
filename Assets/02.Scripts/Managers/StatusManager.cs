@@ -70,10 +70,10 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     private Coroutine hitBombCoroutine = null;
 
-    private static int initialHP;
-    private static decimal initialPower;
+    private int initialHP;
+    private decimal initialPower;
 
-    public static void Initialize(int hp, decimal power)
+    public void Initialize(int hp, decimal power)
     {
         initialHP = hp;
         initialPower = power;
