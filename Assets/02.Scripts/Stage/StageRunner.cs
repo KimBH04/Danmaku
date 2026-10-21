@@ -6,9 +6,9 @@ public class StageRunner : MonoBehaviour
 {
     [SerializeField] private StageData data;
 
-    [SerializeField] private UnityEvent onStageStart;
+    private readonly UnityEvent onStageStart = new();
 
-    [SerializeField] private UnityEvent onStageEnd;
+    private readonly UnityEvent onStageEnd = new();
 
     public event UnityAction OnStageStart
     {
