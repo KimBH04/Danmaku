@@ -91,9 +91,10 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        Vector3 target = move * (
-            (
-                InGameInputHandler.Instance.IsSlowMoving ? speed : slowSpeed
+        Vector3 target = move * ((
+                InGameInputHandler.Instance.IsSlowMoving
+                ? slowSpeed
+                : speed
             ) * Time.fixedDeltaTime
         ) + (Vector2)transform.position;
 
