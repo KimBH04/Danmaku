@@ -1,5 +1,7 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "NewPlayer", menuName = "Player/Player")]
 public class PlayerData : ScriptableObject
 {
     [field: SerializeField]
@@ -16,4 +18,7 @@ public class PlayerData : ScriptableObject
 
     [field: SerializeField]
     public BurstData PlayerBurst { get; private set; }
+
+    [field: SerializeField]
+    public AnimatorController AniCon { get; private set; }
 }

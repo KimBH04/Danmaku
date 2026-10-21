@@ -2421,7 +2421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613eaab21f6abf14aa9a9f9611a55f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonFinder
-  sceneName: InGame
+  sceneName: LevelSelect
 --- !u!1 &2081296596
 GameObject:
   m_ObjectHideFlags: 0

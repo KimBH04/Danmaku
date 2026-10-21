@@ -66,20 +66,35 @@ public class GameManager : SingletonBehaviour<GameManager>
         SceneManager.LoadScene(sceneName);
     }
 
+    public void LoadSceneAdd(string sceneName)
+    {
+        pauseCount = 0;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+    }
+
     public IEnumerator LoadInGameScene(LevelData level, PlayerData player)
     {
         const string INGAME = "InGame";
         var loadingScene = SceneManager.LoadSceneAsync(INGAME);
-        loadingScene.allowSceneActivation = false;
         yield return loadingScene;
 
         Scene gameScene = SceneManager.GetSceneByName(INGAME);
         var runnerObj = (GameObject)Instantiate(new GameObject("Runner"), gameScene);
         var playerObj = (GameObject)Instantiate(new GameObject("Player"), gameScene);
 
-        runnerObj.AddComponent<LevelRunner>().Initialize(level);
-        playerObj.AddComponent<PlayerController>().Initialize(player);
-        playerObj.AddComponent<PlayerAnimation>();
+        runnerObj
+            .AddComponent<LevelRunner>()
+            .Initialize(level);
+
+        playerObj
+            .AddComponent<PlayerController>()
+            .Initialize(player);
+
+        playerObj
+            .AddComponent<PlayerAnimation>()
+            .GetComponent<Animator>()
+            .runtimeAnimatorController = player.AniCon;
     }
 
     public void OpenOptionPanel()

@@ -11,6 +11,6 @@ public class ButtonFinder : MonoBehaviour
     private void Start()
     {
         btn = GetComponent<Button>();
-        btn.onClick.AddListener(() => GameManager.Instance.LoadScene(sceneName));
+        btn.onClick.AddListener(() => GameManager.Instance.LoadSceneAdd(sceneName));
     }
 }
