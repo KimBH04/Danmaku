@@ -2,17 +2,10 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerData data;
-
-    [field: SerializeField, FormerlySerializedAs("deadzoneMinTr")]
-    public Transform DeadzoneMinTr { get; private set; }
-
-    [field: SerializeField, FormerlySerializedAs("deadzoneMaxTr")]
-    public Transform DeadzoneMaxTr { get; private set; }
 
     private float speed;
     private float slowSpeed;
@@ -44,16 +37,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if (DeadzoneMinTr != null && DeadzoneMaxTr != null)
-        {
-            Vector2 min = DeadzoneMinTr.position;
-            Vector2 max = DeadzoneMaxTr.position;
-            deadzone = Rect.MinMaxRect(min.x, min.y, max.x, max.y);
-        }
-        else
-        {
-            Debug.LogWarning("[Player] 데드존 트랜스폼이 연결되지 않았습니다.", this);
-        }
+        var deadzoneTr = GameObject.Find("Deadzone").transform;
+        Vector2 min = deadzoneTr.Find("Min").position;
+        Vector2 max = deadzoneTr.Find("Max").position;
+        deadzone = Rect.MinMaxRect(min.x, min.y, max.x, max.y);
 
         InGameInputHandler.Instance.OnMove += Move;
         InGameInputHandler.Instance.OnUseBomb += Bomb;
