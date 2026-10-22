@@ -66,6 +66,14 @@ Most data fields are `[field: SerializeField]` auto-properties, serialized as `<
 - `BulletRenderer` draws `ActiveBullets` with `Graphics.DrawMeshInstanced`, batched per sprite in chunks of 1023, using a runtime copy of `04.Materials/Bullet01.mat` (shader `Custom/URP/Sprite Invert Multiply`). Meshes come from sprite vertices/UVs, so the tightly packed atlas `03.Textures/AtlasSet.spriteatlasv2` renders correctly. It only reads bullet data.
 - The game camera renders into `03.Textures/InGame.renderTexture`, shown in the UI (the gameplay view is not the screen directly).
 
+### Rules for authoring danmaku data
+
+When asked to create bullet/danmaku data:
+
+- Change only data assets (`Assets/Datas/`) and sequence scripts. **Never modify any other script** (`Bullet`, `BulletManager`, `Enemy`, …): any new movement must be solvable entirely inside a sequence.
+- A new sequence goes in `02.Scripts/Spell/Bullet/Sequence/`, inherits `BulletSequenceBase`, and keeps its `ISequenceRunner` as a **`private` nested class** inside the sequence class (as `DefaultSequence.DefaultRunner` does). Expose it only through `GetSequenceRunner()`.
+- Reusable runners must be shared to save memory: a runner with no state at all is a static singleton (`private static readonly … Singleton = new();`, returned from `GetSequenceRunner()`, as in `DefaultSequence`). A runner that only reads the SO's settings (no per-bullet state) can't be a static singleton since each asset has its own values — cache one per asset (a lazily created `[System.NonSerialized]` field on the sequence) and return that. Only runners holding per-bullet state (start frame, child runners, …) are created per call, as `AccelateSequence`/`SequenceBridge` do. Per-bullet data lives in `Bullet` (`Position`, `Velocity`, `Torque`, `Elapse`, `bulletColor`), never in a shared runner.
+
 ### Player / status / input
 
 - `StatusManager`: HP and power are `int`s in **hundredths** (`MAX_HP = MAX_POWER = 500` = 5.00; `UpdateHP`/`UpdatePower` and the `HP`/`Power` properties pass the value ÷100 as `float`), score, high score (`DataSaveLoad` → PlayerPrefs, only ever raised), exposed as `UnityEvent`s with C# `event` wrappers. `Hit()` fires `OnPlayerHit` at once (the player stops moving/firing and turns invincible). 18 frames later, unless `TryUsePower` (bomb, −100) / `TryUseSemiPower` (−50) cancelled it, HP drops by 100 and `OnPlayerDie` respawns the player at (0, −7) with 300 invincible frames — or, once HP goes **below 0** (0 is the last life), it's game over: save high score, pause, result panel, `OnGameOver`. `Initialize(hp, power)` (called from `PlayerController.Initialize`) only stores the values; `StatusManager.Start` applies them and pushes the initial UI values.
