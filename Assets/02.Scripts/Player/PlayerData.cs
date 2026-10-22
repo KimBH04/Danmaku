@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewPlayer", menuName = "Player/Player")]
@@ -28,5 +27,5 @@ public class PlayerData : ScriptableObject
     public SpellCard PlayerSpell { get; private set; }
 
     [field: SerializeField]
-    public AnimatorController AniCon { get; private set; }
+    public RuntimeAnimatorController AniCon { get; private set; }
 }
