@@ -4,7 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// 균일 격자(Uniform Grid) 공간분할로 탄환 충돌을 판정합니다.<br/>
-/// 탄환을 발사 주체(<see cref="BulletTag"/>)별 격자에 나누어 등록하고, 판정 시 주변 칸의 탄환만 검사합니다.<br/>
+/// 탄환을 태그(<see cref="BulletTag"/>: 적 탄 / 플레이어 탄 / 아이템)별 격자에 나누어 등록하고, 판정 시 주변 칸의 탄환만 검사합니다.<br/>
 /// 격자는 <see cref="Rebuild"/>를 호출한 시점의 탄환 상태로 만들어지므로, 탄환 이동이 끝난 뒤 매 프레임 갱신해야 합니다.
 /// </summary>
 public static class BulletCollision
@@ -127,7 +127,7 @@ public static class BulletCollision
     /// 원형 엔티티가 탄환과 충돌했는지 판정합니다.
     /// </summary>
     /// <param name="position">엔티티 위치</param>
-    /// <param name="tag">검사할 탄환의 발사 주체. 엔티티가 Enemy라면 <see cref="BulletTag.Player"/>, Player라면 <see cref="BulletTag.Enemy"/></param>
+    /// <param name="tag">검사할 탄환의 태그 (쏜 쪽). <see cref="BulletTag.Player"/> = 플레이어가 쏜 탄 (적의 피격 판정), <see cref="BulletTag.Enemy"/> = 적이 쏜 탄 (플레이어의 피격 판정), <see cref="BulletTag.Item"/> = 아이템</param>
     /// <param name="radius">엔티티 판정 반지름</param>
     public static bool Check(Vector2 position, BulletTag tag, float radius)
     {
@@ -172,7 +172,7 @@ public static class BulletCollision
     /// 원형 엔티티와 충돌한 탄환을 모두 찾습니다.
     /// </summary>
     /// <param name="position">엔티티 위치</param>
-    /// <param name="tag">검사할 탄환의 발사 주체. 엔티티가 Enemy라면 <see cref="BulletTag.Player"/>, Player라면 <see cref="BulletTag.Enemy"/></param>
+    /// <param name="tag">검사할 탄환의 태그 (쏜 쪽). <see cref="BulletTag.Player"/> = 플레이어가 쏜 탄 (적의 피격 판정), <see cref="BulletTag.Enemy"/> = 적이 쏜 탄 (플레이어의 피격 판정), <see cref="BulletTag.Item"/> = 아이템</param>
     /// <param name="radius">엔티티 판정 반지름</param>
     /// <param name="results">충돌 탄환을 담을 리스트 (호출 시 비워집니다)</param>
     /// <returns>충돌한 탄환 수</returns>
