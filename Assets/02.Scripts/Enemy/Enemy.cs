@@ -9,13 +9,12 @@ public class Enemy : MonoBehaviour
 
     private Coroutine burstChainCoroutine;
 
-    private int elapse;
-
     protected int enemyHP;
     protected int maxHP;
 
     // EnemyBoss.BossAlive가 사용 (사망 처리가 시작되면 true)
     protected bool isDead;
+    protected bool isBurstDone = false;
 
     private new SpriteRenderer renderer;
 
@@ -28,7 +27,6 @@ public class Enemy : MonoBehaviour
 
     public virtual void Initialize(EnemyPattern enemyPattern)
     {
-        elapse = 0;
         isDead = false;
 
         pattern = enemyPattern;
@@ -45,38 +43,52 @@ public class Enemy : MonoBehaviour
     public void StartPattern()
     {
         StartCoroutine(Run());
-        StartCoroutine(Timer());
 
         IEnumerator Run()
         {
             int wait = pattern.WaitForFirstBurstFrame;
             foreach (var spell in pattern.Spells)
             {
+                enemyHP = maxHP = spell.PresentHP;
+
                 if (wait > 0)
                 {
                     yield return new WaitForFixedFrame(wait);
                 }
 
-                enemyHP = maxHP = spell.PresentHP;
                 OnSpellStart();     // EnemyBoss가 체력바를 채우는 데 사용
+                int elapse = 0;
+                int timeLimit = spell.TimeLimit;
                 do
                 {
-                    burstChainCoroutine = BulletManager.Instance.BurstChain(spell.Bursts, transform);
-                    yield return burstChainCoroutine;
+                    burstChainCoroutine = BulletManager.Instance.BurstChain(
+                        spell.Bursts,
+                        transform,
+                        () => isBurstDone = true
+                    );
+
+                    while (!isBurstDone && burstChainCoroutine != null)
+                    {
+                        if (elapse++ >= timeLimit || enemyHP <= 0)
+                        {
+                            if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
+                            {
+                                BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
+                            }
+                            break;
+                        }
+
+                        yield return GameManager.WaitForFixedUpdate;
+                    }
+
+                    burstChainCoroutine = null;
+                    isBurstDone = false;
                 }
-                while ((uint)spell.TimeLimit >= elapse && enemyHP > 0);
+                while (elapse < timeLimit && enemyHP > 0);
             }
 
             isDead = true;
             OnDie();
-        }
-
-        IEnumerator Timer()
-        {
-            for (elapse = 0; ; elapse++)
-            {
-                yield return GameManager.WaitForFixedUpdate;
-            }
         }
     }
 
@@ -99,20 +111,34 @@ public class Enemy : MonoBehaviour
             return;
         }
 
+        HitCheck();
+    }
+
+    private void HitCheck()
+    {
+        if (isDead)
+        {
+            return;
+        }
+
         if (BulletCollision.Check(transform.position, BulletTag.Player, pattern.Body.Distance, out var bullet))
         {
+            enemyHP--;
+
             bullet.IsAlive = false;
             OnHit?.Invoke();
 
-            if (--enemyHP == 0)
+            if (enemyHP <= 0)
             {
                 if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
                 {
                     BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
+                    burstChainCoroutine = null;
+                    isBurstDone = true;
                 }
 
-                isDead = true;
-                OnDie();
+                // isDead = true;
+                // OnDie();
             }
         }
     }
@@ -120,7 +146,6 @@ public class Enemy : MonoBehaviour
     private void OnDisable()
     {
         pattern = default;
-        elapse = 0;
         if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
         {
             BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
@@ -133,7 +158,6 @@ public class Enemy : MonoBehaviour
     private void OnDestroy()
     {
         pattern = default;
-        elapse = 0;
         if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
         {
             BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
@@ -141,5 +165,20 @@ public class Enemy : MonoBehaviour
         }
         StopAllCoroutines();
         OnHit = null;
+    }
+
+    private class BurstYieldInstruntion : IEnumerator
+    {
+        public object Current => throw new System.NotImplementedException();
+
+        public bool MoveNext()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Reset()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

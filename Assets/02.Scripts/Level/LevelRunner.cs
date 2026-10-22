@@ -35,5 +35,6 @@ public class LevelRunner : MonoBehaviour
 
         runner = new GameObject("Runner").AddComponent<StageRunner>();
         runner.OnStageEnd += StartLevel;
+        StartLevel();
     }
 }

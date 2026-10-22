@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Pool;
 using UnityEngine.Serialization;
 
@@ -60,7 +61,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
     public Coroutine BulletPatternChain(IEnumerable<BulletPattern> patterns, Transform presenter) =>
         StartCoroutine(SpawnBulletChain(patterns, presenter));
 
-    public Coroutine BurstChain(IEnumerable<BurstData> bursts, Transform presenter)
+    public Coroutine BurstChain(IEnumerable<BurstData> bursts, Transform presenter, UnityAction onEnd)
     {
         return StartCoroutine(Chain());
 
@@ -85,6 +86,8 @@ public class BulletManager : SingletonBehaviour<BulletManager>
                     yield return new WaitForFixedFrame(burst.WaitForFrame);
                 }
             }
+
+            onEnd?.Invoke();
         }
     }
 

@@ -8,7 +8,7 @@ public class BulletTest : MonoBehaviour
     {
         foreach (var spell in spellCards)
         {
-            BulletManager.Instance.BurstChain(spell.Bursts, transform);
+            BulletManager.Instance.BurstChain(spell.Bursts, transform, null);
         }
     }
 }
