@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5657747ca4e67b89e131712c9abbde, type: 3}
   m_Name: Esay
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  stages: []
+  stages:
+  - {fileID: 11400000, guid: 7b622d0e06045414b8f11218b97ee1c0, type: 2}
