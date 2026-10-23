@@ -18,7 +18,7 @@ MonoBehaviour:
     \uC62E\uACA8 \uB2E4\uB2C8\uBA70 Radial12_Spin_3Types\uB97C 1.5\uCD08 \uAC04\uACA9\uC73C\uB85C
     \uC138 \uBC88 \uC3DC \uB4A4, 5\uCD08 \uB3D9\uC548 \uD654\uBA74 \uC911\uC559\uC73C\uB85C
     \uC774\uB3D9\uD574 Swirl_Tangent\uB97C 15\uCD08 \uB3D9\uC548 \uC3DF\uC544\uB0B8\uB2E4."
-  <PresentHP>k__BackingField: 500
+  <PresentHP>k__BackingField: 200
   <TimeLimit>k__BackingField: 3600
   bursts:
   - {fileID: 11400000, guid: 30931958e1684e4e8466b479a5f7562a, type: 2}
