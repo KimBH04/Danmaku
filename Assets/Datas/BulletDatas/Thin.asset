@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Thin
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
   <Type>k__BackingField: 0
-  <Tag>k__BackingField: 0
+  <Tag>k__BackingField: 1
   <BulletImage>k__BackingField: {fileID: 21300000, guid: 63454fb950e68c445bbceaf4661af86e, type: 3}
   <Distance>k__BackingField: 0.13

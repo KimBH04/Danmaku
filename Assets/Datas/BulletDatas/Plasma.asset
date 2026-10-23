@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Plasma
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
   <Type>k__BackingField: 0
-  <Tag>k__BackingField: 0
+  <Tag>k__BackingField: 1
   <BulletImage>k__BackingField: {fileID: 21300000, guid: fbb1c4f715e3d8948a42d0f470133e51, type: 3}
   <Distance>k__BackingField: 1.6666666

@@ -4,7 +4,8 @@ using UnityEngine;
 
 /// <summary>
 /// 균일 격자(Uniform Grid) 공간분할로 탄환 충돌을 판정합니다.<br/>
-/// 탄환을 태그(<see cref="BulletTag"/>: 적 탄 / 플레이어 탄 / 아이템)별 격자에 나누어 등록하고, 판정 시 주변 칸의 탄환만 검사합니다.<br/>
+/// 탄환을 태그(<see cref="BulletTag"/>) 비트별 격자에 나누어 등록하고, 판정 시 주변 칸의 탄환만 검사합니다.<br/>
+/// 비트가 여러 개 켜진 태그의 탄환은 해당하는 모든 격자에 등록되고, 판정 태그에 비트가 여러 개면 해당 격자를 모두 검사합니다.<br/>
 /// 격자는 <see cref="Rebuild"/>를 호출한 시점의 탄환 상태로 만들어지므로, 탄환 이동이 끝난 뒤 매 프레임 갱신해야 합니다.
 /// </summary>
 public static class BulletCollision
@@ -12,7 +13,7 @@ public static class BulletCollision
     public const float DefaultCellSize = 1f;
 
     /// <summary>
-    /// 태그 하나에 대한 격자.<br/>
+    /// 태그 비트 하나에 대한 격자.<br/>
     /// 칸마다 List를 두지 않고 카운팅 정렬로 한 배열에 모아 저장합니다. (갱신 시 할당 없음)
     /// </summary>
     private class Grid
@@ -23,7 +24,8 @@ public static class BulletCollision
         public int[] entries = new int[256];
     }
 
-    private static readonly Grid[] grids = new Grid[Enum.GetValues(typeof(BulletTag)).Length];
+    // grids[i] = 비트 (1 << i)의 격자
+    private static readonly Grid[] grids = new Grid[GetBitCount()];
 
     private static IReadOnlyList<Bullet> source;
     private static Vector2 origin;
@@ -74,16 +76,22 @@ public static class BulletCollision
         int count = bullets.Count;
         for (int i = 0; i < count; i++)
         {
-            if (!TryGetCellRange(bullets[i], out var grid, out var min, out var max))
+            if (!TryGetCellRange(bullets[i], out int tag, out var min, out var max))
             {
                 continue;
             }
 
-            for (int y = min.y; y <= max.y; y++)
+            for (int g = 0; g < grids.Length; g++)
             {
-                for (int x = min.x; x <= max.x; x++)
+                if ((tag & (1 << g)) == 0) continue;
+
+                var grid = grids[g];
+                for (int y = min.y; y <= max.y; y++)
                 {
-                    grid.cellStart[y * columns + x + 1]++;
+                    for (int x = min.x; x <= max.x; x++)
+                    {
+                        grid.cellStart[y * columns + x + 1]++;
+                    }
                 }
             }
         }
@@ -108,16 +116,22 @@ public static class BulletCollision
         // 3) 칸에 탄환 인덱스 채우기
         for (int i = 0; i < count; i++)
         {
-            if (!TryGetCellRange(bullets[i], out var grid, out var min, out var max))
+            if (!TryGetCellRange(bullets[i], out int tag, out var min, out var max))
             {
                 continue;
             }
 
-            for (int y = min.y; y <= max.y; y++)
+            for (int g = 0; g < grids.Length; g++)
             {
-                for (int x = min.x; x <= max.x; x++)
+                if ((tag & (1 << g)) == 0) continue;
+
+                var grid = grids[g];
+                for (int y = min.y; y <= max.y; y++)
                 {
-                    grid.entries[grid.cursor[y * columns + x]++] = i;
+                    for (int x = min.x; x <= max.x; x++)
+                    {
+                        grid.entries[grid.cursor[y * columns + x]++] = i;
+                    }
                 }
             }
         }
@@ -127,7 +141,7 @@ public static class BulletCollision
     /// 원형 엔티티가 탄환과 충돌했는지 판정합니다.
     /// </summary>
     /// <param name="position">엔티티 위치</param>
-    /// <param name="tag">검사할 탄환의 태그 (쏜 쪽). <see cref="BulletTag.Player"/> = 플레이어가 쏜 탄 (적의 피격 판정), <see cref="BulletTag.Enemy"/> = 적이 쏜 탄 (플레이어의 피격 판정), <see cref="BulletTag.Item"/> = 아이템</param>
+    /// <param name="tag">검사할 탄환의 태그 (쏜 쪽). <see cref="BulletTag.Player"/> = 플레이어가 쏜 탄 (적의 피격 판정), <see cref="BulletTag.Enemy"/> = 적이 쏜 탄 (플레이어의 피격 판정), <see cref="BulletTag.Item"/> = 아이템 (Power | Score). 비트가 여러 개면 모두 검사합니다.</param>
     /// <param name="radius">엔티티 판정 반지름</param>
     public static bool Check(Vector2 position, BulletTag tag, float radius)
     {
@@ -144,22 +158,27 @@ public static class BulletCollision
             return false;
         }
 
-        var grid = grids[(int)tag];
         var min = ToCell(position - new Vector2(radius, radius));
         var max = ToCell(position + new Vector2(radius, radius));
 
-        for (int y = min.y; y <= max.y; y++)
+        for (int g = 0; g < grids.Length; g++)
         {
-            for (int x = min.x; x <= max.x; x++)
+            if (((int)tag & (1 << g)) == 0) continue;
+
+            var grid = grids[g];
+            for (int y = min.y; y <= max.y; y++)
             {
-                int cell = y * columns + x;
-                for (int e = grid.cellStart[cell]; e < grid.cellStart[cell + 1]; e++)
+                for (int x = min.x; x <= max.x; x++)
                 {
-                    var bullet = source[grid.entries[e]];
-                    if (Overlaps(bullet, position, radius))
+                    int cell = y * columns + x;
+                    for (int e = grid.cellStart[cell]; e < grid.cellStart[cell + 1]; e++)
                     {
-                        hit = bullet;
-                        return true;
+                        var bullet = source[grid.entries[e]];
+                        if (Overlaps(bullet, position, radius))
+                        {
+                            hit = bullet;
+                            return true;
+                        }
                     }
                 }
             }
@@ -172,7 +191,7 @@ public static class BulletCollision
     /// 원형 엔티티와 충돌한 탄환을 모두 찾습니다.
     /// </summary>
     /// <param name="position">엔티티 위치</param>
-    /// <param name="tag">검사할 탄환의 태그 (쏜 쪽). <see cref="BulletTag.Player"/> = 플레이어가 쏜 탄 (적의 피격 판정), <see cref="BulletTag.Enemy"/> = 적이 쏜 탄 (플레이어의 피격 판정), <see cref="BulletTag.Item"/> = 아이템</param>
+    /// <param name="tag">검사할 탄환의 태그 (쏜 쪽). <see cref="BulletTag.Player"/> = 플레이어가 쏜 탄 (적의 피격 판정), <see cref="BulletTag.Enemy"/> = 적이 쏜 탄 (플레이어의 피격 판정), <see cref="BulletTag.Item"/> = 아이템 (Power | Score). 비트가 여러 개면 모두 검사합니다.</param>
     /// <param name="radius">엔티티 판정 반지름</param>
     /// <param name="results">충돌 탄환을 담을 리스트 (호출 시 비워집니다)</param>
     /// <returns>충돌한 탄환 수</returns>
@@ -184,23 +203,28 @@ public static class BulletCollision
             return 0;
         }
 
-        var grid = grids[(int)tag];
         var min = ToCell(position - new Vector2(radius, radius));
         var max = ToCell(position + new Vector2(radius, radius));
 
-        for (int y = min.y; y <= max.y; y++)
+        for (int g = 0; g < grids.Length; g++)
         {
-            for (int x = min.x; x <= max.x; x++)
-            {
-                int cell = y * columns + x;
-                for (int e = grid.cellStart[cell]; e < grid.cellStart[cell + 1]; e++)
-                {
-                    var bullet = source[grid.entries[e]];
+            if (((int)tag & (1 << g)) == 0) continue;
 
-                    // 여러 칸에 걸친 탄환(레이저 등)의 중복 추가 방지
-                    if (Overlaps(bullet, position, radius) && !results.Contains(bullet))
+            var grid = grids[g];
+            for (int y = min.y; y <= max.y; y++)
+            {
+                for (int x = min.x; x <= max.x; x++)
+                {
+                    int cell = y * columns + x;
+                    for (int e = grid.cellStart[cell]; e < grid.cellStart[cell + 1]; e++)
                     {
-                        results.Add(bullet);
+                        var bullet = source[grid.entries[e]];
+
+                        // 여러 칸·여러 격자에 걸친 탄환(레이저, 비트가 여러 개인 태그)의 중복 추가 방지
+                        if (Overlaps(bullet, position, radius) && !results.Contains(bullet))
+                        {
+                            results.Add(bullet);
+                        }
                     }
                 }
             }
@@ -212,16 +236,16 @@ public static class BulletCollision
     /// <summary>
     /// 탄환이 차지하는 영역(AABB)이 걸치는 칸 범위를 구합니다.
     /// </summary>
-    private static bool TryGetCellRange(Bullet bullet, out Grid grid, out Vector2Int min, out Vector2Int max)
+    private static bool TryGetCellRange(Bullet bullet, out int tag, out Vector2Int min, out Vector2Int max)
     {
-        grid = null;
+        tag = 0;
         min = max = default;
-        if (bullet == null || !bullet.IsAlive || bullet.Data == null)
+        if (bullet == null || !bullet.IsAlive || bullet.Data == null || bullet.Data.Tag == 0)
         {
             return false;
         }
 
-        grid = grids[(int)bullet.Data.Tag];
+        tag = (int)bullet.Data.Tag;
 
         if (bullet.Data.Type == BulletType.Laser)
         {
@@ -237,6 +261,26 @@ public static class BulletCollision
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// <see cref="BulletTag"/>에 쓰인 비트 수 (가장 높은 비트 위치 + 1)
+    /// </summary>
+    private static int GetBitCount()
+    {
+        int all = 0;
+        foreach (BulletTag value in Enum.GetValues(typeof(BulletTag)))
+        {
+            all |= (int)value;
+        }
+
+        int count = 0;
+        while (all >> count != 0)
+        {
+            count++;
+        }
+
+        return count;
     }
 
     private static bool Overlaps(Bullet bullet, Vector2 position, float radius)

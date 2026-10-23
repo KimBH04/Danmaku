@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Power
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
   <Type>k__BackingField: 0
-  <Tag>k__BackingField: 2
+  <Tag>k__BackingField: 4
   <BulletImage>k__BackingField: {fileID: 21300000, guid: 8f26a9da3b72c0549815dc8574bf1551, type: 3}
   <Distance>k__BackingField: 1
