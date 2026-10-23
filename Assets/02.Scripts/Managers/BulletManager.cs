@@ -8,6 +8,12 @@ using UnityEngine.Serialization;
 
 public class BulletManager : SingletonBehaviour<BulletManager>
 {
+    [field: SerializeField]
+    public BulletPattern PowerItemPattern { get; private set; }
+
+    [field: SerializeField]
+    public BulletPattern ScoreItemPattern { get; private set; }
+
     [field: SerializeField, FormerlySerializedAs("deadzoneMinTr")]
     public Transform DeadzoneMinTr { get; private set; }
 
@@ -56,6 +62,16 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         bullet.Start();
 
         activeBullets.Add(bullet);
+    }
+
+    public void SpawnPowerItem(Transform presenter)
+    {
+        SpawnBullet(PowerItemPattern, presenter);
+    }
+
+    public void SpawnScoreItem(Transform presenter)
+    {
+        SpawnBullet(ScoreItemPattern, presenter);
     }
 
     public Coroutine BulletPatternChain(IEnumerable<BulletPattern> patterns, Transform presenter) =>

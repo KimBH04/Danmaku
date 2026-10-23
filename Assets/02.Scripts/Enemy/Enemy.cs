@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     private Coroutine burstChainCoroutine;
 
     protected int enemyHP;
-    protected int maxHP;
+    protected int maxHP = 1;
 
     // EnemyBoss.BossAlive가 사용 (사망 처리가 시작되면 true)
     protected bool isDead;
@@ -50,16 +50,16 @@ public class Enemy : MonoBehaviour
             foreach (var spell in pattern.Spells)
             {
                 enemyHP = maxHP = spell.PresentHP;
+                OnSpellStart();     // EnemyBoss가 체력바를 채우는 데 사용
 
                 if (wait > 0)
                 {
                     yield return new WaitForFixedFrame(wait);
                 }
 
-                OnSpellStart();     // EnemyBoss가 체력바를 채우는 데 사용
                 int elapse = 0;
                 int timeLimit = spell.TimeLimit;
-                do
+                for (;;)
                 {
                     burstChainCoroutine = BulletManager.Instance.BurstChain(
                         spell.Bursts,
@@ -69,22 +69,39 @@ public class Enemy : MonoBehaviour
 
                     while (!isBurstDone && burstChainCoroutine != null)
                     {
-                        if (elapse++ >= timeLimit || enemyHP <= 0)
+                        bool isTimeOut = elapse++ >= timeLimit;
+                        bool isDead = enemyHP <= 0;
+                        if (!isTimeOut && !isDead)
                         {
-                            if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
-                            {
-                                BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
-                            }
-                            break;
+                            yield return GameManager.WaitForFixedUpdate;
+                            continue;
                         }
 
-                        yield return GameManager.WaitForFixedUpdate;
+                        if (burstChainCoroutine != null && BulletManager.ExistingInstance != null)
+                        {
+                            BulletManager.ExistingInstance.StopCoroutine(burstChainCoroutine);
+                        }
+                        
+                        if (isTimeOut)
+                        {
+                            goto TimeOut;
+                        }
+                        
+                        if (isDead)
+                        {
+                            goto Dead;
+                        }
                     }
 
                     burstChainCoroutine = null;
                     isBurstDone = false;
                 }
-                while (elapse < timeLimit && enemyHP > 0);
+            Dead:
+                StartCoroutine(ItemFirework(pattern));
+                continue;
+
+            TimeOut:;
+
             }
 
             isDead = true;
@@ -112,6 +129,22 @@ public class Enemy : MonoBehaviour
         }
 
         HitCheck();
+    }
+
+    private IEnumerator ItemFirework(EnemyPattern pattern)
+    {
+        int p = pattern.DropPowerCount;
+        int s = pattern.DropScoreCount;
+        while (p-- > 0)
+        {
+            BulletManager.Instance.SpawnPowerItem(transform);
+            yield return GameManager.WaitForFixedUpdate;
+        }
+        while (s-- > 0)
+        {
+            BulletManager.Instance.SpawnScoreItem(transform);
+            yield return GameManager.WaitForFixedUpdate;
+        }
     }
 
     private void HitCheck()

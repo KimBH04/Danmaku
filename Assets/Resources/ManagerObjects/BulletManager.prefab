@@ -77,6 +77,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae51eefc58274e48b512823d96bd586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletManager
+  <PowerItemPattern>k__BackingField:
+    <BulletData>k__BackingField: {fileID: 11400000, guid: b38776bc3fe6ad4458b325149d9ff9fb, type: 2}
+    <InitialBullet>k__BackingField:
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <InitialPosition>k__BackingField: {x: 0, y: 0}
+      <InitialVelocity>k__BackingField: {x: 0, y: 0}
+      <InitialTorqueDegree>k__BackingField: 0
+    <BulletSequence>k__BackingField: {fileID: 11400000, guid: 2285cfe3efc34000a861de0012d299bf, type: 2}
+    <WaitForFrame>k__BackingField: 0
+  <ScoreItemPattern>k__BackingField:
+    <BulletData>k__BackingField: {fileID: 11400000, guid: 5a83b0fcde53a20439c6c177ff59cae3, type: 2}
+    <InitialBullet>k__BackingField:
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <InitialPosition>k__BackingField: {x: 0, y: 0}
+      <InitialVelocity>k__BackingField: {x: 0, y: 0}
+      <InitialTorqueDegree>k__BackingField: 0
+    <BulletSequence>k__BackingField: {fileID: 11400000, guid: 2285cfe3efc34000a861de0012d299bf, type: 2}
+    <WaitForFrame>k__BackingField: 0
   <DeadzoneMinTr>k__BackingField: {fileID: 1053474646256587283}
   <DeadzoneMaxTr>k__BackingField: {fileID: 1018401638279089337}
 --- !u!1 &7580212697783559103

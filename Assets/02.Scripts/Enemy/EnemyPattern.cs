@@ -31,6 +31,12 @@ public struct EnemyPattern
     public Vector2 SpawnPosition { get; private set; }
 
     [field: SerializeField]
+    public int DropPowerCount { get; private set; }
+
+    [field: SerializeField]
+    public int DropScoreCount { get; private set; }
+
+    [field: SerializeField]
     public int WaitForFirstBurstFrame { get; private set; }
 
     public readonly IReadOnlyList<SpellCard> Spells => spells;

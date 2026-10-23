@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
     private bool alive = true;
     private bool isInvisibility = false;
 
+    private readonly List<Bullet> itemParts = new();
+
     private int atkCooldown = 0;
 
     public event UnityAction<int> OnInvisibility;
@@ -32,6 +35,7 @@ public class PlayerController : MonoBehaviour
         speed = data.Speed;
         slowSpeed = data.SlowSpeed;
         attacks = data.PlayerAttacks.ToArray();
+        power = data.InitialPower / 100;
         StatusManager.Instance.Initialize(data.InitialHP, data.InitialPower);
     }
 
@@ -109,6 +113,24 @@ public class PlayerController : MonoBehaviour
 
         usedBomb = false;
         usedSemiBomb = false;
+    }
+
+    private void InhaleItem()
+    {
+        int cnt = BulletCollision.CheckAll(transform.position, BulletTag.Item, 3f, itemParts);
+        for (int i = 0; i < cnt; i++)
+        {
+            var bullet = itemParts[i];
+            var vel = (Vector2)transform.position - bullet.Position;
+            if (vel.sqrMagnitude <= 0.2f)
+            {
+                bullet.IsAlive = false;
+                StatusManager.Instance.AddPower(10);
+                continue;
+            }
+
+            bullet.Velocity = vel.normalized * 0.2f;
+        }
     }
 
     private void Move(Vector2 m)
