@@ -7,6 +7,9 @@ public struct BulletPattern
     [field: SerializeField, FormerlySerializedAs("bulletData")]
     public BulletData BulletData { get; private set; }
 
+    [field: SerializeField]
+    public int Damage { get; private set; }
+
     [field: SerializeField, FormerlySerializedAs("initialBullet")]
     public InitialBullet InitialBullet { get; private set; }
 

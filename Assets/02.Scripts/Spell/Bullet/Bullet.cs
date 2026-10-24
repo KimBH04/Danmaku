@@ -9,6 +9,7 @@ public class Bullet
     public Vector2 Position;
     public Vector2 Velocity;
     public float Torque;
+    public int Damage { get; private set; }
 
     public bool IsAlive = true;
     public int Elapse { get; private set; }
@@ -24,6 +25,7 @@ public class Bullet
         Position    = bulletData.InitialPosition + presenterPosition;
         Velocity    = bulletData.InitialVelocity;
         Torque      = bulletData.InitialTorqueDegree * Mathf.Deg2Rad;
+        Damage = pattern.Damage;
 
         IsAlive = true;
         Elapse = 0;

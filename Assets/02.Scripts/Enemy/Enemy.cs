@@ -156,7 +156,7 @@ public class Enemy : MonoBehaviour
 
         if (BulletCollision.Check(transform.position, BulletTag.Player, pattern.Body.Distance, out var bullet))
         {
-            enemyHP--;
+            enemyHP -= bullet.Damage;
 
             bullet.IsAlive = false;
             OnHit?.Invoke();
