@@ -395,7 +395,13 @@ MonoBehaviour:
   updateHighScore:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerHit:
+    m_PersistentCalls:
+      m_Calls: []
   onPlayerDie:
+    m_PersistentCalls:
+      m_Calls: []
+  onGameOver:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &517216108
@@ -511,6 +517,9 @@ MonoBehaviour:
   bossStatusUIObj: {fileID: 0}
   bossNameText: {fileID: 0}
   bossHPImg: {fileID: 0}
+  resultPanelObj: {fileID: 0}
+  resultScoreText: {fileID: 0}
+  resultHighScoreText: {fileID: 0}
 --- !u!4 &901179999
 Transform:
   m_ObjectHideFlags: 0
@@ -599,6 +608,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dae51eefc58274e48b512823d96bd586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletManager
+  <PowerItemPattern>k__BackingField:
+    <BulletData>k__BackingField: {fileID: 0}
+    <InitialBullet>k__BackingField:
+      <BulletColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+      <InitialPosition>k__BackingField: {x: 0, y: 0}
+      <InitialVelocity>k__BackingField: {x: 0, y: 0}
+      <InitialTorqueDegree>k__BackingField: 0
+    <BulletSequence>k__BackingField: {fileID: 0}
+    <WaitForFrame>k__BackingField: 0
+  <ScoreItemPattern>k__BackingField:
+    <BulletData>k__BackingField: {fileID: 0}
+    <InitialBullet>k__BackingField:
+      <BulletColor>k__BackingField: {r: 0, g: 0, b: 0, a: 0}
+      <InitialPosition>k__BackingField: {x: 0, y: 0}
+      <InitialVelocity>k__BackingField: {x: 0, y: 0}
+      <InitialTorqueDegree>k__BackingField: 0
+    <BulletSequence>k__BackingField: {fileID: 0}
+    <WaitForFrame>k__BackingField: 0
   <DeadzoneMinTr>k__BackingField: {fileID: 886858740}
   <DeadzoneMaxTr>k__BackingField: {fileID: 547734368}
 --- !u!4 &1047814542
@@ -1042,11 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5853dd59aeee647a06b827d0c2d458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  <Speed>k__BackingField: 1
-  <LowSpeedMagnification>k__BackingField: 0.7
-  <Radius>k__BackingField: 0.5
-  <DeadzoneMinTr>k__BackingField: {fileID: 886858740}
-  <DeadzoneMaxTr>k__BackingField: {fileID: 547734368}
+  data: {fileID: 0}
 --- !u!4 &1822433138
 Transform:
   m_ObjectHideFlags: 0
@@ -1248,6 +1271,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3113831699760317100, guid: 3df09a33b735fa742baca144f2e64beb, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113831699760317100, guid: 3df09a33b735fa742baca144f2e64beb, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113831699760317100, guid: 3df09a33b735fa742baca144f2e64beb, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3607895529557949777, guid: 3df09a33b735fa742baca144f2e64beb, type: 3}
       propertyPath: m_Name
       value: BossPrefab
@@ -1268,6 +1303,22 @@ PrefabInstance:
     - target: {fileID: 451687568298623106, guid: 5e9d8df3583b6014389cb85eb7f9768d, type: 3}
       propertyPath: m_Name
       value: EnemyPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016501201372116325, guid: 5e9d8df3583b6014389cb85eb7f9768d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7106107631447259969, guid: e9ba9f7e1a581a145bee50d9c7d6ceb3, type: 3}
+    - target: {fileID: 1016501201372116325, guid: 5e9d8df3583b6014389cb85eb7f9768d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016501201372116325, guid: 5e9d8df3583b6014389cb85eb7f9768d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016501201372116325, guid: 5e9d8df3583b6014389cb85eb7f9768d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.26302862
       objectReference: {fileID: 0}
     - target: {fileID: 6520438189982192528, guid: 5e9d8df3583b6014389cb85eb7f9768d, type: 3}
       propertyPath: m_LocalPosition.x

@@ -26,26 +26,36 @@ public class EnemyManager : SingletonBehaviour<EnemyManager>
         maxSize: 100
     );
 
+    private void Start()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            enemyPool.Release(
+                Instantiate(enemyObj)
+                    .GetComponent<Enemy>()
+            );
+        }
+    }
+
     public Enemy SpawnEnemy(EnemyPattern enemyPattern)
     {
+        Enemy enemy;
         if (enemyPattern.Type == EnemyType.Common)
         {
-            var enemy = enemyPool.Get();
-            enemy.Initialize(enemyPattern);
-            enemy.StartPattern();
-
-            return enemy;
+            enemy = enemyPool.Get();
         }
         else
         {
             var boss = Instantiate(bossObj).GetComponent<EnemyBoss>();
-            boss.Initialize(enemyPattern);
-            boss.StartPattern();
-
             onRaiseBoss.Invoke(boss);
-
-            return boss;
+            enemy = boss;
         }
+
+        enemy.GetComponent<Animator>().runtimeAnimatorController = enemyPattern.AniCon;
+        enemy.Initialize(enemyPattern);
+        enemy.StartPattern();
+
+        return enemy;
     }
 
     public void ReleaseEnemy(Enemy enemy)

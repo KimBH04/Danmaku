@@ -25,6 +25,9 @@ public struct EnemyPattern
     [field: SerializeField]
     public BulletData Body { get; private set; }
 
+    [field: SerializeField]
+    public RuntimeAnimatorController AniCon { get; private set; }
+
     [SerializeField] private SpellCard[] spells;
 
     [field: SerializeField]
