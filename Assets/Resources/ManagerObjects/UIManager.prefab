@@ -3957,7 +3957,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3034913444637859206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4048,6 +4048,11 @@ MonoBehaviour:
   rSlowAbove: {fileID: 7726579567892659935}
   lBombAbove: {fileID: 6275974424220213194}
   rBombAbove: {fileID: 5388430263440289737}
+  bombButtons:
+  - {fileID: 979823624327544174}
+  - {fileID: 6973675530549610729}
+  - {fileID: 4265300895533475916}
+  - {fileID: 3537816070638453992}
 --- !u!1 &6220845113110192100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4880,7 +4885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4584775726510361293
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6443,7 +6448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1301716133806143236
 RectTransform:
   m_ObjectHideFlags: 0

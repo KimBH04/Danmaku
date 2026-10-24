@@ -36,6 +36,8 @@ public class UIManager : SingletonBehaviour<UIManager>
     [SerializeField] private GameObject lBombAbove;
     [SerializeField] private GameObject rBombAbove;
 
+    [SerializeField] private System.Collections.Generic.List<Button> bombButtons;
+
     private Tween runFillAmount = null;
 
     protected override void Awake()
@@ -51,6 +53,8 @@ public class UIManager : SingletonBehaviour<UIManager>
             status.UpdatePower += SetPowerSlider;
             status.UpdateCurrentScore += SetScoreText;
             status.UpdateHighScore += SetHighScoreText;
+
+            status.UpdatePower += p => bombButtons.ForEach(b => b.interactable = p >= 1f);
         }
     }
 
