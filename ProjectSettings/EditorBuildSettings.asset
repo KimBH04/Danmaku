@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/01.Scenes/Online/LevelSelect.unity
     guid: 6f81259b8c3bd564a84aa930b15cebcf
   - enabled: 1
+    path: Assets/01.Scenes/Online/Settings.unity
+    guid: 174cf99f4d29d78489f01ca654b89a99
+  - enabled: 1
     path: Assets/01.Scenes/Online/InGame.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:

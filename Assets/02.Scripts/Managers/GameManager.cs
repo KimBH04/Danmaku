@@ -24,10 +24,7 @@ public class GameManager : SingletonBehaviour<GameManager>
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
-    }
 
-    private void Start()
-    {
         DataSaveLoad.LoadSettings(out var settings);
         GameSettings = settings;
     }
@@ -76,8 +73,6 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     public void LoadSceneAdditive(string sceneName)
     {
-        pauseCount = 0;
-        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
 
@@ -106,13 +101,11 @@ public class GameManager : SingletonBehaviour<GameManager>
         playerObj.transform.position = new Vector3(0f, -7f);
     }
 
-    public void OpenSettingsPanel()
+    public void ApplySettings(Settings settings)
     {
-        
-    }
-
-    public void CloseSettingsPanel()
-    {
-        DataSaveLoad.SaveSettings(GameSettings);
+        if (DataSaveLoad.SaveSettings(settings))
+        {
+            GameSettings = settings;
+        }
     }
 }
