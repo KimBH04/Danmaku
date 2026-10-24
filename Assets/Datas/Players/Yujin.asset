@@ -18,10 +18,10 @@ MonoBehaviour:
   <InitialPower>k__BackingField: 200
   playerAttacks:
   - {fileID: 11400000, guid: a982f1c4aa3f4d67b58eb5c94de2e6f4, type: 2}
-  - {fileID: 11400000, guid: cfe500095ab54274886d3037805ed330, type: 2}
-  - {fileID: 11400000, guid: cfe500095ab54274886d3037805ed330, type: 2}
-  - {fileID: 11400000, guid: cfe500095ab54274886d3037805ed330, type: 2}
-  - {fileID: 11400000, guid: cfe500095ab54274886d3037805ed330, type: 2}
   - {fileID: 11400000, guid: 738b78d93bc74468bd16ca496372ea85, type: 2}
+  - {fileID: 11400000, guid: 738b78d93bc74468bd16ca496372ea85, type: 2}
+  - {fileID: 11400000, guid: dfc75242f6fa41c3a7320eab44f13222, type: 2}
+  - {fileID: 11400000, guid: dfc75242f6fa41c3a7320eab44f13222, type: 2}
+  - {fileID: 11400000, guid: cfe500095ab54274886d3037805ed330, type: 2}
   <PlayerSpell>k__BackingField: {fileID: 0}
   <AniCon>k__BackingField: {fileID: 9100000, guid: 1487ff49565369a4f8ba54db104c5265, type: 2}
