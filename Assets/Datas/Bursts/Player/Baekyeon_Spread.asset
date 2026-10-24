@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b719e80cc201b2a43b1bdfec3f134106, type: 3}
-  m_Name: l0
+  m_Name: Baekyeon_Spread
   m_EditorClassIdentifier: Assembly-CSharp::BurstData
   bulletPatterns:
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
