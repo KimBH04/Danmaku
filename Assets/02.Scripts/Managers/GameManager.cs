@@ -13,6 +13,8 @@ public class GameManager : SingletonBehaviour<GameManager>
 
     protected override bool IsPersistent => true;
 
+    public Settings GameSettings { get; private set; }
+
     protected override void Awake()
     {
         base.Awake();
@@ -22,6 +24,12 @@ public class GameManager : SingletonBehaviour<GameManager>
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
+    }
+
+    private void Start()
+    {
+        DataSaveLoad.LoadSettings(out var settings);
+        GameSettings = settings;
     }
 
     private void OnDestroy()
@@ -98,10 +106,13 @@ public class GameManager : SingletonBehaviour<GameManager>
         playerObj.transform.position = new Vector3(0f, -7f);
     }
 
-    public void OpenOptionPanel()
+    public void OpenSettingsPanel()
     {
         
     }
 
-    
+    public void CloseSettingsPanel()
+    {
+        DataSaveLoad.SaveSettings(GameSettings);
+    }
 }

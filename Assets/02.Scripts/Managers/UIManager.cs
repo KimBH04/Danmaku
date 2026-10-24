@@ -22,6 +22,20 @@ public class UIManager : SingletonBehaviour<UIManager>
     [SerializeField] private TMP_Text resultScoreText;
     [SerializeField] private TMP_Text resultHighScoreText;
 
+    [Header("Button Arrangement")]
+    [SerializeField] private GameObject leftHand;
+    [SerializeField] private GameObject rightHand;
+
+    [SerializeField] private GameObject lStick;
+    [SerializeField] private GameObject rStick;
+    [SerializeField] private GameObject lDpad;
+    [SerializeField] private GameObject rDpad;
+
+    [SerializeField] private GameObject lSlowAbove;
+    [SerializeField] private GameObject rSlowAbove;
+    [SerializeField] private GameObject lBombAbove;
+    [SerializeField] private GameObject rBombAbove;
+
     private Tween runFillAmount = null;
 
     protected override void Awake()
@@ -59,6 +73,24 @@ public class UIManager : SingletonBehaviour<UIManager>
         bossHPImg.fillAmount = 0f;
         bossStatusUIObj.SetActive(false);
         resultPanelObj.SetActive(false);
+
+        var settings = GameManager.Instance.GameSettings;
+
+        bool left = settings.Position == Settings.MovementInputPosition.Left;
+        leftHand.SetActive(left);
+        rightHand.SetActive(!left);
+
+        bool stick = settings.Mode == Settings.MovementInputMode.Stick;
+        lStick.SetActive(stick);
+        rStick.SetActive(stick);
+        lDpad.SetActive(!stick);
+        rDpad.SetActive(!stick);
+
+        bool slowUp = settings.Above == Settings.AboveButton.Slow;
+        lSlowAbove.SetActive(slowUp);
+        rSlowAbove.SetActive(slowUp);
+        lBombAbove.SetActive(!slowUp);
+        rBombAbove.SetActive(!slowUp);
     }
 
     /// <param name="hp">체력 소수 값 (0 ~ 5)</param>

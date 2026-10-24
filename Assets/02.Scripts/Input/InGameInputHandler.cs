@@ -10,11 +10,14 @@ public class InGameInputHandler : SingletonBehaviour<InGameInputHandler>
     public event UnityAction OnUseBomb;
     public event UnityAction OnUseSemiBomb;
     public event UnityAction<Vector2> OnSwipe;
+
+    [SerializeField] private UnityEvent<bool> IsMoving;
     
     public void InvokeOnMove(InputAction.CallbackContext context)
     {
         var move = context.ReadValue<Vector2>();
         OnMove?.Invoke(move);
+        IsMoving.Invoke(move.sqrMagnitude > 1e-2f);
     }
 
     public void InvokeOnUseBomb()

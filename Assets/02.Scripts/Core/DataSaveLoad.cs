@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 public static class DataSaveLoad
 {
     private const string HIGH_SOCRE_KEY = "HIGH_SCORE";
+    private const string OPTION_KEY = "OPT";
 
     private static readonly Lazy<string> API_URL = new(() => Resources.Load<TextAsset>("apiurl").text.Trim());
     private const int TRYCOUNT = 5;
@@ -22,6 +23,36 @@ public static class DataSaveLoad
             {
                 PlayerPrefs.SetInt(HIGH_SOCRE_KEY, value);
             }
+        }
+    }
+
+    public static bool SaveSettings(Settings settings)
+    {
+        try
+        {
+            string json = JsonConvert.SerializeObject(settings);
+            PlayerPrefs.SetString(OPTION_KEY, json);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public static bool LoadSettings(out Settings settings)
+    {
+        settings = Settings.Default;
+
+        try
+        {
+            string json = PlayerPrefs.GetString(OPTION_KEY);
+            settings = JsonConvert.DeserializeObject<Settings>(json);
+            return true;
+        }
+        catch
+        {
+            return false;
         }
     }
 
