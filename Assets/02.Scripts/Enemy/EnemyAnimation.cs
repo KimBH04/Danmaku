@@ -20,12 +20,13 @@ public class EnemyAnimation : MonoBehaviour
     private void FixedUpdate()
     {
         var move = transform.position - pre;
-        animator.SetInteger(HashRight, move.x switch
-        {
-            >  1e-4f =>  1,
-            < -1e-4f => -1,
-            _        =>  0,
-        });
+        if (animator.runtimeAnimatorController != null)
+            animator.SetInteger(HashRight, move.x switch
+            {
+                >  1e-4f =>  1,
+                < -1e-4f => -1,
+                _        =>  0,
+            });
 
         pre = transform.position;
     }
