@@ -20,6 +20,8 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     [SerializeField] private UnityEvent onPlayerHit;
 
+    [SerializeField] private UnityEvent onUseBomb;
+
     [SerializeField] private UnityEvent onPlayerDie;
 
     [SerializeField] private UnityEvent onGameOver;
@@ -54,6 +56,12 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         remove => onPlayerHit.RemoveListener(value);
     }
 
+    public event UnityAction OnUseBomb
+    {
+        add => onUseBomb.AddListener(value);
+        remove => onUseBomb.RemoveListener(value);
+    }
+
     public event UnityAction OnPlayerDie
     {
         add => onPlayerDie.AddListener(value);
@@ -76,10 +84,12 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     public static int TotalScore { get; private set; }
 
+    public bool IsPlayerDie => currentHP < 0;
+
     private Coroutine hitBombCoroutine = null;
 
-    private int initialHP;
-    private int initialPower;
+    private int initialHP = -1;
+    private int initialPower = -1;
 
     /// <summary>체력 소수 값 (currentHP / 100)</summary>
     public float HP => currentHP / 100f;
@@ -124,7 +134,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         TotalScore = currentScore;
     }
 
-    public void AddResultScore(int stageID)
+    public void CalculateResultScore(int stageID)
     {
         int hp = currentHP * 10;
         int power = currentPower * 10;
@@ -148,6 +158,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
             updateHP.Invoke(HP);
             hitBombCoroutine = null;
 
+            onPlayerDie.Invoke();
             if (currentHP < 0)
             {
                 GameOver();
@@ -155,9 +166,16 @@ public class StatusManager : SingletonBehaviour<StatusManager>
             }
             else
             {
-                onPlayerDie.Invoke();
+                currentPower = initialPower;
             }
         }
+    }
+
+    public void Retry()
+    {
+        Start();
+        GameManager.Instance.Resume();
+        FindFirstObjectByType<PlayerController>(FindObjectsInactive.Include).transform.position = new Vector3(0f, -7f);
     }
 
     private void Start()
@@ -165,6 +183,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         currentHP = Mathf.Clamp(initialHP, 0, MAX_HP);
         currentPower = Mathf.Clamp(initialPower, 0, MAX_POWER);
 
+        TotalScore = currentScore = 0;
         highScore = DataSaveLoad.HighScore;
 
         updateHP.Invoke(HP);
@@ -181,7 +200,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
     {
         SaveHighScore();
         GameManager.Instance.Pause();
-        UIManager.Instance.ResultBoardOn();
+        GameManager.Instance.LoadSceneAdditive("SummitScore");
     }
 
     /// <summary>
@@ -204,6 +223,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
         currentPower -= 100;
         updatePower.Invoke(Power);
+        onUseBomb.Invoke();
 
         if (hitBombCoroutine != null)
         {
@@ -223,6 +243,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
         currentPower -= 50;
         updatePower.Invoke(Power);
+        onUseBomb.Invoke();
 
         if (hitBombCoroutine != null)
         {

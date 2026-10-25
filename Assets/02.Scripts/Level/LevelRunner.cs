@@ -19,9 +19,14 @@ public class LevelRunner : MonoBehaviour
     {
         if (stageEnumerator.MoveNext())
         {
+            GameManager.Instance.Resume();
             StageData data = stageEnumerator.Current;
             runner.Initialize(data);
             runner.StartRun(); 
+        }
+        else    // 레벨 끝
+        {
+            GameManager.Instance.LoadSceneAdditive("SummitScore");
         }
     }
 
@@ -34,7 +39,6 @@ public class LevelRunner : MonoBehaviour
         }
 
         runner = new GameObject("Runner").AddComponent<StageRunner>();
-        runner.OnStageEnd += StartLevel;
         StartLevel();
     }
 }

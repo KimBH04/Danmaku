@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class ButtonFinder : MonoBehaviour
+public class LoadSceneProxy : MonoBehaviour
 {
     private Button btn;
 
@@ -11,6 +11,6 @@ public class ButtonFinder : MonoBehaviour
     private void Start()
     {
         btn = GetComponent<Button>();
-        btn.onClick.AddListener(() => GameManager.Instance.LoadSceneAdditive(sceneName));
+        btn.onClick.AddListener(() => GameManager.Instance.LoadScene(sceneName));
     }
 }

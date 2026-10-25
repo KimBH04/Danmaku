@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   stages:
   - {fileID: 11400000, guid: 7b622d0e06045414b8f11218b97ee1c0, type: 2}
+  - {fileID: 11400000, guid: 7b622d0e06045414b8f11218b97ee1c0, type: 2}

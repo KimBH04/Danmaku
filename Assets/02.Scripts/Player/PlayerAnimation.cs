@@ -21,7 +21,7 @@ public class PlayerAnimation : MonoBehaviour
         controller = GetComponent<PlayerController>();
         InGameInputHandler.Instance.OnMove += ChangeAnimationOnMove;
 
-        StatusManager.Instance.UpdatePower += _ => OnDieAnimationInterrupter();
+        StatusManager.Instance.OnUseBomb += OnDieAnimationInterrupter;
         StatusManager.Instance.OnPlayerHit += OnDieAnimation;
         StatusManager.Instance.OnPlayerDie += OnDieAnimationPlayback;
 

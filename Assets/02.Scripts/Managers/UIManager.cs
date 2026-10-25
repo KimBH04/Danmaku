@@ -39,8 +39,10 @@ public class UIManager : SingletonBehaviour<UIManager>
     [SerializeField] private GameObject rSlowAbove;
     [SerializeField] private GameObject lBombAbove;
     [SerializeField] private GameObject rBombAbove;
-
     [SerializeField] private System.Collections.Generic.List<Button> bombButtons;
+
+    [Header("Retry")]
+    [SerializeField] private GameObject retryPanel;
 
     private Tween runFillAmount = null;
 
@@ -162,5 +164,10 @@ public class UIManager : SingletonBehaviour<UIManager>
     public void SetStageResultScore(int score)
     {
         stageScoreText.text = score.ToString("#,##0");
+    }
+
+    public void OpenRetryPanel()
+    {
+        retryPanel.SetActive(true);
     }
 }

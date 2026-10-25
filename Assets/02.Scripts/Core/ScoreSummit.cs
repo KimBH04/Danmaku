@@ -1,23 +1,45 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreSummit : MonoBehaviour
 {
     private string nickName = string.Empty;
 
-    private int score = StatusManager.TotalScore;
+    private int MyScore => StatusManager.TotalScore;
 
     private readonly List<ScoreEntry> entries = new();
 
     [SerializeField] private TMP_InputField nameField;
     [SerializeField] private Button summitButton;
 
+    [SerializeField] private TMP_Text myScoreText;
+
     [SerializeField] private TMP_Text namesText;
     [SerializeField] private TMP_Text scoresText;
+
+    [SerializeField] private DOTweenAnimation summitPanelAnimation;
+
+    public void ReturnButton()
+    {
+        if (StatusManager.Instance.IsPlayerDie)
+        {
+            UIManager.Instance.OpenRetryPanel();
+            summitPanelAnimation.onRewind.AddListener(
+                () => SceneManager.UnloadSceneAsync("SummitScore")
+            );
+            summitPanelAnimation.tween.PlayBackwards();
+        }
+        else
+        {
+            GameManager.Instance.LoadScene("Title");
+        }
+    }
 
     public void InputName(string name)
     {
@@ -34,7 +56,7 @@ public class ScoreSummit : MonoBehaviour
 
         nameField.interactable = false;
         summitButton.interactable = false;
-        StartCoroutine(DataSaveLoad.PostScores(nickName, score, IsDone));
+        StartCoroutine(DataSaveLoad.PostScores(nickName, MyScore, IsDone));
     }
 
     private void IsDone(bool done)
@@ -50,7 +72,7 @@ public class ScoreSummit : MonoBehaviour
         entries.Add(new()
         {
             Name = nickName,
-            Score = score,
+            Score = MyScore,
             Time = long.MaxValue,
         });
         entries.Sort();
@@ -60,6 +82,7 @@ public class ScoreSummit : MonoBehaviour
 
     private void Awake()
     {
+        myScoreText.text = MyScore.ToString("#,##0");
         StartCoroutine(DataSaveLoad.GetScores(se =>
         {
             if (se == null)
@@ -78,9 +101,6 @@ public class ScoreSummit : MonoBehaviour
 
     private void DisplayEntries()
     {
-        namesText.text = string.Empty;
-        scoresText.text = string.Empty;
-
         var trimed = entries.GetRange(0, 10);
         namesText.text = string.Join('\n', trimed.Select(e => string.IsNullOrEmpty(e.Name) ? "Mu" : e.Name));
         scoresText.text = string.Join('\n', trimed.Select(e => e.Score.ToString("#,##0")));

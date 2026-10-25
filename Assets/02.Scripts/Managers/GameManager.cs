@@ -38,6 +38,11 @@ public class GameManager : SingletonBehaviour<GameManager>
     // (결과창 버튼이 씬의 인스턴스가 아니라 프리팹 에셋의 LoadScene을 호출해도 이 인스턴스의 상태가 초기화됨)
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (mode != LoadSceneMode.Single)
+        {
+            return;
+        }
+
         pauseCount = 0;
         Time.timeScale = 1f;
     }

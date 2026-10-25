@@ -80,6 +80,8 @@ public class StageRunner : MonoBehaviour
 
             // 클리어도 게임 오버처럼 멈춘 뒤 결과창 표시
             GameManager.Instance.Pause();
+
+            StatusManager.Instance.CalculateResultScore(data.StageID);
             UIManager.Instance.ResultBoardOn();
 
             onStageEnd.Invoke();
