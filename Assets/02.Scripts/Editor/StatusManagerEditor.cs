@@ -43,12 +43,14 @@ public class StatusManagerEditor : Editor
         // 체력 (백분율, 100 단위)
         using (new EditorGUILayout.HorizontalScope())
         {
-            int slider = EditorGUILayout.IntSlider($"HP % (0~{StatusManager.MAX_HP})", hp, 0, StatusManager.MAX_HP);
+            // 최소 -100: 게임 오버 후 체력(-100)을 슬라이더가 0으로 되돌리지 않도록
+            const int MIN_HP = -100;
+            int slider = EditorGUILayout.IntSlider($"HP % ({MIN_HP}~{StatusManager.MAX_HP})", hp, MIN_HP, StatusManager.MAX_HP);
             int next = Mathf.RoundToInt(slider / 100f) * 100;
             if (GUILayout.Button("-100", GUILayout.Width(40))) next = hp - 100;
             if (GUILayout.Button("+100", GUILayout.Width(40))) next = hp + 100;
 
-            next = Mathf.Clamp(next, 0, StatusManager.MAX_HP);
+            next = Mathf.Clamp(next, MIN_HP, StatusManager.MAX_HP);
             if (next != hp)
             {
                 status.AddHP(next - hp);
@@ -89,6 +91,13 @@ public class StatusManagerEditor : Editor
             {
                 status.TryUseSemiPower();
             }
+        }
+
+        // 남은 체력과 상관없이 바로 게임 오버 (체력 0에서 피격 → 0 미만)
+        if (GUILayout.Button("즉사 (게임 오버)"))
+        {
+            status.AddHP(-1000);
+            status.Hit();
         }
 
         if (GUILayout.Button("최대치로 초기화"))
