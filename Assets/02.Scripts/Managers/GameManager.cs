@@ -87,6 +87,7 @@ public class GameManager : SingletonBehaviour<GameManager>
         var loadingScene = SceneManager.LoadSceneAsync(INGAME);
         yield return loadingScene;
 
+#region 인게임 오브젝트 생성
         var runnerObj = new GameObject("Runner");
         var playerObj = new GameObject("Player");
 
@@ -104,6 +105,7 @@ public class GameManager : SingletonBehaviour<GameManager>
             .runtimeAnimatorController = player.AniCon;
 
         playerObj.transform.position = new Vector3(0f, -7f);
+#endregion
     }
 
     public void ApplySettings(Settings settings)
