@@ -12,6 +12,8 @@ public class PlayerAnimation : MonoBehaviour
     private Animator animator;
     private PlayerController controller;
 
+    private GameObject hitpoint;
+
     private Tween scaleTween;
 
     private void Start()
@@ -19,6 +21,11 @@ public class PlayerAnimation : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         controller = GetComponent<PlayerController>();
+
+        hitpoint = GameObject.Find("HitPoint");
+        hitpoint.transform.parent = transform;
+        hitpoint.transform.localPosition = Vector3.zero + Vector3.back * 4;
+
         InGameInputHandler.Instance.OnMove += ChangeAnimationOnMove;
 
         StatusManager.Instance.OnUseBomb += OnDieAnimationInterrupter;
