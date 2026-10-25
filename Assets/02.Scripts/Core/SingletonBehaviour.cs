@@ -32,7 +32,8 @@ public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonB
 
     protected virtual void Awake()
     {
-        if (instance == null || !instance.isActiveAndEnabled)
+        if (instance == null || instance == this || !instance.isActiveAndEnabled
+            || (!IsPersistent && instance.gameObject.scene != gameObject.scene))
         {
             instance = (T)this;
             if (IsPersistent)
