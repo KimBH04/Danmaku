@@ -22,6 +22,10 @@ public class UIManager : SingletonBehaviour<UIManager>
     [SerializeField] private TMP_Text resultScoreText;
     [SerializeField] private TMP_Text resultHighScoreText;
 
+    [SerializeField] private TMP_Text hpScoreText;
+    [SerializeField] private TMP_Text powerScoreText;
+    [SerializeField] private TMP_Text stageScoreText;
+
     [Header("Button Arrangement")]
     [SerializeField] private GameObject leftHand;
     [SerializeField] private GameObject rightHand;
@@ -111,12 +115,12 @@ public class UIManager : SingletonBehaviour<UIManager>
 
     public void SetScoreText(int score)
     {
-        resultScoreText.text = scoreText.text = score.ToString("000,000,000");
+        resultScoreText.text = scoreText.text = score.ToString("#,##0");
     }
 
     public void SetHighScoreText(int score)
     {
-        resultHighScoreText.text = highScoreText.text = score.ToString("000,000,000");
+        resultHighScoreText.text = highScoreText.text = score.ToString("#,##0");
     }
 
     public void BossStatusOn()
@@ -143,5 +147,20 @@ public class UIManager : SingletonBehaviour<UIManager>
     public void ResultBoardOn()
     {
         resultPanelObj.SetActive(true);
+    }
+
+    public void SetHPResultScore(int score)
+    {
+        hpScoreText.text = score.ToString("#,##0");
+    }
+
+    public void SetPowerResultScore(int score)
+    {
+        powerScoreText.text = score.ToString("#,##0");
+    }
+
+    public void SetStageResultScore(int score)
+    {
+        stageScoreText.text = score.ToString("#,##0");
     }
 }

@@ -131,8 +131,21 @@ public static class DataSaveLoad
 }
 
 [Serializable]
-public struct ScoreEntry
+public struct ScoreEntry : IComparable<ScoreEntry>
 {
     [JsonProperty("name")] public string Name { get; set; }
     [JsonProperty("score")] public int Score { get; set; }
+    [JsonProperty("time")] public long Time { get; set; }
+
+    public readonly int CompareTo(ScoreEntry other)
+    {
+        bool empty = Name == null, otherEmpty = other.Name == null;
+        if (empty != otherEmpty)
+        {
+            return empty ? 1 : -1;
+        }
+
+        int score = other.Score.CompareTo(Score);
+        return score != 0 ? score : Time.CompareTo(other.Time);
+    }
 }

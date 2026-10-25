@@ -74,6 +74,8 @@ public class StatusManager : SingletonBehaviour<StatusManager>
     private int currentScore = 0;
     private int highScore = 0;
 
+    public static int TotalScore { get; private set; }
+
     private Coroutine hitBombCoroutine = null;
 
     private int initialHP;
@@ -89,6 +91,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
     /// <param name="power">초기 파워 (백분율, 0 ~ <see cref="MAX_POWER"/>)</param>
     public void Initialize(int hp, int power)
     {
+        TotalScore = 0;
         initialHP = hp;
         initialPower = power;
     }
@@ -117,6 +120,20 @@ public class StatusManager : SingletonBehaviour<StatusManager>
             highScore = currentScore;
             updateHighScore.Invoke(highScore);
         }
+
+        TotalScore = currentScore;
+    }
+
+    public void AddResultScore(int stageID)
+    {
+        int hp = currentHP * 10;
+        int power = currentPower * 10;
+        int stage = stageID * 10000;
+        AddScore(hp + power + stage);
+
+        UIManager.Instance.SetHPResultScore(hp);
+        UIManager.Instance.SetPowerResultScore(power);
+        UIManager.Instance.SetStageResultScore(stage);
     }
 
     public void Hit()
