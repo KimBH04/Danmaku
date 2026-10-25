@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BurstData
   bulletPatterns:
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
+    <Damage>k__BackingField: 1
     <InitialBullet>k__BackingField:
       <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
