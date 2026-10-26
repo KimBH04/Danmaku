@@ -90,7 +90,7 @@ public class BulletManager : SingletonBehaviour<BulletManager>
                 {
                     presenter.DOMove(burst.PresentPosition, GameManager.FrameToSecond(burst.WaitForFrame))
                         .SetEase(Ease.Linear)
-                        .SetLink(presenter.gameObject, LinkBehaviour.KillOnDisable);
+                        .SetLink(presenter.gameObject);
                 }
 
                 var bullet = SpawnBulletChain(burst.BulletPatterns, presenter);

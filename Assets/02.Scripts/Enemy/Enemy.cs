@@ -186,6 +186,8 @@ public class Enemy : MonoBehaviour
         }
         StopAllCoroutines();
         OnHit = null;
+
+        DG.Tweening.DOTween.Kill(transform);
     }
 
     private void OnDestroy()
