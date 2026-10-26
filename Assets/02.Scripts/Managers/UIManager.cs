@@ -18,7 +18,7 @@ public class UIManager : SingletonBehaviour<UIManager>
     [SerializeField] private Image bossHPImg;
 
     [Header("Result")]
-    [SerializeField] private GameObject resultPanelObj;
+    [SerializeField] private DOTweenAnimation resultPanelAnimation;
     [SerializeField] private TMP_Text resultScoreText;
     [SerializeField] private TMP_Text resultHighScoreText;
 
@@ -82,7 +82,7 @@ public class UIManager : SingletonBehaviour<UIManager>
     {
         bossHPImg.fillAmount = 0f;
         bossStatusUIObj.SetActive(false);
-        resultPanelObj.SetActive(false);
+        resultPanelAnimation.DORewindAllById("RESULT");
 
         var settings = GameManager.Instance.GameSettings;
 
@@ -148,7 +148,10 @@ public class UIManager : SingletonBehaviour<UIManager>
 
     public void ResultBoardOn()
     {
-        resultPanelObj.SetActive(true);
+        resultPanelAnimation.DOPlayForwardById("RESULT");
+        var cg = resultPanelAnimation.GetComponent<CanvasGroup>();
+        cg.interactable = true;
+        cg.blocksRaycasts = true;
     }
 
     public void SetHPResultScore(int score)
