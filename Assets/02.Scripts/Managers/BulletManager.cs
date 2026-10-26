@@ -55,10 +55,35 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         }
     }
 
+    public void RemoveAllBullets()
+    {
+        int count = activeBullets.Count;
+        for (int i = 0; i < count; i++)
+        {
+            var bullet = activeBullets[i];
+            if (!bullet.IsAlive || bullet.Data.Tag != BulletTag.Enemy)
+            {
+                continue;
+            }
+
+            bullet.IsAlive = false;
+            SpawnBullet(ScoreItemPattern, bullet.Position);
+        }
+    }
+
     public void SpawnBullet(BulletPattern pattern, Transform presenter)
     {
         var bullet = bulletPool.Get();
         bullet.Initialize(pattern, presenter.position);
+        bullet.Start();
+
+        activeBullets.Add(bullet);
+    }
+
+    public void SpawnBullet(BulletPattern pattern, Vector2 position)
+    {
+        var bullet = bulletPool.Get();
+        bullet.Initialize(pattern, position);
         bullet.Start();
 
         activeBullets.Add(bullet);

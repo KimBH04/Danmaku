@@ -24,6 +24,7 @@ public class EnemyBoss : Enemy
     protected override void OnSpellStart()
     {
         UIManager.Instance.SetBossHP(enemyHP, maxHP);
+        BulletManager.Instance.RemoveAllBullets();
     }
 
     protected override void OnDie()
@@ -33,6 +34,7 @@ public class EnemyBoss : Enemy
         transform.DOMoveY(15f, 3f)
             .SetLink(gameObject)
             .OnComplete(base.OnDie);
+        BulletManager.Instance.RemoveAllBullets();
     }
 
     public System.Collections.IEnumerator BossAlive()
