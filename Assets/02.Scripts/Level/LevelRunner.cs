@@ -9,6 +9,8 @@ public class LevelRunner : MonoBehaviour
 
     private StageRunner runner;
 
+    public double LevelScoreMultiplyer => data.ScoreMultiplyer;
+
     public void Initialize(LevelData data)
     {
         this.data = data;

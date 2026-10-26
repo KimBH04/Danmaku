@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelData : ScriptableObject
 {
     [field: SerializeField]
-    public decimal ScoreMultiplyer { get; private set; } = 1.0m;
+    public double ScoreMultiplyer { get; private set; } = 1.0;
 
     [SerializeField] private StageData[] stages;
     public IReadOnlyList<StageData> Stages => stages;

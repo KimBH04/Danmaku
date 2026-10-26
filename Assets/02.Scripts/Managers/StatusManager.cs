@@ -82,6 +82,8 @@ public class StatusManager : SingletonBehaviour<StatusManager>
     private int currentScore = 0;
     private int highScore = 0;
 
+    private double scoreMultiplyer;
+
     public static int TotalScore { get; private set; }
 
     public bool IsPlayerDie => currentHP < 0;
@@ -99,17 +101,18 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     /// <param name="hp">초기 체력 (백분율, 0 ~ <see cref="MAX_HP"/>)</param>
     /// <param name="power">초기 파워 (백분율, 0 ~ <see cref="MAX_POWER"/>)</param>
-    public void Initialize(int hp, int power)
+    public void Initialize(int hp, int power, double multi)
     {
         TotalScore = 0;
         initialHP = hp;
         initialPower = power;
+        scoreMultiplyer = multi;
     }
 
     /// <param name="point">더할 체력 (백분율)</param>
     public void AddHP(int point)
     {
-        currentHP = Mathf.Clamp(currentHP + point, 0, MAX_HP);
+        currentHP = Mathf.Clamp(currentHP + (int)(point * scoreMultiplyer), 0, MAX_HP);
         updateHP.Invoke(HP);
     }
 
@@ -136,9 +139,9 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     public void CalculateResultScore(int stageID)
     {
-        int hp = currentHP * 10;
-        int power = currentPower * 10;
-        int stage = stageID * 10000;
+        int hp = (int)(currentHP * 10 * scoreMultiplyer);
+        int power = (int)(currentPower * 10 * scoreMultiplyer);
+        int stage = (int)(stageID * 10000 * scoreMultiplyer);
         AddScore(hp + power + stage);
 
         UIManager.Instance.SetHPResultScore(hp);

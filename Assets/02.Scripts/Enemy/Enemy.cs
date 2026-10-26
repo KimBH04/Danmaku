@@ -173,6 +173,8 @@ public class Enemy : MonoBehaviour
                 // isDead = true;
                 // OnDie();
             }
+
+            StatusManager.Instance.AddScore(pattern.Score / 10);
         }
     }
 
