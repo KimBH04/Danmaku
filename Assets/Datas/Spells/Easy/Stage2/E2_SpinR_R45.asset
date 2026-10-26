@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727e9866015447a47bef3d31af6fd0e2, type: 3}
+  m_Name: E2_SpinR_R45
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCard
+  <SpellName>k__BackingField: "\uBCC4 \uD68C\uC624\uB9AC"
+  <SpellDescription>k__BackingField: "\uB0B4\uB824\uC640 4\uAC08\uB798\uB85C \uB3C4\uB294 \uBCC4 \uC870\uAC01\uD0C4\uC744 \uBFCC\uB9B0 \uB4A4 \uB3CC\uC544\uAC04\uB2E4."
+  <PresentHP>k__BackingField: 30
+  <TimeLimit>k__BackingField: 184
+  bursts:
+  - {fileID: 11400000, guid: eb9dbaacf1ea512cab87ca6d8823cce8, type: 2}
+  - {fileID: 11400000, guid: c59851626ed95835a4e24f9aab4cf784, type: 2}
+  - {fileID: 11400000, guid: 1f599bb650f35dcb8db01bf13819815c, type: 2}

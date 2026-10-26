@@ -1,0 +1,818 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5709f5e13a7956459b4f976e611254f, type: 3}
+  m_Name: E2_Phase
+  m_EditorClassIdentifier: Assembly-CSharp::PhaseData
+  <EnemyChains>k__BackingField:
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 0c25dfb6731c4f44adab4fa2b250c33c, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 0c25dfb6731c4f44adab4fa2b250c33c, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 0c25dfb6731c4f44adab4fa2b250c33c, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 0c25dfb6731c4f44adab4fa2b250c33c, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 24
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 0c25dfb6731c4f44adab4fa2b250c33c, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 144
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a1c148e7786e43d3b284c04def754ee8, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a1c148e7786e43d3b284c04def754ee8, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a1c148e7786e43d3b284c04def754ee8, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a1c148e7786e43d3b284c04def754ee8, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 24
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a1c148e7786e43d3b284c04def754ee8, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 204
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCF4\uB77C \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4 \uD68C\uC624\uB9AC\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.78, g: 0.6, b: 1, a: 1}
+      <Score>k__BackingField: 150
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a33a8bc6130242ac9d8f757362b61546, type: 2}
+      <SpawnPosition>k__BackingField: {x: -4.5, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 1
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 0
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCF4\uB77C \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4 \uD68C\uC624\uB9AC\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.78, g: 0.6, b: 1, a: 1}
+      <Score>k__BackingField: 150
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 4fc900d78be84bfdb0f998c092d02679, type: 2}
+      <SpawnPosition>k__BackingField: {x: 4.5, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 1
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 260
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
+      <Description>k__BackingField: "\uC870\uC900 \uACE0\uB9AC\uB97C \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.55, g: 0.75, b: 1, a: 1}
+      <Score>k__BackingField: 60
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 2c7e7572a4e7478283bb27a3a18af30a, type: 2}
+      <SpawnPosition>k__BackingField: {x: -6, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 0
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
+      <Description>k__BackingField: "\uC870\uC900 \uACE0\uB9AC\uB97C \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.55, g: 0.75, b: 1, a: 1}
+      <Score>k__BackingField: 60
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 05442db0e7f74b68b5759d53eed48478, type: 2}
+      <SpawnPosition>k__BackingField: {x: 6, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 50
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
+      <Description>k__BackingField: "\uC870\uC900 \uACE0\uB9AC\uB97C \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.55, g: 0.75, b: 1, a: 1}
+      <Score>k__BackingField: 60
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 1483ae3bda6d4a979c20c3ecc4cf89d6, type: 2}
+      <SpawnPosition>k__BackingField: {x: -3, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 0
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
+      <Description>k__BackingField: "\uC870\uC900 \uACE0\uB9AC\uB97C \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.55, g: 0.75, b: 1, a: 1}
+      <Score>k__BackingField: 60
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 9452763a881d4b47ac4cafee1d0f787d, type: 2}
+      <SpawnPosition>k__BackingField: {x: 3, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 50
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
+      <Description>k__BackingField: "\uC870\uC900 \uACE0\uB9AC\uB97C \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.55, g: 0.75, b: 1, a: 1}
+      <Score>k__BackingField: 60
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: c5cef8349ccc41fe949c0352646dec80, type: 2}
+      <SpawnPosition>k__BackingField: {x: 0, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 180
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCC4 \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4\uB625\uBE44\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.92, b: 0.5, a: 1}
+      <Score>k__BackingField: 80
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 22a5a3ba1d214acd86e06614ecb478af, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.6}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCC4 \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4\uB625\uBE44\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.92, b: 0.5, a: 1}
+      <Score>k__BackingField: 80
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 22a5a3ba1d214acd86e06614ecb478af, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.6}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 45
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCC4 \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4\uB625\uBE44\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.92, b: 0.5, a: 1}
+      <Score>k__BackingField: 80
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 22a5a3ba1d214acd86e06614ecb478af, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.6}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 120
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCC4 \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4\uB625\uBE44\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.92, b: 0.5, a: 1}
+      <Score>k__BackingField: 80
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 4e87a41f33cc4592ba4089491cd6e52f, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 7.6}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCC4 \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4\uB625\uBE44\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.92, b: 0.5, a: 1}
+      <Score>k__BackingField: 80
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 4e87a41f33cc4592ba4089491cd6e52f, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 7.6}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 45
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCC4 \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4\uB625\uBE44\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.92, b: 0.5, a: 1}
+      <Score>k__BackingField: 80
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 4e87a41f33cc4592ba4089491cd6e52f, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 7.6}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 180
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uAC70\uC6B8 \uC694\uC815"
+      <Description>k__BackingField: "\uBA48\uCDB0 \uC11C\uB294 \uACE0\uB9AC\uB97C \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.92, g: 0.92, b: 1, a: 1}
+      <Score>k__BackingField: 150
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 2833b2a7257e435bb29bc7d3caa1904a, type: 2}
+      <SpawnPosition>k__BackingField: {x: -3, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 1
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 50
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uAC70\uC6B8 \uC694\uC815"
+      <Description>k__BackingField: "\uBA48\uCDB0 \uC11C\uB294 \uACE0\uB9AC\uB97C \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.92, g: 0.92, b: 1, a: 1}
+      <Score>k__BackingField: 150
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 71fe4a5b5bd0453086efa94fc993f368, type: 2}
+      <SpawnPosition>k__BackingField: {x: 3, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 1
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 190
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uC5F0\uAF43 \uC694\uC815"
+      <Description>k__BackingField: "\uC5F0\uAF43 \uD0C4\uB9C9\uC744 \uD53C\uC6B0\uB294 \uD070 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.62, b: 0.78, a: 1}
+      <Score>k__BackingField: 300
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 2881f5ccb6bb4d838e733ece7c10ed20, type: 2}
+      <SpawnPosition>k__BackingField: {x: 0, y: 11.5}
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 100
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
+      <Description>k__BackingField: "\uAD50\uCC28\uD558\uBA70 \uC9C0\uB098\uAC00\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.55, g: 0.75, b: 1, a: 1}
+      <Score>k__BackingField: 30
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uAD50\uCC28\uD558\uBA70 \uC9C0\uB098\uAC00\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 30
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
+      <Description>k__BackingField: "\uAD50\uCC28\uD558\uBA70 \uC9C0\uB098\uAC00\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.55, g: 0.75, b: 1, a: 1}
+      <Score>k__BackingField: 30
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uAD50\uCC28\uD558\uBA70 \uC9C0\uB098\uAC00\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 30
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
+      <Description>k__BackingField: "\uAD50\uCC28\uD558\uBA70 \uC9C0\uB098\uAC00\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.55, g: 0.75, b: 1, a: 1}
+      <Score>k__BackingField: 30
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uAD50\uCC28\uD558\uBA70 \uC9C0\uB098\uAC00\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 30
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
+      <Description>k__BackingField: "\uAD50\uCC28\uD558\uBA70 \uC9C0\uB098\uAC00\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.55, g: 0.75, b: 1, a: 1}
+      <Score>k__BackingField: 30
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uAD50\uCC28\uD558\uBA70 \uC9C0\uB098\uAC00\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 30
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
+      <Description>k__BackingField: "\uAD50\uCC28\uD558\uBA70 \uC9C0\uB098\uAC00\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.55, g: 0.75, b: 1, a: 1}
+      <Score>k__BackingField: 30
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 22
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uAD50\uCC28\uD558\uBA70 \uC9C0\uB098\uAC00\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 30
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 202
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 0c25dfb6731c4f44adab4fa2b250c33c, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a1c148e7786e43d3b284c04def754ee8, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 0c25dfb6731c4f44adab4fa2b250c33c, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a1c148e7786e43d3b284c04def754ee8, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 0c25dfb6731c4f44adab4fa2b250c33c, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a1c148e7786e43d3b284c04def754ee8, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 0c25dfb6731c4f44adab4fa2b250c33c, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 26
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBB3C\uBE5B \uC694\uC815"
+      <Description>k__BackingField: "\uC606\uC5D0\uC11C \uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.5, g: 0.95, b: 1, a: 1}
+      <Score>k__BackingField: 40
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a1c148e7786e43d3b284c04def754ee8, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 8.4}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 118
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCF4\uB77C \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4 \uD68C\uC624\uB9AC\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.78, g: 0.6, b: 1, a: 1}
+      <Score>k__BackingField: 150
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: a33a8bc6130242ac9d8f757362b61546, type: 2}
+      <SpawnPosition>k__BackingField: {x: -4.5, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 1
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 0
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCF4\uB77C \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4 \uD68C\uC624\uB9AC\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.78, g: 0.6, b: 1, a: 1}
+      <Score>k__BackingField: 150
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 4fc900d78be84bfdb0f998c092d02679, type: 2}
+      <SpawnPosition>k__BackingField: {x: 4.5, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 1
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 60
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uAC70\uC6B8 \uC694\uC815"
+      <Description>k__BackingField: "\uBA48\uCDB0 \uC11C\uB294 \uACE0\uB9AC\uB97C \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 0.92, g: 0.92, b: 1, a: 1}
+      <Score>k__BackingField: 150
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 5fcd2c3be58246c090a7c42fa07991f5, type: 2}
+      <SpawnPosition>k__BackingField: {x: 0, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 1
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 240
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uC8FC\uD669 \uC694\uC815"
+      <Description>k__BackingField: "\uAE09\uAC15\uD558\uD574 \uC870\uC900\uD0C4\uC744 \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.72, b: 0.45, a: 1}
+      <Score>k__BackingField: 50
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: dd979bcf56194d46ae208fca423f3fc8, type: 2}
+      <SpawnPosition>k__BackingField: {x: -6, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uC8FC\uD669 \uC694\uC815"
+      <Description>k__BackingField: "\uAE09\uAC15\uD558\uD574 \uC870\uC900\uD0C4\uC744 \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.72, b: 0.45, a: 1}
+      <Score>k__BackingField: 50
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 33bba5a88b1b4bbd99419812d8644ceb, type: 2}
+      <SpawnPosition>k__BackingField: {x: -3, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uC8FC\uD669 \uC694\uC815"
+      <Description>k__BackingField: "\uAE09\uAC15\uD558\uD574 \uC870\uC900\uD0C4\uC744 \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.72, b: 0.45, a: 1}
+      <Score>k__BackingField: 50
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 637b43db195146c897124d6cb757dbb2, type: 2}
+      <SpawnPosition>k__BackingField: {x: 0, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uC8FC\uD669 \uC694\uC815"
+      <Description>k__BackingField: "\uAE09\uAC15\uD558\uD574 \uC870\uC900\uD0C4\uC744 \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.72, b: 0.45, a: 1}
+      <Score>k__BackingField: 50
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 22a4d7b00b5a498599d4fe9d2625a534, type: 2}
+      <SpawnPosition>k__BackingField: {x: 3, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 24
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uC8FC\uD669 \uC694\uC815"
+      <Description>k__BackingField: "\uAE09\uAC15\uD558\uD574 \uC870\uC900\uD0C4\uC744 \uC3D8\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.72, b: 0.45, a: 1}
+      <Score>k__BackingField: 50
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: bce7d2a21fb24319af40ed46c779ab7e, type: 2}
+      <SpawnPosition>k__BackingField: {x: 6, y: 11.5}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 84
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCC4 \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4\uB625\uBE44\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.92, b: 0.5, a: 1}
+      <Score>k__BackingField: 80
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 22a5a3ba1d214acd86e06614ecb478af, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.6}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCC4 \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4\uB625\uBE44\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.92, b: 0.5, a: 1}
+      <Score>k__BackingField: 80
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 4e87a41f33cc4592ba4089491cd6e52f, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 7.6}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCC4 \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4\uB625\uBE44\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.92, b: 0.5, a: 1}
+      <Score>k__BackingField: 80
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 22a5a3ba1d214acd86e06614ecb478af, type: 2}
+      <SpawnPosition>k__BackingField: {x: -10.4, y: 8.6}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 40
+  - <EnemyPatterns>k__BackingField:
+    - <Type>k__BackingField: 0
+      <EnemyName>k__BackingField: "\uBCC4 \uC694\uC815"
+      <Description>k__BackingField: "\uBCC4\uB625\uBE44\uB97C \uBFCC\uB9AC\uB294 \uC694\uC815."
+      <EnemyColor>k__BackingField: {r: 1, g: 0.92, b: 0.5, a: 1}
+      <Score>k__BackingField: 80
+      <Body>k__BackingField: {fileID: 11400000, guid: 45e2a4b81c9c5c14b144f035143a27b8, type: 2}
+      <AniCon>k__BackingField: {fileID: 9100000, guid: dd316f17a072be04aaa14a0e0aed64a3, type: 2}
+      spells:
+      - {fileID: 11400000, guid: 4e87a41f33cc4592ba4089491cd6e52f, type: 2}
+      <SpawnPosition>k__BackingField: {x: 10.4, y: 7.6}
+      <DropPowerCount>k__BackingField: 1
+      <DropScoreCount>k__BackingField: 0
+      <WaitForFirstBurstFrame>k__BackingField: 0
+    <WaitForNextEmenyFrame>k__BackingField: 310
+  <WaitForFirstEmenyFrame>k__BackingField: 90
+  <Boss>k__BackingField:
+    <Type>k__BackingField: 2
+    <EnemyName>k__BackingField: "\uD638\uC218\uC758 \uBB34\uB140 \uC5F0\uD654"
+    <Description>k__BackingField: "\uBCC4\uBE5B\uC774 \uB0B4\uB824\uC549\uB294 \uD638\uC22B\uAC00\uC758 \uBB34\uB140. \uC218\uBA74\uC5D0 \uBE44\uCE5C \uBCC4\uC744 \uD0C4\uD658\uC73C\uB85C \uB744\uC6B4\uB2E4."
+    <EnemyColor>k__BackingField: {r: 0.75, g: 0.85, b: 1, a: 1}
+    <Score>k__BackingField: 30000
+    <Body>k__BackingField: {fileID: 11400000, guid: a271055cf82852bdb0fad65c728d4612, type: 2}
+    <AniCon>k__BackingField: {fileID: 9100000, guid: 0a9fe0c649f3eb84e907f466fa4118a7, type: 2}
+    spells:
+    - {fileID: 11400000, guid: b55d480498bf419d8ca1e5e19e551335, type: 2}
+    - {fileID: 11400000, guid: 44069dbfc79e46f7bf50dca38fdcd378, type: 2}
+    - {fileID: 11400000, guid: 2204f749df1543aab45a50972ef9bc89, type: 2}
+    <SpawnPosition>k__BackingField: {x: 0, y: 12}
+    <DropPowerCount>k__BackingField: 50
+    <DropScoreCount>k__BackingField: 50
+    <WaitForFirstBurstFrame>k__BackingField: 60

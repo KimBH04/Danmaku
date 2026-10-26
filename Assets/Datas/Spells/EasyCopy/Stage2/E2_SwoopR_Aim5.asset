@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727e9866015447a47bef3d31af6fd0e2, type: 3}
+  m_Name: E2_SwoopR_Aim5
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCard
+  <SpellName>k__BackingField: "\uD718\uC5B4 \uB4E4\uC5B4\uC624\uB294 5\uBC29\uD5A5 \uC870\uC900\uD0C4"
+  <SpellDescription>k__BackingField: "\uC606\uC5D0\uC11C \uACE1\uC120\uC744 \uADF8\uB9AC\uBA70 \uB0B4\uB824\uC640 5\uBC29\uD5A5 \uC870\uC900\uD0C4\uC744 \uC3D8\uACE0 \uAC19\uC740 \uCABD\uC73C\uB85C \uB3CC\uC544\uAC04\uB2E4."
+  <PresentHP>k__BackingField: 8
+  <TimeLimit>k__BackingField: 174
+  bursts:
+  - {fileID: 11400000, guid: 446ce17ed4df4c43a82e25c2d840818c, type: 2}
+  - {fileID: 11400000, guid: 6fb67eecb3fb470c9a289cc45a3ec05f, type: 2}
+  - {fileID: 11400000, guid: 5a3e6d690f8743ee9588e84e433df3d1, type: 2}
+  - {fileID: 11400000, guid: 30abac637da54390888e145f28291f55, type: 2}

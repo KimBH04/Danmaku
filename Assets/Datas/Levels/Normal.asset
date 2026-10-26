@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5657747ca4e67b89e131712c9abbde, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  stages: []
+  <ScoreMultiplyer>k__BackingField: 1
+  stages:
+  - {fileID: 11400000, guid: 2f1fac626d90517580094dfb91e6f7f9, type: 2}
+  - {fileID: 11400000, guid: 212541db8ed95f1a9d276e375a6c6ac2, type: 2}

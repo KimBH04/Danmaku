@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5657747ca4e67b89e131712c9abbde, type: 3}
   m_Name: Esay
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  <ScoreMultiplyer>k__BackingField: 0.8
   stages:
-  - {fileID: 11400000, guid: 7b622d0e06045414b8f11218b97ee1c0, type: 2}
-  - {fileID: 11400000, guid: 7b622d0e06045414b8f11218b97ee1c0, type: 2}
+  - {fileID: 11400000, guid: 5ded89822d2340f59cace6c0f3025b92, type: 2}
+  - {fileID: 11400000, guid: a72d451c350b4c269c7d41da7569d92b, type: 2}

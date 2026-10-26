@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727e9866015447a47bef3d31af6fd0e2, type: 3}
+  m_Name: E2_Lotus_C00
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCard
+  <SpellName>k__BackingField: "\uC5F0\uAF43"
+  <SpellDescription>k__BackingField: "\uC5F0\uAF43\uCC98\uB7FC \uD37C\uC9C0\uB294 \uACE0\uB9AC\uD0C4 20\uBC1C\uC744 \uC138 \uBC88 \uD53C\uC6B0\uACE0 \uC870\uC900\uD0C4\uC744 \uC11E\uB294\uB2E4."
+  <PresentHP>k__BackingField: 80
+  <TimeLimit>k__BackingField: 238
+  bursts:
+  - {fileID: 11400000, guid: 66785333079951c590163fc6b1428adc, type: 2}
+  - {fileID: 11400000, guid: 3d3c2771e1555b1fa392de65411f9b39, type: 2}
+  - {fileID: 11400000, guid: 8a334d6b9e535929aed8e04b592af71b, type: 2}

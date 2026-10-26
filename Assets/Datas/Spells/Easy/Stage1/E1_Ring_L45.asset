@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727e9866015447a47bef3d31af6fd0e2, type: 3}
+  m_Name: E1_Ring_L45
+  m_EditorClassIdentifier: Assembly-CSharp::SpellCard
+  <SpellName>k__BackingField: "\uC774\uC2AC \uACE0\uB9AC"
+  <SpellDescription>k__BackingField: "\uB0B4\uB824\uC640 \uB290\uB9B0 \uC6D0\uD615\uD0C4 14\uBC1C\uC744 \uC138 \uBC88 \uD37C\uB728\uB9B0 \uB4A4 \uB3CC\uC544\uAC04\uB2E4."
+  <PresentHP>k__BackingField: 30
+  <TimeLimit>k__BackingField: 228
+  bursts:
+  - {fileID: 11400000, guid: 0c3e97b4ecec586c93ce41971c958ad1, type: 2}
+  - {fileID: 11400000, guid: d9bc7dc525745c87a097a804cd4536fc, type: 2}
+  - {fileID: 11400000, guid: 2fc2eab12eed5445bbe1c199c5fb5207, type: 2}
