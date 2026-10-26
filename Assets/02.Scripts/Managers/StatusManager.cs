@@ -83,6 +83,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
     private int highScore = 0;
 
     private double scoreMultiplyer;
+    private string levelName;
 
     public static int TotalScore { get; private set; }
 
@@ -101,12 +102,13 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     /// <param name="hp">초기 체력 (백분율, 0 ~ <see cref="MAX_HP"/>)</param>
     /// <param name="power">초기 파워 (백분율, 0 ~ <see cref="MAX_POWER"/>)</param>
-    public void Initialize(int hp, int power, double multi)
+    public void Initialize(int hp, int power, double multi, string level)
     {
         TotalScore = 0;
         initialHP = hp;
         initialPower = power;
         scoreMultiplyer = multi;
+        levelName = level;
     }
 
     /// <param name="point">더할 체력 (백분율)</param>
@@ -139,14 +141,16 @@ public class StatusManager : SingletonBehaviour<StatusManager>
 
     public void CalculateResultScore(int stageID)
     {
-        int hp = (int)(currentHP * 10 * scoreMultiplyer);
-        int power = (int)(currentPower * 10 * scoreMultiplyer);
-        int stage = (int)(stageID * 10000 * scoreMultiplyer);
-        AddScore(hp + power + stage);
+        var hp = currentHP * 10;
+        var power = currentPower * 10;
+        var stage = stageID * 10000;
+        var total = (int)((hp + power + stage) * scoreMultiplyer);
+        AddScore(total);
 
         UIManager.Instance.SetHPResultScore(hp);
         UIManager.Instance.SetPowerResultScore(power);
         UIManager.Instance.SetStageResultScore(stage);
+        UIManager.Instance.SetLevelResultScore(levelName, scoreMultiplyer, total);
     }
 
     public void Hit()

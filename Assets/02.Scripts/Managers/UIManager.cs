@@ -25,6 +25,9 @@ public class UIManager : SingletonBehaviour<UIManager>
     [SerializeField] private TMP_Text hpScoreText;
     [SerializeField] private TMP_Text powerScoreText;
     [SerializeField] private TMP_Text stageScoreText;
+    [SerializeField] private TMP_Text levelLabelText;
+    [SerializeField] private TMP_Text levelMultiText;
+    [SerializeField] private TMP_Text levelScoreText;
 
     [Header("Button Arrangement")]
     [SerializeField] private GameObject leftHand;
@@ -167,6 +170,13 @@ public class UIManager : SingletonBehaviour<UIManager>
     public void SetStageResultScore(int score)
     {
         stageScoreText.text = score.ToString("#,##0");
+    }
+
+    public void SetLevelResultScore(string levelName, double multiplyer, int finalScore)
+    {
+        levelLabelText.text = $"{levelName} Rank";
+        levelMultiText.text = $"* {multiplyer:0.##}";
+        levelScoreText.text = $"= {finalScore:#,##0}";
     }
 
     public void OpenRetryPanel()

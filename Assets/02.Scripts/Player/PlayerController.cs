@@ -36,10 +36,12 @@ public class PlayerController : MonoBehaviour
         slowSpeed = data.SlowSpeed;
         attacks = data.PlayerAttacks.ToArray();
         power = data.InitialPower / 100;
+        var level = FindFirstObjectByType<LevelRunner>();
         StatusManager.Instance.Initialize(
             data.InitialHP,
             data.InitialPower,
-            FindFirstObjectByType<LevelRunner>().LevelScoreMultiplyer);
+            level.LevelScoreMultiplyer,
+            level.LevelName);
     }
 
     private void Start()

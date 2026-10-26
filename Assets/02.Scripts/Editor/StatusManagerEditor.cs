@@ -102,7 +102,7 @@ public class StatusManagerEditor : Editor
 
         if (GUILayout.Button("최대치로 초기화"))
         {
-            StatusManager.Instance.Initialize(StatusManager.MAX_HP, StatusManager.MAX_POWER, 1.0);
+            StatusManager.Instance.Initialize(StatusManager.MAX_HP, StatusManager.MAX_POWER, 1.0, "Test");
         }
     }
 }
