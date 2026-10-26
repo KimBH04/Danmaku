@@ -97,7 +97,7 @@ public class Enemy : MonoBehaviour
                     isBurstDone = false;
                 }
             Dead:
-                StartCoroutine(ItemFirework(pattern));
+                ItemFirework(pattern);
                 continue;
 
             TimeOut:;
@@ -131,19 +131,17 @@ public class Enemy : MonoBehaviour
         HitCheck();
     }
 
-    private IEnumerator ItemFirework(EnemyPattern pattern)
+    private void ItemFirework(EnemyPattern pattern)
     {
         int p = pattern.DropPowerCount;
         int s = pattern.DropScoreCount;
         while (p-- > 0)
         {
             BulletManager.Instance.SpawnPowerItem(transform);
-            yield return GameManager.WaitForFixedUpdate;
         }
         while (s-- > 0)
         {
             BulletManager.Instance.SpawnScoreItem(transform);
-            yield return GameManager.WaitForFixedUpdate;
         }
     }
 

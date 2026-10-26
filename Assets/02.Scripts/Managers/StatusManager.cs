@@ -170,6 +170,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
             else
             {
                 currentPower = initialPower;
+                updatePower.Invoke(Power);
             }
         }
     }

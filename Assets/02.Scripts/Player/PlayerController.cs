@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Attack();
+        InhaleItem();
     }
 
     private void FiexdMove()
@@ -120,6 +121,13 @@ public class PlayerController : MonoBehaviour
 
     private void InhaleItem()
     {
+        if (!alive)
+        {
+            itemParts.ForEach(i => { if (i.IsAlive) i.Velocity = Vector2.down * 2f; });
+            itemParts.Clear();
+            return;
+        }
+
         int cnt = BulletCollision.CheckAll(transform.position, BulletTag.Item, 3f, itemParts);
         for (int i = 0; i < cnt; i++)
         {
@@ -128,11 +136,19 @@ public class PlayerController : MonoBehaviour
             if (vel.sqrMagnitude <= 0.2f)
             {
                 bullet.IsAlive = false;
-                StatusManager.Instance.AddPower(10);
+                if (bullet.Data.Tag == BulletTag.Power)
+                {
+                    StatusManager.Instance.AddPower(1);
+                    StatusManager.Instance.AddScore(100);
+                }
+                else
+                {
+                    StatusManager.Instance.AddScore(1000);
+                }
                 continue;
             }
 
-            bullet.Velocity = vel.normalized * 0.2f;
+            bullet.Velocity = vel.normalized * 20f;
         }
     }
 

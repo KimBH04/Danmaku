@@ -18,7 +18,7 @@ public class DownwardSequence : BulletSequenceBase
 
         public void Start(Bullet data)
         {
-            data.Velocity = Vector2.down * data.Velocity.magnitude;
+            data.Velocity = Vector2.down * 2f;
         }
 
         public void Next(Bullet data)

@@ -15,6 +15,8 @@ public class BulletRenderer : MonoBehaviour
 
     private static readonly int MainTexId = Shader.PropertyToID("_MainTex");
     private static readonly int ColorId = Shader.PropertyToID("_Color");
+    // 셰이더가 곱하는 SpriteRenderer 색 (인스턴싱 시 배열). DrawMeshInstanced는 채워 주지 않으므로 흰색으로 지정합니다.
+    private static readonly int SpriteColorArrayId = Shader.PropertyToID("unity_SpriteRendererColorArray");
 
     [field: SerializeField, FormerlySerializedAs("bulletMaterial"), Tooltip("탄환 머티리얼 (예: Bullet01). 원본 에셋은 수정하지 않고 런타임 복사본을 사용합니다.")]
     public Material BulletMaterial { get; private set; }
@@ -47,6 +49,7 @@ public class BulletRenderer : MonoBehaviour
     // 한 배치(최대 1023개)를 그릴 때 사용하는 버퍼
     private readonly Matrix4x4[] matrixBuffer = new Matrix4x4[MaxInstancesPerBatch];
     private readonly Vector4[] colorBuffer = new Vector4[MaxInstancesPerBatch];
+    private static readonly Vector4[] WhiteBuffer = CreateWhiteBuffer();
 
     private MaterialPropertyBlock propertyBlock;
     private Material runtimeMaterial;
@@ -58,6 +61,13 @@ public class BulletRenderer : MonoBehaviour
     /// 지정하지 않으면 <see cref="BulletManager"/>의 활성 탄환 목록을 자동으로 사용합니다.
     /// </summary>
     public void SetSource(IReadOnlyList<Bullet> bullets) => source = bullets;
+
+    private static Vector4[] CreateWhiteBuffer()
+    {
+        var buffer = new Vector4[MaxInstancesPerBatch];
+        Array.Fill(buffer, Vector4.one);
+        return buffer;
+    }
 
     private void Awake()
     {
@@ -180,6 +190,7 @@ public class BulletRenderer : MonoBehaviour
                 propertyBlock.Clear();
                 propertyBlock.SetTexture(MainTexId, batch.Texture);
                 propertyBlock.SetVectorArray(ColorId, colorBuffer);
+                propertyBlock.SetVectorArray(SpriteColorArrayId, WhiteBuffer);
 
                 Graphics.DrawMeshInstanced(
                     batch.Mesh, 0, runtimeMaterial,

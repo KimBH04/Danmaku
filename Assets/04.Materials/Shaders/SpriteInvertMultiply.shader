@@ -32,7 +32,8 @@ Shader "Custom/URP/Sprite Invert Multiply"
             #pragma fragment frag
             #pragma multi_compile_instancing
 
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            // unity_SpriteColor (SpriteRenderer.color) 정의를 위해 Core2D를 사용
+            #include "Packages/com.unity.render-pipelines.universal/Shaders/2D/Include/Core2D.hlsl"
 
             TEXTURE2D(_MainTex);
             SAMPLER(sampler_MainTex);
@@ -49,7 +50,7 @@ Shader "Custom/URP/Sprite Invert Multiply"
             struct Attributes
             {
                 float4 positionOS : POSITION;
-                float4 color      : COLOR;      // SpriteRenderer.color
+                float4 color      : COLOR;      // 정점 색
                 float2 uv         : TEXCOORD0;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
             };
@@ -70,7 +71,8 @@ Shader "Custom/URP/Sprite Invert Multiply"
 
                 OUT.positionCS = TransformObjectToHClip(IN.positionOS.xyz);
                 OUT.uv = TRANSFORM_TEX(IN.uv, _MainTex);
-                OUT.color = IN.color * UNITY_ACCESS_INSTANCED_PROP(Props, _Color);
+                // Unity 6의 SpriteRenderer는 색을 정점 색이 아닌 unity_SpriteColor로 전달합니다.
+                OUT.color = IN.color * UNITY_ACCESS_INSTANCED_PROP(Props, _Color) * unity_SpriteColor;
                 return OUT;
             }
 

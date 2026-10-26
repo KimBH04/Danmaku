@@ -26,11 +26,11 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         () => new(),                // Create
         b  => b.Clear(),            // Get
         b  => b.IsAlive = false,    // Release
-        defaultCapacity: 128,
+        defaultCapacity: 256,
         maxSize: 1024
     );
 
-    private readonly List<Bullet> activeBullets = new(128);
+    private readonly List<Bullet> activeBullets = new(256);
 
     public IReadOnlyList<Bullet> ActiveBullets => activeBullets;
 
@@ -136,6 +136,11 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         else
         {
             Debug.LogWarning("[BulletManager] 데드존 트랜스폼이 연결되지 않았습니다.", this);
+        }
+
+        for (int i = 0; i < 256; i++)
+        {
+            bulletPool.Release(new());
         }
     }
 

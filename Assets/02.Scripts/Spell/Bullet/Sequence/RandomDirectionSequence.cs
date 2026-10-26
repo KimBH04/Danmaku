@@ -19,7 +19,7 @@ public class RandomDirectionSequence : BulletSequenceBase
         public void Start(Bullet data)
         {
             // 길이가 1 이하인 무작위 벡터 (단위 원 안에서 균일 분포)
-            data.Velocity = Random.insideUnitCircle * data.Velocity.magnitude;
+            data.Velocity = Random.insideUnitCircle * 4f;
         }
 
         public void Next(Bullet data)

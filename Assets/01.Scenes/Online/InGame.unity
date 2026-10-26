@@ -1173,6 +1173,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <PowerItemPattern>k__BackingField.<InitialBullet>k__BackingField.<BulletColor>k__BackingField.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <PowerItemPattern>k__BackingField.<InitialBullet>k__BackingField.<BulletColor>k__BackingField.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <PowerItemPattern>k__BackingField.<InitialBullet>k__BackingField.<BulletColor>k__BackingField.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <ScoreItemPattern>k__BackingField.<InitialBullet>k__BackingField.<BulletColor>k__BackingField.b
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <ScoreItemPattern>k__BackingField.<InitialBullet>k__BackingField.<BulletColor>k__BackingField.g
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <ScoreItemPattern>k__BackingField.<InitialBullet>k__BackingField.<BulletColor>k__BackingField.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <PowerItemPattern>k__BackingField.<InitialBullet>k__BackingField.<InitialVelocity>k__BackingField.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <PowerItemPattern>k__BackingField.<InitialBullet>k__BackingField.<InitialVelocity>k__BackingField.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <ScoreItemPattern>k__BackingField.<InitialBullet>k__BackingField.<InitialPosition>k__BackingField.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <ScoreItemPattern>k__BackingField.<InitialBullet>k__BackingField.<InitialPosition>k__BackingField.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <ScoreItemPattern>k__BackingField.<InitialBullet>k__BackingField.<InitialVelocity>k__BackingField.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638835369381649391, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
+      propertyPath: <ScoreItemPattern>k__BackingField.<InitialBullet>k__BackingField.<InitialVelocity>k__BackingField.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8040567926935649694, guid: 653158caf7a834a4d9f7999765fff342, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
