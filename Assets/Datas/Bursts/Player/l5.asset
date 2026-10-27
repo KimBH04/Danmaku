@@ -15,7 +15,7 @@ MonoBehaviour:
   bulletPatterns:
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: 17.20729, y: 24.57456}
       <InitialTorqueDegree>k__BackingField: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
     <WaitForFrame>k__BackingField: 0
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: 14.08415, y: 26.48843}
       <InitialTorqueDegree>k__BackingField: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
     <WaitForFrame>k__BackingField: 0
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: 10.75104, y: 28.00741}
       <InitialTorqueDegree>k__BackingField: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     <WaitForFrame>k__BackingField: 0
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: 7.25766, y: 29.10887}
       <InitialTorqueDegree>k__BackingField: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     <WaitForFrame>k__BackingField: 0
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: 3.65608, y: 29.77638}
       <InitialTorqueDegree>k__BackingField: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
     <WaitForFrame>k__BackingField: 0
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: 0, y: 30}
       <InitialTorqueDegree>k__BackingField: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
     <WaitForFrame>k__BackingField: 0
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: -3.65608, y: 29.77638}
       <InitialTorqueDegree>k__BackingField: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
     <WaitForFrame>k__BackingField: 0
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: -7.25766, y: 29.10887}
       <InitialTorqueDegree>k__BackingField: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
     <WaitForFrame>k__BackingField: 0
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: -10.75104, y: 28.00741}
       <InitialTorqueDegree>k__BackingField: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
     <WaitForFrame>k__BackingField: 0
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: -14.08415, y: 26.48843}
       <InitialTorqueDegree>k__BackingField: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
     <WaitForFrame>k__BackingField: 0
   - <BulletData>k__BackingField: {fileID: 11400000, guid: af9a84c6f8d83b747b331e3a8ade771c, type: 2}
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: -17.20729, y: 24.57456}
       <InitialTorqueDegree>k__BackingField: 0

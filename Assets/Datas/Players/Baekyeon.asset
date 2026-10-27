@@ -19,9 +19,9 @@ MonoBehaviour:
   playerAttacks:
   - {fileID: 11400000, guid: 63636e6036ba58a78bf1d3da7975b5ef, type: 2}
   - {fileID: 11400000, guid: a4cb7bd38d245a0481f4894431010230, type: 2}
-  - {fileID: 11400000, guid: a4cb7bd38d245a0481f4894431010230, type: 2}
+  - {fileID: 11400000, guid: d7c37633387d4ecda97e9e554484686f, type: 2}
   - {fileID: 11400000, guid: 88d4229ad5d95eb9b653e8897a1ed0b2, type: 2}
-  - {fileID: 11400000, guid: 88d4229ad5d95eb9b653e8897a1ed0b2, type: 2}
+  - {fileID: 11400000, guid: b0eae08b74df41df900f4f6d03623e0f, type: 2}
   - {fileID: 11400000, guid: 9b27b452b195583b8414227f86a32e5b, type: 2}
   <PlayerSpell>k__BackingField: {fileID: 0}
   <AniCon>k__BackingField: {fileID: 9100000, guid: 9f1c6b2d1e3d24c4c9ebf33ec1f0f8b9, type: 2}
