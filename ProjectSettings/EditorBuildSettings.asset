@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01.Scenes/Online/SummitScore.unity
     guid: 0cadec9ae858046468ccdd5fe9b5ed5e
+  - enabled: 1
+    path: Assets/01.Scenes/Online/Tutorial.unity
+    guid: 754a1b33dad84b84a9cb82af148f4305
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5aed63f81c604b242926ccd629826ab3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

@@ -36,12 +36,13 @@ public class PlayerController : MonoBehaviour
         slowSpeed = data.SlowSpeed;
         attacks = data.PlayerAttacks.ToArray();
         power = data.InitialPower / 100;
+        // 튜토리얼처럼 레벨 없이 플레이어만 만드는 씬에서는 배율 1
         var level = FindFirstObjectByType<LevelRunner>();
         StatusManager.Instance.Initialize(
             data.InitialHP,
             data.InitialPower,
-            level.LevelScoreMultiplyer,
-            level.LevelName);
+            level != null ? level.LevelScoreMultiplyer : 1.0,
+            level != null ? level.LevelName : string.Empty);
     }
 
     private void Start()

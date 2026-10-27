@@ -449,15 +449,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 580757479}
-  - component: {fileID: 580757481}
   - component: {fileID: 580757480}
   m_Layer: 5
-  m_Name: ExitP
+  m_Name: Tuto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &580757479
 RectTransform:
   m_ObjectHideFlags: 0
@@ -564,7 +563,7 @@ MonoBehaviour:
   animationType: 1
   targetType: 5
   forcedTargetType: 0
-  autoPlay: 1
+  autoPlay: 0
   useTargetAsV3: 0
   endValueFloat: 0
   endValueV3: {x: 400, y: 0, z: 0}
@@ -586,21 +585,6 @@ MonoBehaviour:
   optionalScrambleMode: 0
   optionalShakeRandomnessMode: 0
   optionalString: 
---- !u!114 &580757481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580757478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 40306178, guid: aa0b1eebb5db27a419fa4564bbe5c9c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: DOTweenPro.dll::DG.Tweening.DOTweenVisualManager
-  preset: 0
-  onEnableBehaviour: 1
-  onDisableBehaviour: 2
 --- !u!1 &750379665
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,8 +798,9 @@ GameObject:
   - component: {fileID: 926835661}
   - component: {fileID: 926835660}
   - component: {fileID: 926835659}
+  - component: {fileID: 926835662}
   m_Layer: 5
-  m_Name: Exit BTN
+  m_Name: Tuto BTN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -923,6 +908,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926835657}
   m_CullTransparentMesh: 1
+--- !u!114 &926835662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926835657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537962628ef4aa9469f29342d62ca62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadSceneProxy
+  sceneName: Tutorial
 --- !u!1 &978544623
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,6 +2541,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 580757480}
+        m_TargetAssemblyTypeName: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
+        m_MethodName: DOPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2081296596}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -2612,7 +2622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Tutorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4845ce9f3bc7c5a42a063e77a4a29acb, type: 2}
   m_sharedMaterial: {fileID: -3325761506677098762, guid: 4845ce9f3bc7c5a42a063e77a4a29acb, type: 2}

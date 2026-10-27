@@ -89,15 +89,25 @@ public class GameManager : SingletonBehaviour<GameManager>
 
 #region 인게임 오브젝트 생성
         var runnerObj = new GameObject("Runner");
-        var playerObj = new GameObject("Player");
 
         runnerObj
             .AddComponent<LevelRunner>()
             .Initialize(level);
 
-        playerObj
-            .AddComponent<PlayerController>()
-            .Initialize(player);
+        // 플레이어가 초기화될 때 LevelRunner의 점수 배율을 읽으므로 러너 다음에 생성
+        SpawnPlayer(player);
+#endregion
+    }
+
+    /// <summary>
+    /// 플레이어 오브젝트를 만들어 시작 위치 (0, -7)에 둡니다. (인게임과 튜토리얼이 함께 사용)
+    /// </summary>
+    public static PlayerController SpawnPlayer(PlayerData player)
+    {
+        var playerObj = new GameObject("Player");
+
+        var controller = playerObj.AddComponent<PlayerController>();
+        controller.Initialize(player);
 
         playerObj
             .AddComponent<PlayerAnimation>()
@@ -105,7 +115,8 @@ public class GameManager : SingletonBehaviour<GameManager>
             .runtimeAnimatorController = player.AniCon;
 
         playerObj.transform.position = new Vector3(0f, -7f);
-#endregion
+
+        return controller;
     }
 
     public void ApplySettings(Settings settings)
