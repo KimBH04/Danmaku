@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d5cb09ab234b86ab10e961228afa79, type: 3}
+  m_Name: PlayerBomb_RandomField
+  m_EditorClassIdentifier: Assembly-CSharp::RandomAreaSpawnSequence
+  <AreaMin>k__BackingField: {x: -8.5, y: -9.5}
+  <AreaMax>k__BackingField: {x: 8.5, y: 4}
+  <HoldFrame>k__BackingField: 60
+  <Acceleration>k__BackingField: 150
+  <TorqueRange>k__BackingField: 20
+  <MaxSpeed>k__BackingField: 100
+  <TrackNearestEnemy>k__BackingField: 1
+  <TargetAreaMin>k__BackingField: {x: -8.9, y: -10}
+  <TargetAreaMax>k__BackingField: {x: 8.9, y: 10}

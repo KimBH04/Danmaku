@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,6 +20,8 @@ public class Enemy : MonoBehaviour
     private new SpriteRenderer renderer;
 
     protected event UnityAction OnHit;
+
+    protected readonly List<Bullet> hitBullets = new();
 
     private void Awake()
     {
@@ -152,8 +155,10 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        if (BulletCollision.Check(transform.position, BulletTag.Player, pattern.Body.Distance, out var bullet))
+        int cnt = BulletCollision.CheckAll(transform.position, BulletTag.Player, pattern.Body.Distance, hitBullets);
+        for (int i = 0; i < cnt; i++)
         {
+            var bullet = hitBullets[i];
             enemyHP -= bullet.Damage;
 
             bullet.IsAlive = false;
@@ -170,6 +175,7 @@ public class Enemy : MonoBehaviour
 
                 // isDead = true;
                 // OnDie();
+                break;
             }
 
             StatusManager.Instance.AddScore(pattern.Score / 10);

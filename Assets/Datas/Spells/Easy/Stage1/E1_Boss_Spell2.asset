@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpellCard
   <SpellName>k__BackingField: "[\uC774\uC2AC\uBD80] \uC544\uCE68 \uC774\uC2AC \uBD84\uC218"
   <SpellDescription>k__BackingField: "\uC774\uC2AC \uAC19\uC740 \uD0C4\uC744 \uC704\uB85C \uD769\uBFCC\uB824 \uD3EC\uBB3C\uC120\uC73C\uB85C \uB5A8\uC5B4\uB728\uB9AC\uACE0, \uB290\uB9B0 \uD070 \uACE0\uB9AC\uD0C4\uC744 \uD568\uAED8 \uD37C\uB728\uB9B0\uB2E4."
-  <PresentHP>k__BackingField: 400
-  <TimeLimit>k__BackingField: 1500
+  <PresentHP>k__BackingField: 1200
+  <TimeLimit>k__BackingField: 3600
   bursts:
   - {fileID: 11400000, guid: c0b5bd8f202358358b68f921e71cf73d, type: 2}
   - {fileID: 11400000, guid: 4dbc93d129d15b3cbcdc44de37d76282, type: 2}

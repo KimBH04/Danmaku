@@ -16,7 +16,7 @@ MonoBehaviour:
   - <BulletData>k__BackingField: {fileID: 11400000, guid: bd545ac4820bc5245a4afcaa55356d78, type: 2}
     <Damage>k__BackingField: 1
     <InitialBullet>k__BackingField:
-      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+      <BulletColor>k__BackingField: {r: 1, g: 1, b: 1, a: 0.5}
       <InitialPosition>k__BackingField: {x: 0, y: 0}
       <InitialVelocity>k__BackingField: {x: 0, y: 30}
       <InitialTorqueDegree>k__BackingField: 0
