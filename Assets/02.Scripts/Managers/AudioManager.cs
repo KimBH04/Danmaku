@@ -72,10 +72,9 @@ public class AudioManager : SingletonBehaviour<AudioManager>
         sfxSource.PlayOneShot(clip);
     }
 
-    private void Start()
+    protected override void Awake()
     {
-        SetBGMVolume(GameManager.Instance.GameSettings.BGM);
-        SetSFXVolume(GameManager.Instance.GameSettings.SFX);
+        base.Awake();
 
         int len = sfxClips.Length;
         for (int i = 0; i < len; i++)
@@ -86,6 +85,12 @@ public class AudioManager : SingletonBehaviour<AudioManager>
                 Debug.LogError("겹침: " + kv.SFXKind);
             }
         }
+    }
+
+    private void Start()
+    {
+        SetBGMVolume(GameManager.Instance.GameSettings.BGM);
+        SetSFXVolume(GameManager.Instance.GameSettings.SFX);
     }
 }
 
