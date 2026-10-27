@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Yujin_Bomb
   m_EditorClassIdentifier: Assembly-CSharp::SpellCard
   <SpellName>k__BackingField: "\uC720\uC9C4 \uD3ED\uD0C4"
-  <SpellDescription>k__BackingField: "\uD544\uB4DC\uC758 \uBB34\uC791\uC704 \uC704\uCE58\uC5D0\uC11C 2.5\uCD08 \uB3D9\uC548 \uBC31\uC5F0\uC758 \uD0C4 100\uBC1C\uC774 \uC55E\uC73C\uB85C \uC3DF\uC544\uC9C4\uB2E4."
+  <SpellDescription>k__BackingField: "\uD544\uB4DC\uC758 \uBB34\uC791\uC704 \uC704\uCE58\uC5D0\uC11C 2.5\uCD08 \uB3D9\uC548 \uBC31\uC5F0\uC758 \uD0C4 150\uBC1C\uC774 \uC55E\uC73C\uB85C \uC3DF\uC544\uC9C4\uB2E4."
   <PresentHP>k__BackingField: 0
   <TimeLimit>k__BackingField: 0
   bursts:
