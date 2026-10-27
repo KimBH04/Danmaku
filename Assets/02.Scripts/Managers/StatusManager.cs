@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -235,6 +236,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         updatePower.Invoke(Power);
         onUseBomb.Invoke();
         AudioManager.Instance.PlayOneShotSFX(Kind.Bomb);
+        Camera.main.DOShakePosition(3f, 0.2f, 100);
 
         if (hitBombCoroutine != null)
         {
