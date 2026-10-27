@@ -23,5 +23,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88d4229ad5d95eb9b653e8897a1ed0b2, type: 2}
   - {fileID: 11400000, guid: b0eae08b74df41df900f4f6d03623e0f, type: 2}
   - {fileID: 11400000, guid: 9b27b452b195583b8414227f86a32e5b, type: 2}
-  <PlayerSpell>k__BackingField: {fileID: 0}
+  <PlayerSpell>k__BackingField: {fileID: 11400000, guid: 97938c92ad26408a8e85154030a9082a, type: 2}
   <AniCon>k__BackingField: {fileID: 9100000, guid: 9f1c6b2d1e3d24c4c9ebf33ec1f0f8b9, type: 2}

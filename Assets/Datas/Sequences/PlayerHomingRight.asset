@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232049b51e3049f09d0e3212bac37b8c, type: 3}
+  m_Name: PlayerHomingRight
+  m_EditorClassIdentifier: Assembly-CSharp::HomingSequence
+  <Side>k__BackingField: 2
+  <TurnRate>k__BackingField: 360
+  <TurnGain>k__BackingField: 8
+  <TurnAcceleration>k__BackingField: 1080
+  <MaxTurnRate>k__BackingField: 1440
+  <AreaMin>k__BackingField: {x: -8.9, y: -10}
+  <AreaMax>k__BackingField: {x: 8.9, y: 10}

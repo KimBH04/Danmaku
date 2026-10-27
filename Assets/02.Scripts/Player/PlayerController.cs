@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("펑");
                 BulletManager.Instance.BulletClearing(transform.position);
+                BulletManager.Instance.BurstChain(data.PlayerSpell.Bursts, transform, null);
                 SetInvisivility(300);
             }
             else if (usedSemiBomb && StatusManager.Instance.TryUseSemiPower())
