@@ -21,6 +21,9 @@ public class Enemy : MonoBehaviour
 
     protected event UnityAction OnHit;
 
+    protected event UnityAction<float> RemainingTime;
+    protected event UnityAction<int> RemainingSpellCount;
+
     protected readonly List<Bullet> hitBullets = new();
 
     private void Awake()
@@ -50,8 +53,12 @@ public class Enemy : MonoBehaviour
         IEnumerator Run()
         {
             int wait = pattern.WaitForFirstBurstFrame;
-            foreach (var spell in pattern.Spells)
+            int cnt = pattern.Spells.Count;
+            for (int i = 0; i < cnt; i++)
             {
+                var spell = pattern.Spells[i];
+                RemainingSpellCount?.Invoke(cnt - (i + 1));
+
                 enemyHP = maxHP = spell.PresentHP;
                 OnSpellStart();     // EnemyBoss가 체력바를 채우는 데 사용
 
@@ -74,8 +81,12 @@ public class Enemy : MonoBehaviour
                     {
                         bool isTimeOut = elapse++ >= timeLimit;
                         bool isDead = enemyHP <= 0;
+
                         if (!isTimeOut && !isDead)
                         {
+                            int remaining = timeLimit - elapse;
+                            RemainingTime?.Invoke(GameManager.FrameToSecond(remaining));
+
                             yield return GameManager.WaitForFixedUpdate;
                             continue;
                         }
@@ -213,5 +224,6 @@ public class Enemy : MonoBehaviour
         }
         StopAllCoroutines();
         OnHit = null;
+        RemainingTime = null;
     }
 }

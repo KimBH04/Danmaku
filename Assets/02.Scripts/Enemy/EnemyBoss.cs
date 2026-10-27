@@ -18,6 +18,9 @@ public class EnemyBoss : Enemy
             int hp = enemyPattern.Spells[0].PresentHP;
             UIManager.Instance.SetBossHP(hp, hp);
         }
+
+        RemainingTime += UIManager.Instance.SetBossRemainingTime;
+        RemainingSpellCount += UIManager.Instance.SetBossRemainingSpellCount;
     }
 
     // 스펠이 바뀔 때마다 새 체력으로 체력바를 다시 채움

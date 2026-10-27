@@ -16,6 +16,8 @@ public class UIManager : SingletonBehaviour<UIManager>
     [SerializeField] private GameObject bossStatusUIObj;
     [SerializeField] private TextMeshProUGUI bossNameText;
     [SerializeField] private Image bossHPImg;
+    [SerializeField] private TMP_Text bossRemainingSpellCountText;
+    [SerializeField] private TMP_Text bossRemainingTimeText;
 
     [Header("Result")]
     [SerializeField] private DOTweenAnimation resultPanelAnimation;
@@ -147,6 +149,16 @@ public class UIManager : SingletonBehaviour<UIManager>
     {
         runFillAmount?.Kill();
         runFillAmount = bossHPImg.DOFillAmount((float) current / max, 0.4f);
+    }
+
+    public void SetBossRemainingSpellCount(int count)
+    {
+        bossRemainingSpellCountText.text = $"남은 스펠 수: {count}";
+    }
+
+    public void SetBossRemainingTime(float remaining)
+    {
+        bossRemainingTimeText.text = $"{remaining:0.00}";
     }
 
     public void ResultBoardOn()
