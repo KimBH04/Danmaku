@@ -13,7 +13,7 @@ public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonB
                 instance = FindFirstObjectByType<T>(FindObjectsInactive.Exclude);
             }
 
-            if (instance == null || !instance.isActiveAndEnabled)
+            if (instance == null || !IsUsable(instance))
             {
                 instance = Instantiate(
                     Resources.LoadAll<T>("ManagerObjects")[0].gameObject,
@@ -28,11 +28,15 @@ public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonB
 
     public static T ExistingInstance => instance;
 
+    // isActiveAndEnabled는 OnEnable 전(다른 오브젝트의 Awake 시점 등)에는 false이므로,
+    // 씬에 배치돼 있지만 아직 Awake 전인 인스턴스도 사용 가능으로 봅니다.
+    private static bool IsUsable(T target) => target.enabled && target.gameObject.activeInHierarchy;
+
     protected virtual bool IsPersistent { get; } = false;
 
     protected virtual void Awake()
     {
-        if (instance == null || instance == this || !instance.isActiveAndEnabled
+        if (instance == null || instance == this || !IsUsable(instance)
             || (!IsPersistent && instance.gameObject.scene != gameObject.scene))
         {
             instance = (T)this;
