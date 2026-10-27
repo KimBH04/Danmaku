@@ -24,8 +24,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -37,8 +37,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -50,8 +50,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -63,8 +63,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -76,8 +76,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -89,8 +89,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -102,8 +102,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 18
   - <EnemyPatterns>k__BackingField:
@@ -117,8 +117,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 64
   - <EnemyPatterns>k__BackingField:
@@ -132,8 +132,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 2fb85ef933e14372ad66743e4f4f338d, type: 2}
       <SpawnPosition>k__BackingField: {x: -4.5, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 0
   - <EnemyPatterns>k__BackingField:
@@ -147,8 +147,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 374ff1ab7930459fa109f51e2d1b10ac, type: 2}
       <SpawnPosition>k__BackingField: {x: 4.5, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 140
   - <EnemyPatterns>k__BackingField:
@@ -162,8 +162,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -175,8 +175,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -188,8 +188,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -201,8 +201,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -214,8 +214,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -227,8 +227,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -240,8 +240,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 18
   - <EnemyPatterns>k__BackingField:
@@ -255,8 +255,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 144
   - <EnemyPatterns>k__BackingField:
@@ -270,8 +270,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 94eba011f2084f05966b76f43207279f, type: 2}
       <SpawnPosition>k__BackingField: {x: -4.5, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 1
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 2
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 60
   - <EnemyPatterns>k__BackingField:
@@ -285,8 +285,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: bb6222b7e55b4a9bbe8c176cf0537290, type: 2}
       <SpawnPosition>k__BackingField: {x: 4.5, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 1
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 2
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 240
   - <EnemyPatterns>k__BackingField:
@@ -300,8 +300,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: dd979bcf56194d46ae208fca423f3fc8, type: 2}
       <SpawnPosition>k__BackingField: {x: -6, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uB178\uB791 \uC694\uC815"
@@ -313,8 +313,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 33bba5a88b1b4bbd99419812d8644ceb, type: 2}
       <SpawnPosition>k__BackingField: {x: -3, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uB178\uB791 \uC694\uC815"
@@ -326,8 +326,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 637b43db195146c897124d6cb757dbb2, type: 2}
       <SpawnPosition>k__BackingField: {x: 0, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uB178\uB791 \uC694\uC815"
@@ -339,8 +339,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 22a4d7b00b5a498599d4fe9d2625a534, type: 2}
       <SpawnPosition>k__BackingField: {x: 3, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 24
   - <EnemyPatterns>k__BackingField:
@@ -354,8 +354,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: bce7d2a21fb24319af40ed46c779ab7e, type: 2}
       <SpawnPosition>k__BackingField: {x: 6, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 144
   - <EnemyPatterns>k__BackingField:
@@ -369,8 +369,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: bce7d2a21fb24319af40ed46c779ab7e, type: 2}
       <SpawnPosition>k__BackingField: {x: 6, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uB178\uB791 \uC694\uC815"
@@ -382,8 +382,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 22a4d7b00b5a498599d4fe9d2625a534, type: 2}
       <SpawnPosition>k__BackingField: {x: 3, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uB178\uB791 \uC694\uC815"
@@ -395,8 +395,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 637b43db195146c897124d6cb757dbb2, type: 2}
       <SpawnPosition>k__BackingField: {x: 0, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uB178\uB791 \uC694\uC815"
@@ -408,8 +408,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 33bba5a88b1b4bbd99419812d8644ceb, type: 2}
       <SpawnPosition>k__BackingField: {x: -3, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 24
   - <EnemyPatterns>k__BackingField:
@@ -423,8 +423,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: dd979bcf56194d46ae208fca423f3fc8, type: 2}
       <SpawnPosition>k__BackingField: {x: -6, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 204
   - <EnemyPatterns>k__BackingField:
@@ -438,8 +438,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -451,8 +451,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -464,8 +464,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -477,8 +477,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -490,8 +490,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -503,8 +503,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -516,8 +516,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -529,8 +529,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -542,8 +542,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 22
   - <EnemyPatterns>k__BackingField:
@@ -557,8 +557,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 102
   - <EnemyPatterns>k__BackingField:
@@ -572,8 +572,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 1aa335de6fbc43f499a114e2640c5127, type: 2}
       <SpawnPosition>k__BackingField: {x: 0, y: 11.5}
-      <DropPowerCount>k__BackingField: 2
-      <DropScoreCount>k__BackingField: 1
+      <DropPowerCount>k__BackingField: 3
+      <DropScoreCount>k__BackingField: 2
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 120
   - <EnemyPatterns>k__BackingField:
@@ -587,8 +587,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: dd979bcf56194d46ae208fca423f3fc8, type: 2}
       <SpawnPosition>k__BackingField: {x: -6, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 0
   - <EnemyPatterns>k__BackingField:
@@ -602,8 +602,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: bce7d2a21fb24319af40ed46c779ab7e, type: 2}
       <SpawnPosition>k__BackingField: {x: 6, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 100
   - <EnemyPatterns>k__BackingField:
@@ -617,8 +617,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 33bba5a88b1b4bbd99419812d8644ceb, type: 2}
       <SpawnPosition>k__BackingField: {x: -3, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 0
   - <EnemyPatterns>k__BackingField:
@@ -632,8 +632,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 22a4d7b00b5a498599d4fe9d2625a534, type: 2}
       <SpawnPosition>k__BackingField: {x: 3, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 200
   - <EnemyPatterns>k__BackingField:
@@ -647,8 +647,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 1289f1f5356744df880581c44cff49e3, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uC8FC\uD669 \uC694\uC815"
@@ -660,8 +660,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 1289f1f5356744df880581c44cff49e3, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uC8FC\uD669 \uC694\uC815"
@@ -673,8 +673,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 1289f1f5356744df880581c44cff49e3, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 45
   - <EnemyPatterns>k__BackingField:
@@ -688,8 +688,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 1289f1f5356744df880581c44cff49e3, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 8.4}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 105
   - <EnemyPatterns>k__BackingField:
@@ -703,8 +703,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: cdd3ff8fdc6b458695ebf2d30c2f66f9, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 7.4}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uC8FC\uD669 \uC694\uC815"
@@ -716,8 +716,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: cdd3ff8fdc6b458695ebf2d30c2f66f9, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 7.4}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uC8FC\uD669 \uC694\uC815"
@@ -729,8 +729,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: cdd3ff8fdc6b458695ebf2d30c2f66f9, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 7.4}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 45
   - <EnemyPatterns>k__BackingField:
@@ -744,8 +744,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: cdd3ff8fdc6b458695ebf2d30c2f66f9, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 7.4}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 165
   - <EnemyPatterns>k__BackingField:
@@ -759,8 +759,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 94eba011f2084f05966b76f43207279f, type: 2}
       <SpawnPosition>k__BackingField: {x: -4.5, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 1
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 2
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 60
   - <EnemyPatterns>k__BackingField:
@@ -774,8 +774,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: bb6222b7e55b4a9bbe8c176cf0537290, type: 2}
       <SpawnPosition>k__BackingField: {x: 4.5, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 1
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 2
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 140
   - <EnemyPatterns>k__BackingField:
@@ -789,8 +789,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: dd979bcf56194d46ae208fca423f3fc8, type: 2}
       <SpawnPosition>k__BackingField: {x: -6, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 0
   - <EnemyPatterns>k__BackingField:
@@ -804,8 +804,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: bce7d2a21fb24319af40ed46c779ab7e, type: 2}
       <SpawnPosition>k__BackingField: {x: 6, y: 11.5}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 160
   - <EnemyPatterns>k__BackingField:
@@ -819,8 +819,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -832,8 +832,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -845,8 +845,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -858,8 +858,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -871,8 +871,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -884,8 +884,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -897,8 +897,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uBD84\uD64D \uC694\uC815"
@@ -910,8 +910,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     - <Type>k__BackingField: 0
       <EnemyName>k__BackingField: "\uD30C\uB791 \uC694\uC815"
@@ -923,8 +923,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: 6cb246c362b24d799d68aefac956b1d6, type: 2}
       <SpawnPosition>k__BackingField: {x: -10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 20
   - <EnemyPatterns>k__BackingField:
@@ -938,8 +938,8 @@ MonoBehaviour:
       spells:
       - {fileID: 11400000, guid: a967a49b1815446db434adfc5500e179, type: 2}
       <SpawnPosition>k__BackingField: {x: 10.4, y: 6.8}
-      <DropPowerCount>k__BackingField: 1
-      <DropScoreCount>k__BackingField: 0
+      <DropPowerCount>k__BackingField: 2
+      <DropScoreCount>k__BackingField: 1
       <WaitForFirstBurstFrame>k__BackingField: 0
     <WaitForNextEmenyFrame>k__BackingField: 270
   <WaitForFirstEmenyFrame>k__BackingField: 90

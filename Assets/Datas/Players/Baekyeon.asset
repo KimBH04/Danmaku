@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
   <Speed>k__BackingField: 10
   <SlowSpeed>k__BackingField: 5
-  <InitialHP>k__BackingField: 200
-  <InitialPower>k__BackingField: 300
+  <InitialHP>k__BackingField: 300
+  <InitialPower>k__BackingField: 200
   playerAttacks:
   - {fileID: 11400000, guid: 63636e6036ba58a78bf1d3da7975b5ef, type: 2}
   - {fileID: 11400000, guid: a4cb7bd38d245a0481f4894431010230, type: 2}
