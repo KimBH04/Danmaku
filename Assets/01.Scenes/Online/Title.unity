@@ -2700,6 +2700,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 180063855376825818, guid: 285980fa428dc30478c2b589c955c7b9, type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 180063855376825818, guid: 285980fa428dc30478c2b589c955c7b9, type: 3}
+      propertyPath: sfxClips.Array.data[1].SFXKind
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 180063855376825818, guid: 285980fa428dc30478c2b589c955c7b9, type: 3}
+      propertyPath: sfxClips.Array.data[2].SFXKind
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 180063855376825818, guid: 285980fa428dc30478c2b589c955c7b9, type: 3}
+      propertyPath: sfxClips.Array.data[3].SFXKind
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 180063855376825818, guid: 285980fa428dc30478c2b589c955c7b9, type: 3}
+      propertyPath: sfxClips.Array.data[4].SFXKind
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 180063855376825818, guid: 285980fa428dc30478c2b589c955c7b9, type: 3}
+      propertyPath: sfxClips.Array.data[5].SFXKind
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 180063855376825818, guid: 285980fa428dc30478c2b589c955c7b9, type: 3}
+      propertyPath: sfxClips.Array.data[6].SFXKind
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 180063855376825818, guid: 285980fa428dc30478c2b589c955c7b9, type: 3}
+      propertyPath: sfxClips.Array.data[7].SFXKind
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 180063855376825818, guid: 285980fa428dc30478c2b589c955c7b9, type: 3}
+      propertyPath: sfxClips.Array.data[8].SFXKind
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 180063855376825818, guid: 285980fa428dc30478c2b589c955c7b9, type: 3}
+      propertyPath: sfxClips.Array.data[9].SFXKind
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 952199322277621866, guid: 285980fa428dc30478c2b589c955c7b9, type: 3}
       propertyPath: m_Name
       value: AudioManager
