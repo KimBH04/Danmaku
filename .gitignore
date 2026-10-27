@@ -109,6 +109,8 @@ InitTestScene*.unity*
 Assets/Plugins/SunnyLand Expansion Trees
 Assets/Plugins/Grass Tiles
 
+Assets/Plugins/512sounds
+
 # DOTween Pro (유료 에셋이라 저장소에 포함하지 않음, 무료 DOTween 폴더만 추적)
 /[Aa]ssets/Plugins/Demigiant/DOTweenPro/
 /[Aa]ssets/Plugins/Demigiant/DOTweenPro.meta

@@ -178,6 +178,27 @@ MonoBehaviour:
   master: {fileID: 24100000, guid: 87764769c30952e49a4d598fe084481e, type: 2}
   bgmSource: {fileID: 5925904388097272599}
   sfxSource: {fileID: 6486435817912058964}
+  sfxClips:
+  - SFXKind: 0
+    Clip: {fileID: 8300000, guid: 3723d0a4adaf83dbc9e55862d5238a8f, type: 3}
+  - SFXKind: 1
+    Clip: {fileID: 8300000, guid: e3b9a7baa5af979e58198bf6f3ec55ea, type: 3}
+  - SFXKind: 2
+    Clip: {fileID: 8300000, guid: f550f1fc9e772c19faea15f7017e920c, type: 3}
+  - SFXKind: 3
+    Clip: {fileID: 8300000, guid: d20b04430c1e6823ea00424b481f86e9, type: 3}
+  - SFXKind: 4
+    Clip: {fileID: 8300000, guid: 26b78e210d532782f96835b2d7aad935, type: 3}
+  - SFXKind: 5
+    Clip: {fileID: 8300000, guid: f541e971fb446db4d93b3dab6131b1ee, type: 3}
+  - SFXKind: 6
+    Clip: {fileID: 8300000, guid: 9264b55dbbe7f5944a47e379ba60ef8d, type: 3}
+  - SFXKind: 7
+    Clip: {fileID: 8300000, guid: e42b81443b16379c4ab37221cb114c5a, type: 3}
+  - SFXKind: 8
+    Clip: {fileID: 8300000, guid: 34cf4e3dec05d688d8c5d5952afad0cf, type: 3}
+  - SFXKind: 9
+    Clip: {fileID: 8300000, guid: 4825ff8057896fae29a0ef950fecf18c, type: 3}
 --- !u!1 &7624865425794330481
 GameObject:
   m_ObjectHideFlags: 0
