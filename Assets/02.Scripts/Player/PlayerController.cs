@@ -148,6 +148,7 @@ public class PlayerController : MonoBehaviour
                 {
                     StatusManager.Instance.AddScore(1000);
                 }
+                AudioManager.Instance.PlayOneShotSFX(Kind.GetItem);
                 continue;
             }
 
@@ -185,6 +186,7 @@ public class PlayerController : MonoBehaviour
 
         atkCooldown = 5;
         BulletManager.Instance.BulletPatternChain(attacks[power].BulletPatterns, transform);
+        AudioManager.Instance.PlayOneShotSFX(Kind.PlayerShot);
     }
 
     private void SetInvisivility(int duration)

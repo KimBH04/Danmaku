@@ -158,6 +158,8 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         hitBombCoroutine ??= StartCoroutine(HitBomb());
         onPlayerHit.Invoke();
 
+        AudioManager.Instance.PlayOneShotSFX(Kind.PlayerHit);
+
         System.Collections.IEnumerator HitBomb()
         {
             yield return new WaitForFixedFrame(18);
@@ -232,6 +234,7 @@ public class StatusManager : SingletonBehaviour<StatusManager>
         currentPower -= 100;
         updatePower.Invoke(Power);
         onUseBomb.Invoke();
+        AudioManager.Instance.PlayOneShotSFX(Kind.Bomb);
 
         if (hitBombCoroutine != null)
         {

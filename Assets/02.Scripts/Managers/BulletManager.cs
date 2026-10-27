@@ -137,6 +137,10 @@ public class BulletManager : SingletonBehaviour<BulletManager>
         foreach (var pattern in patterns)
         {
             SpawnBullet(pattern, presenter);
+            if (pattern.BulletData.Tag == BulletTag.Enemy)
+            {
+                AudioManager.Instance.PlayOneShotSFX(Kind.EnemyShot);
+            }
 
             if (pattern.WaitForFrame > 0)
             {

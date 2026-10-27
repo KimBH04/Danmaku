@@ -122,6 +122,11 @@ public class Enemy : MonoBehaviour
         enemyHP = 0;
         StatusManager.Instance.AddScore(pattern.Score);
         EnemyManager.Instance.ReleaseEnemy(this);
+
+        if (this is not EnemyBoss)
+        {
+            AudioManager.Instance.PlayOneShotSFX(Kind.EnemyDie);
+        }
     }
 
     private void FixedUpdate()
@@ -160,6 +165,8 @@ public class Enemy : MonoBehaviour
         {
             var bullet = hitBullets[i];
             enemyHP -= bullet.Damage;
+
+            AudioManager.Instance.PlayOneShotSFX(Kind.EnemyHit);
 
             bullet.IsAlive = false;
             OnHit?.Invoke();

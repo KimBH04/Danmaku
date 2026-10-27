@@ -35,6 +35,7 @@ public class EnemyBoss : Enemy
             .SetLink(gameObject)
             .OnComplete(base.OnDie);
         BulletManager.Instance.RemoveAllBullets();
+        AudioManager.Instance.PlayOneShotSFX(Kind.EnemyDie);
     }
 
     public System.Collections.IEnumerator BossAlive()

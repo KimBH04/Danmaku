@@ -27,6 +27,8 @@ public class AudioManager : SingletonBehaviour<AudioManager>
 
     private readonly Dictionary<Kind, AudioClip> clips = new();
 
+    private readonly bool[] isPlayedInFrame = new bool[10];
+
     public void SetBGMVolume(float volume)
     {
         master.SetFloat(BGM_KEY,
@@ -69,6 +71,12 @@ public class AudioManager : SingletonBehaviour<AudioManager>
             return;
         }
 
+        if (isPlayedInFrame[(int)kind])
+        {
+            return;
+        }
+
+        isPlayedInFrame[(int)kind] = true;
         sfxSource.PlayOneShot(clip);
     }
 
@@ -91,6 +99,14 @@ public class AudioManager : SingletonBehaviour<AudioManager>
     {
         SetBGMVolume(GameManager.Instance.GameSettings.BGM);
         SetSFXVolume(GameManager.Instance.GameSettings.SFX);
+    }
+
+    private void FixedUpdate()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            isPlayedInFrame[i] = false;
+        }
     }
 }
 
