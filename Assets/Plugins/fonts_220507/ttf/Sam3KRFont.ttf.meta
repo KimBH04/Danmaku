@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bd5bd77212f10674ea4e676dccc8aee0
+guid: 1a32a1a9ebbc64f4d9534a1d6eaba3b8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Suhgung Mono 12
+  - Sam3KRFont
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
